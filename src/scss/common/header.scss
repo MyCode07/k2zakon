@@ -1,0 +1,126 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 16;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+
+    &._scrolling {
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    // .header__container
+
+    &__container {
+    }
+
+    // .header__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+    }
+
+    // .header__left
+
+    &__left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .burger {
+            margin-right: 65px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+
+            & > :not(:last-child) {
+                margin-right: 65px;
+            }
+
+            li {
+                a {
+                    color: #000;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    // .header__center
+
+    &__center {
+    }
+
+    // .header__logo
+
+    &__logo {
+        display: block;
+        flex: 0 0 auto;
+        margin: 0 20px;
+
+        img,
+        svg {
+            width: 188px;
+        }
+    }
+
+    // .header__right
+
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        // .header__right-phone
+
+        &-phone {
+            display: block;
+            width: 30px;
+            height: 30px;
+            flex: 0 0 auto;
+            margin-left: 8px;
+
+            display: none;
+        }
+    }
+
+    // .header__city
+
+    &__city {
+        margin-right: 76px;
+
+        // .header__city-btn
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            color: #000;
+            font-family: Inter;
+            font-size: 12px;
+
+            img,
+            svg {
+                width: 12px;
+                margin-right: 4px;
+            }
+        }
+    }
+
+    // .header__phone
+
+    &__phone {
+        color: #d8160c;
+        font-size: 28px;
+        line-height: normal;
+        display: block;
+        margin-bottom: 4px;
+    }
+}

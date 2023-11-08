@@ -1,0 +1,48 @@
+.accordion {
+    // .accordion__item
+
+    &__item {
+        &[data-open] {
+            .accordion__item-content {
+                grid-template-rows: 1fr;
+            }
+            .accordion__item-title {
+                svg {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        // .accordion__item-title
+
+        &-title {
+            cursor: pointer;
+
+            svg {
+                transition: all 0.3s ease 0s;
+            }
+        }
+
+        // .accordion__item-content
+
+        &-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s;
+
+            // .accordion__item-content-height
+
+            &-height {
+                overflow: hidden;
+
+                div {
+                }
+            }
+        }
+    }
+
+    // .accordion__open
+
+    &__open {
+    }
+}
