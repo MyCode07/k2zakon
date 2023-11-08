@@ -12,7 +12,10 @@
 // import "./parts/mobile-controll.js";
 // import "./parts/login.js";
 // import "./parts/category-scroll.js";
-// import "./parts/sliders.js";
+import "./parts/sliders.js";
+
+import "./parts/victory-hover.js"
+import "./parts/filter.js"
 
 // stickyHeader()
 // toTop();
@@ -20,3 +23,5 @@
 // runTicker()
 // accorden();
 // maskInputs('+7 999 999 999 999', '.phone')
+ 
+
