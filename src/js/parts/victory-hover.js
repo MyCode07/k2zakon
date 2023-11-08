@@ -1,36 +1,19 @@
-import { gsap } from "gsap";
-// import { isMobile } from "../isMobile.js";
+import { isMobile } from "../utils/isMobile.js";
 
+const victoryCards = document.querySelectorAll('.victory__card');
 
-// if (!isMobile.any()) {
-const advantagesList = document.querySelectorAll('.js-hover');
+export const victoryCardsHover = () => {
+    if (!victoryCards) return;
 
-if (advantagesList.length) {
+    victoryCards.forEach(card => {
+        const cardText = card.querySelector('.victory__card-text');
 
-    advantagesList.forEach(item => {
-        const div = item.querySelector('div');
-        const animation = gsap.to(div, {
-            opacity: 1,
-            duration: 0.2,
-            ease: "ease-in-out"
-        });
-
-        animation.reverse();
-        item.addEventListener("mouseenter", () => animation.play());
-        item.addEventListener("mouseleave", () => animation.reverse());
-        item.addEventListener("mousemove", (e) => moveText(e, item));
+        if (!isMobile.any()) {
+            cardText.addEventListener("mouseenter", () => card.classList.add('_active'));
+            cardText.addEventListener("mouseleave", () => card.classList.remove('_active'));
+        }
+        else {
+            cardText.addEventListener("click", (e) => card.classList.toggle('_active'));
+        }
     })
-}
-// }
-
-function moveText(e, item) {
-    const div = item.querySelector('div');
-    const left = (e.clientX - item.getBoundingClientRect().left)
-    const top = (e.clientY - item.getBoundingClientRect().top)
-    console.log(left);
-    gsap.to(div, {
-        left: left,
-        top: top,
-        duration: 0.3,
-    });
 }

@@ -1,0 +1,146 @@
+.victory__card {
+    // max-height: 640px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 600px) {
+        max-width: 212px;
+        width: 100%;
+    }
+
+    &._active {
+        .victory__card-descr {
+            top: 0;
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .victory__card-docimg,
+        .victory__card-person a {
+            opacity: 0;
+        }
+    }
+
+    // .victory__card-docimg
+
+    &-docimg {
+        display: block;
+        height: 515px;
+
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 1366px) {
+            height: 274px;
+        }
+
+        cursor:
+            url("@img/lupa.svg") 20 20,
+            zoom-in;
+
+        transition: all 0.5s;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    // .victory__card-person
+
+    &-person {
+        margin-top: -48%;
+
+        @media (max-width: 1366px) {
+            margin-top: -40%;
+        }
+
+        a {
+            display: block;
+            width: 190px;
+            height: 190px;
+            position: relative;
+            margin: 0 auto;
+
+            transition: all 0.5s;
+
+            @media (max-width: 1366px) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    // .victory__card-text
+
+    &-text {
+        display: block;
+        margin-top: 17px;
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        width: 100%;
+        max-width: 264px;
+
+        @media (max-width: 1366px) {
+            margin-top: 2px;
+            max-width: 100%;
+            font-size: 16px;
+        }
+    }
+
+    // .victory__card-descr
+
+    &-descr {
+        position: absolute;
+        width: 100%;
+        max-height: 100%;
+        top: 50px;
+        left: 0;
+
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.5s;
+
+        padding: 24px 12px 24px 24px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 8px 0px #0000004d;
+        border-radius: 20px;
+        z-index: 1;
+
+        @media (max-width: 1366px) {
+            font-size: 14px;
+            line-height: 16px;
+            height: 100%;
+        }
+
+        div {
+            height: 100%;
+            overflow-y: auto;
+            padding-right: 12px;
+
+            @media (any-hover: hover) {
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & > :not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}

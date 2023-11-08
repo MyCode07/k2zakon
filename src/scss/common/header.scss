@@ -5,7 +5,7 @@
     background-color: #fff;
     transition: all 0.3s ease 0s;
 
-    &._scrolling {
+    &._sticky {
         box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
     }
 
@@ -21,6 +21,10 @@
         align-items: center;
         justify-content: space-between;
         height: 100px;
+
+        @media (max-width: 992px) {
+            height: 50px;
+        }
     }
 
     // .header__left
@@ -30,8 +34,16 @@
         align-items: center;
         justify-content: space-between;
 
+        @media (max-width: 992px) {
+            display: none;
+        }
+
         .burger {
             margin-right: 65px;
+
+            @media (max-width: 1280px) {
+                margin-right: 35px;
+            }
         }
 
         ul {
@@ -40,6 +52,10 @@
 
             & > :not(:last-child) {
                 margin-right: 65px;
+
+                @media (max-width: 1280px) {
+                    margin-right: 35px;
+                }
             }
 
             li {
@@ -63,9 +79,17 @@
         flex: 0 0 auto;
         margin: 0 20px;
 
+        @media (max-width: 992px) {
+            margin: 0;
+        }
+
         img,
         svg {
             width: 188px;
+
+            @media (max-width: 992px) {
+                width: 95px;
+            }
         }
     }
 
@@ -76,16 +100,21 @@
         align-items: center;
         justify-content: space-between;
 
+        @media (max-width: 768px) {
+            flex: 1 1 auto;
+        }
+
         // .header__right-phone
 
         &-phone {
-            display: block;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             flex: 0 0 auto;
-            margin-left: 8px;
-
             display: none;
+
+            @media (max-width: 992px) {
+                display: block;
+            }
         }
     }
 
@@ -93,6 +122,15 @@
 
     &__city {
         margin-right: 76px;
+
+        @media (max-width: 1280px) {
+            margin-right: 35px;
+        }
+
+        @media (max-width: 768px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         // .header__city-btn
 
@@ -122,5 +160,15 @@
         line-height: normal;
         display: block;
         margin-bottom: 4px;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    ._socials {
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 }
