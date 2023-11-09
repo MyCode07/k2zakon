@@ -1,7 +1,5 @@
 const filters = document.querySelectorAll('.filter__btn');
-
 if (filters.length) {
-
     filters.forEach(item => {
         const btn = item.querySelector('button');
 
@@ -43,38 +41,12 @@ function toggleTarget(target, targets, classname) {
 }
 
 
-const footerCitieOpenBtn = document.querySelector('.footer__top-open');
-const footerCitiepopup = document.querySelector('.popup');
-
-if (footerCitieOpenBtn) {
-
-    footerCitieOpenBtn.addEventListener('click', function (e) {
-        footerCitiepopup.classList.toggle('_active');
-    })
-}
-
-
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
+
     const filter = document.querySelector('.filter__btn._active');
 
-    if (targetEl.closest('.filter__btn ul li')) {
+    if (targetEl.closest('.filter__btn ul li') || targetEl.classList.contains('filter__btn')) {
         filter.classList.remove('_active')
     }
-
-    if (targetEl.classList.contains('filter__btn')) {
-        filter.classList.remove('_active')
-    }
-
-    if (targetEl.classList.contains('popup')) {
-        footerCitiepopup.classList.remove('_active');
-    }
-
-    if (targetEl.classList.contains('popup__close')) {
-        footerCitiepopup.classList.remove('_active');
-    }
-
 })
-
-
-

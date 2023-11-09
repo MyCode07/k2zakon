@@ -134,7 +134,8 @@ a {
     }
 }
 
-._city-btn {
+[data-open-popup] * {
+    pointer-events: none;
 }
 
 label {

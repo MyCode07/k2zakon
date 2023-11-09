@@ -3,7 +3,7 @@
         <div class="footer__body">
             <div class="footer__top">
                 <div class="footer__top-line">
-                    <button class="footer__top-open _city-btn">
+                    <button class="footer__top-open">
                         <img src="@img/icons/loc-red.svg" alt="">
                         <span>Посмотреть адрес ближайшего к Вам офиса</span>
                     </button>
@@ -75,15 +75,15 @@
             <div class="footer__center">
                 <div class="height">
                     <div class="footer__top-line">
-                        <button class="footer__center-btn _city-btn">
+                        <button class="footer__center-btn" data-open-popup data-id="city">
                             <svg width="19" height="10" viewBox="0 0 19 10" fill="none">
                                 <path d="M1 1.5L9.5 8.5L17.7907 1.67235L18 1.5" stroke="#2B3131" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                             <span>г. Краснодар, ул. Николая Кондратенко, 15</span>
                         </button>
-                        <a href="mailto:23@k2zakon.com" class="footer__contact">23@k2zakon.com</a>
-                        <button class="footer__contact _open-popup">+7 (995) 222-93-23</button>
+                        <a href="mailto:23@k2zakon.com" class="footer__contact" id="footer-email">23@k2zakon.com</a>
+                        <button class="footer__contact _open-popup" id="footer-phone">+7 (995) 222-93-23</button>
                         <div class="_socials">
                             <ul>
                                 <li>
@@ -139,9 +139,7 @@
                         </div>
                     </div>
                     <div class="footer__map">
-                        <div id="map">
-                            <img src="@img/map.jpg" alt="">
-                        </div>
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
@@ -154,35 +152,6 @@
                     <button class="_open-popup">Информация для пользователя</button>
                 </div>
                 <p><strong>Студия Артемия Лебедева</strong> <br> не делала этот сайт, мы и сами о***нно справились</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="popup" id="footer-popup">
-        <div class="popup__container _container">
-            <div class="popup__body">
-                <div class="footer__popup-top">
-                    <button class="footer__top-open _city-btn">
-                        <img src="@img/icons/loc-red.svg" alt="">
-                        <span>Выберите Ваш город</span>
-                    </button>
-                    <button class="popup__close" href="#">
-                        <svg class="svg-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L23 23" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                            <path d="M1 23L23 1" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="popup__content">
-                    <input type="search" placeholder="Введите название города">
-                    <button>Вся Россия</button>
-                    <div><img src="img/icons/map.svg" alt=""></div>
-                    <p>Работаем в радиусе 1000 км от любого из наших офисов</p>
-                </div>
             </div>
         </div>
     </div>

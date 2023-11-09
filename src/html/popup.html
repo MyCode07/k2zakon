@@ -1,10 +1,32 @@
-<div class="popup">
+<div class="popup" id="city">
     <div class="popup__container _container">
         <div class="popup__body">
-            <button class="popup__close" href="#">
-                <img src="@img/svg/close.svg" alt="">
-            </button>
-            <div class="popup__content"></div>
+            <div class="footer__popup-top">
+                <button class="footer__top-open _city-btn">
+                    <img src="@img/icons/loc-red.svg" alt="">
+                    <span>Выберите Ваш город</span>
+                </button>
+                <button class="popup__close" href="#">
+                    <svg class="svg-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L23 23" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M1 23L23 1" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="popup__content">
+                <input type="search" placeholder="Введите название города">
+                <ul>
+                    <li class="all">
+                        <span lat="50.603664" lon="36.571866">Вся Россия</span>
+                    </li>
+                </ul>
+                <div class="popup__content-img"><img src="img/icons/map.svg" alt=""></div>
+                <p>Работаем в радиусе 1000 км от любого из наших офисов</p>
+            </div>
         </div>
     </div>
 </div>
