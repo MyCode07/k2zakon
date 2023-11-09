@@ -139,7 +139,9 @@
                         </div>
                     </div>
                     <div class="footer__map">
-                        <div id="map"></div>
+                        <div id="map">
+                            <img src="@img/map.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,7 +153,36 @@
                     </p>
                     <button class="_open-popup">Информация для пользователя</button>
                 </div>
-                <p><strong>Студия Артемия Лебедева</strong> не делала этот сайт, мы и сами о***нно справились</p>
+                <p><strong>Студия Артемия Лебедева</strong> <br> не делала этот сайт, мы и сами о***нно справились</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="footer-popup">
+        <div class="popup__container _container">
+            <div class="popup__body">
+                <div class="footer__popup-top">
+                    <button class="footer__top-open _city-btn">
+                        <img src="@img/icons/loc-red.svg" alt="">
+                        <span>Выберите Ваш город</span>
+                    </button>
+                    <button class="popup__close" href="#">
+                        <svg class="svg-close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L23 23" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M1 23L23 1" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="popup__content">
+                    <input type="search" placeholder="Введите название города">
+                    <button>Вся Россия</button>
+                    <div><img src="img/icons/map.svg" alt=""></div>
+                    <p>Работаем в радиусе 1000 км от любого из наших офисов</p>
+                </div>
             </div>
         </div>
     </div>

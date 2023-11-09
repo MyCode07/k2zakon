@@ -1,8 +1,10 @@
 const filters = document.querySelectorAll('.filter__btn');
 
 if (filters.length) {
+
     filters.forEach(item => {
         const btn = item.querySelector('button');
+
         if (btn) {
             btn.addEventListener('click', () => {
                 toggleTarget(item, filters, '_active');
@@ -19,6 +21,7 @@ if (filters.length) {
                             if (label) label.textContent = e.target.textContent
 
                             toggleTarget(opt, options, '_selected');
+
                         })
                     })
             }
@@ -32,7 +35,7 @@ function toggleTarget(target, targets, classname) {
             if (item.classList.contains(classname)) item.classList.remove(classname)
         })
 
-        target.classList.add(classname)
+        target.classList.toggle(classname)
     }
     else {
         target.classList.remove(classname)
@@ -40,12 +43,38 @@ function toggleTarget(target, targets, classname) {
 }
 
 
+const footerCitieOpenBtn = document.querySelector('.footer__top-open');
+const footerCitiepopup = document.querySelector('.popup');
+
+if (footerCitieOpenBtn) {
+
+    footerCitieOpenBtn.addEventListener('click', function (e) {
+        footerCitiepopup.classList.toggle('_active');
+    })
+}
+
+
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
+    const filter = document.querySelector('.filter__btn._active');
 
-    if (!targetEl.closest('.filter__btn') && document.querySelector('.filter__btn._active')) {
-        const filter = document.querySelector('.filter__btn._active');
+    if (targetEl.closest('.filter__btn ul li')) {
         filter.classList.remove('_active')
     }
 
+    if (targetEl.classList.contains('filter__btn')) {
+        filter.classList.remove('_active')
+    }
+
+    if (targetEl.classList.contains('popup')) {
+        footerCitiepopup.classList.remove('_active');
+    }
+
+    if (targetEl.classList.contains('popup__close')) {
+        footerCitiepopup.classList.remove('_active');
+    }
+
 })
+
+
+
