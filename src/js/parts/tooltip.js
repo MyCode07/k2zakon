@@ -12,8 +12,10 @@ function updateTooltipPosition(e, tooltip) {
     const tooltipX = e.clientX + xOffset + scrollX;
     const tooltipY = e.clientY + yOffset + scrollY;
 
-    tooltip.style.left = tooltipX + 'px';
     tooltip.style.top = tooltipY + 'px';
+
+    if (!isMobile.any()) tooltip.style.left = tooltipX + 'px';
+    else tooltip.style.left = '50%';
 }
 
 
@@ -57,8 +59,14 @@ export const toolTipAction = () => {
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
-    
-    if (!targetEl.classList.contains('tooltip') && !targetEl.hasAttribute('data-tooltip') && !targetEl.parentNode.hasAttribute('data-tooltip') ) {
+
+    if (!targetEl.classList.contains('tooltip') && !targetEl.hasAttribute('data-tooltip') && !targetEl.parentNode.hasAttribute('data-tooltip')) {
         toolTipElem.style.display = 'none'
+    }
+
+
+    if (!targetEl.classList.contains('victory__card-text') && !targetEl.closest('.victory__card-text')
+        && document.querySelector('.victory__card._active') && !targetEl.classList.contains('victory__card-descr') && !targetEl.closest('.victory__card-descr')) {
+        document.querySelector('.victory__card._active').classList.remove('_active')
     }
 })

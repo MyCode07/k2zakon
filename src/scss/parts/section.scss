@@ -1,4 +1,37 @@
 .section {
+    &._pl {
+        position: relative;
+        background-color: #fff;
+
+        @include adaptive-value("margin-top", 80, 20, 1);
+        @include adaptive-value("margin-bottom", 80, 20, 1);
+
+        &:before,
+        &:after {
+            position: absolute;
+            left: 0;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 80px;
+            background-color: inherit;
+
+            @include adaptive-value("height", 80, 20, 1);
+        }
+
+        &:before {
+            top: 0;
+            transform: translate(0, -100%);
+            clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
+        }
+
+        &:after {
+            bottom: 0;
+            transform: translate(0, 100%);
+            clip-path: polygon(0% 0%, 100% 0, 100% 100%);
+        }
+    }
+
     // .section__container
 
     &__container {
@@ -20,7 +53,7 @@
             position: relative;
             margin-bottom: 30px;
 
-            @media (max-width: 1280px) {
+            @media (max-width: 1366px) {
                 margin-bottom: 15px;
             }
 
@@ -136,12 +169,10 @@
     .grid {
         margin-bottom: 160px;
 
-        @media (max-width: 1280px) {
+        @media (max-width: 1366px) {
             margin-bottom: 120px;
         }
     }
-
-    
 
     .view {
         // .view-more
@@ -155,7 +186,6 @@
                 display: block;
                 white-space: nowrap;
                 color: #000;
-                font-family: Ubuntu;
                 font-size: 16px;
                 position: relative;
 
@@ -181,6 +211,13 @@
 }
 
 #victory-swiperblock {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media (max-width: 992px) {
+        padding-top: 60px;
+    }
+
     .top {
         display: flex;
         align-items: center;
@@ -192,13 +229,62 @@
             flex-direction: column-reverse;
             margin-bottom: 90px;
         }
+
+        p {
+            display: block;
+            color: #2b3131;
+            font-size: 20px;
+            line-height: 130%;
+            margin-left: 80px;
+
+            span {
+                color: #d8160c;
+                font-weight: 700;
+            }
+
+            @media (max-width: 992px) {
+                margin-left: 40px;
+            }
+
+            @media (max-width: 768px) {
+                text-align: center;
+                margin-bottom: 43px;
+                margin-left: 0;
+                font-weight: 500;
+                font-size: 16px;
+                font-weight: 500;
+
+                label {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .swiper {
+            box-shadow: 0px 0px 14.89655px 0px rgba(0, 0, 0, 0.17);
+
+            max-width: 252px;
+            height: 339px;
+            width: 100%;
+
+            @media (max-width: 1366px) {
+                max-width: 233px;
+                height: 314px;
+            }
+
+            @media (max-width: 768px) {
+                max-width: 246px;
+                height: 333px;
+            }
+        }
     }
 
     .bottom {
         display: flex;
         align-items: flex-start;
+        justify-content: space-between;
 
-        @media (max-width: 1280px) {
+        @media (max-width: 1366px) {
             justify-content: center;
         }
 
@@ -218,14 +304,17 @@
 
         & > :last-child {
             max-width: 664px;
+            margin-left: 30px;
 
-            @media (max-width: 1280px) {
+            @media (max-width: 1366px) {
+                max-width: 580px;
                 padding-top: 46px;
-                width: fit-content;
+                margin-left: 10px;
             }
 
             @media (max-width: 992px) {
                 padding-top: 0px;
+                margin-left: 0;
             }
         }
 
@@ -234,13 +323,12 @@
 
             h2 {
                 display: block;
-                margin-bottom: 61px;
                 color: #0d0d0d;
-                font-family: Ubuntu;
                 font-size: 32px;
                 font-weight: 500;
+                margin-bottom: 61px;
 
-                @media (max-width: 1280px) {
+                @media (max-width: 1366px) {
                     margin-bottom: 85px;
                 }
 
@@ -248,11 +336,7 @@
                     width: 100%;
                     text-align: center;
                     margin-bottom: 28px;
-                }
-
-                @media (max-width: 360px) {
                     font-size: 16px;
-                    font-weight: 500;
                 }
             }
 
@@ -261,7 +345,7 @@
                     margin-bottom: 41px;
                 }
 
-                @media (max-width: 1280px) {
+                @media (max-width: 1366px) {
                     & > :not(:last-child) {
                         margin-bottom: 20px;
                     }
@@ -276,7 +360,6 @@
                 li {
                     padding-left: 20px;
                     color: #000;
-                    font-family: Ubuntu;
                     font-size: 20px;
                     font-weight: 300;
 
@@ -304,70 +387,6 @@
                 height: auto;
                 object-fit: cover;
             }
-        }
-    }
-
-    .swiper {
-        max-width: 252px;
-        max-height: 339px;
-        width: 100%;
-
-        @media (max-width: 360px) {
-            max-width: 246px;
-        }
-    }
-
-    .swiper-slide {
-        box-shadow: 0px 0px 14.89655px 0px rgba(0, 0, 0, 0.17);
-    }
-
-    p {
-        display: block;
-        margin-left: 80px;
-        color: #2b3131;
-        font-family: Ubuntu;
-        font-size: 20px;
-        line-height: 130%;
-
-        label {
-            color: #d8160c;
-            font-weight: 700;
-        }
-
-        @media (max-width: 992px) {
-            margin-left: 40px;
-        }
-
-        @media (max-width: 768px) {
-            text-align: center;
-            margin-bottom: 43px;
-            margin-left: 0;
-            font-weight: 500;
-            font-size: 16px;
-            font-weight: 500;
-            label {
-                font-weight: 500;
-            }
-        }
-    }
-
-    h4 {
-        margin-top: 20px;
-        margin-bottom: 13px;
-        display: block;
-        color: #000;
-        font-family: Ubuntu;
-        font-size: 20px;
-        font-weight: 300;
-
-        a {
-            color: #d8160c;
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            text-align: center;
-            font-size: 16px;
         }
     }
 }

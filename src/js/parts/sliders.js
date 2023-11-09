@@ -10,6 +10,7 @@ if (sliders.length) {
                 Autoplay,
             ],
             loop: true,
+            lazy: true,
             slidesPerView: 1,
             autoplay: {
                 delay: 3000,

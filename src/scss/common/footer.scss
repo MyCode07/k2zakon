@@ -12,6 +12,27 @@
     &__body {
     }
 
+    // .footer__title
+
+    &__title {
+        margin-top: 20px;
+        margin-bottom: 13px;
+        display: block;
+        color: #000;
+        font-size: 20px;
+        font-weight: 300;
+
+        a {
+            color: #d8160c;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+
     // .footer__top
 
     &__top {
