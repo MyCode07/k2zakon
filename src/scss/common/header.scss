@@ -127,6 +127,7 @@
 
     &__city {
         margin-right: 76px;
+        position: relative;
 
         @media (max-width: 1280px) {
             margin-right: 35px;
@@ -135,6 +136,10 @@
         @media (max-width: 768px) {
             margin-left: auto;
             margin-right: auto;
+        }
+
+        @media (max-width: 360px) {
+            position: static;
         }
 
         // .header__city-btn
@@ -153,6 +158,104 @@
             svg {
                 width: 12px;
                 margin-right: 4px;
+            }
+        }
+
+        // .header__city-choose
+        &-choose {
+            position: absolute;
+            left: 50%;
+            top: 130%;
+            transform: translate(-50%, 0);
+            bottom: auto;
+            opacity: 1;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            border-radius: 10px;
+            color: #000;
+            cursor: auto;
+            transition: all 0.5s;
+
+            @media (max-width: 992px) {
+                top: 200%;
+            }
+
+            @media (max-width: 360px) {
+                top: 100%;
+            }
+
+            &._open {
+                display: none;
+            }
+
+            & > :first-child {
+                display: block;
+                content: "";
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                background: #fff;
+                top: -8px;
+                left: 45%;
+                transform: rotate(-135deg);
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                width: 50%;
+                height: 10px;
+                top: 0;
+                left: 23%;
+                z-index: 1;
+            }
+
+            p {
+                margin: 0 0 10px;
+                font-size: 12px;
+                font-weight: 400;
+                white-space: nowrap;
+                font-family: Inter;
+
+                span {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+
+            div {
+                display: flex;
+                gap: 5px;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    border-radius: 64px;
+                    padding: 8px 15px;
+                    font-size: 12px;
+                    cursor: pointer;
+                    width: max-content;
+                    white-space: nowrap;
+                    transition: all 0.5s;
+                }
+                & > :first-child {
+                    background-color: #d8160c;
+                    color: #fff;
+                    line-height: 0.5px;
+                }
+
+                & > :last-child {
+                    color: #000;
+                }
             }
         }
     }
