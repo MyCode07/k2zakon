@@ -1,5 +1,20 @@
 .menu {
-    display: none;
+    position: fixed;
+    z-index: 17;
+    left: 0;
+    top: 90px;
+    width: 100%;
+    height: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+
+    &._open{
+        opacity: 1;
+        pointer-events: all;
+    }
+
 
     // .menu__container
 
@@ -9,5 +24,116 @@
     // .menu__body
 
     &__body {
+    }
+
+    nav {
+        background-color: #fff;
+        border-radius: 24px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+        color: #000000;
+        width: fit-content;
+        font-size: 20px;
+        line-height: 1.2;
+        white-space: nowrap;
+
+        ul {
+            & > :first-child {
+                border-radius: 24px 24px 0 0;
+
+                a {
+                    padding: 20px 40px 15px 20px;
+                    border-radius: 24px 24px 0 0;
+                }
+            }
+
+            & > :last-child {
+                border-radius: 0 0 24px 24px;
+
+                a {
+                    padding: 15px 40px 20px 20px;
+                    border-radius: 0 0 24px 24px;
+                }
+            }
+
+            li {
+                position: relative;
+                background-color: #ffffff;
+                transition: all 0.5s;
+                display: flex;
+                align-items: center;
+
+                button {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    transform: translate(0, -50%);
+
+                    svg,
+                    img {
+                        flex: 0 0 auto;
+                        width: 15px;
+                        height: 15px;
+                        transition: all 0.5s;
+                        stroke: currentColor;
+                        transition: all 0.3s ease 0s;
+                    }
+                }
+
+                a {
+                    display: block;
+                    padding: 15px 40px 15px 20px;
+                    transition: all 0.5s;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        ul {
+                            display: block;
+                        }
+
+                        svg,
+                        img {
+                            stroke: #d8160c;
+                        }
+                    }
+                }
+
+                &[data-open] {
+                    ul {
+                        display: block;
+                    }
+
+                    svg,
+                    img {
+                        stroke: #d8160c;
+                    }
+                }
+            }
+
+            ul {
+                position: absolute;
+                left: calc(100% + 4px);
+                top: 0;
+                background-color: #fff;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+                border-radius: 24px;
+                transition: all 0.5s;
+
+                display: none;
+
+                &:before {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    background-color: #ffffff;
+                    position: absolute;
+                    top: 17px;
+                    left: -7px;
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+                }
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 
 import "./parts/sliders.js";
 import "./parts/popup.js";
+import "./parts/menu.js";
 
 import "./parts/victory-hover.js"
 import "./parts/filter.js"

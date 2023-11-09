@@ -4,28 +4,31 @@
 
 @@include('./html/header.html', {
 "text":"Отзывы",
+"bread-class":"_white"
 })
 
 <main>
-    <section class="section _feedback">
+    <section class="section _pl _pl-bottom" id="feedback">
         <div class="section__container _container">
             <div class="section__body">
-                <div class="info__links">
-                    <a href="" class="google" data-tooltip="Посмотреть отзывы на Google">
-                        <span class="link-counter">267</span>
-                        <img src="@img/google.png" alt="">
-                    </a>
-                    <a href="" class="gis" data-tooltip="Посмотреть отзывы на 2ГИС">
-                        <span class="link-counter">123</span>
-                        <img src="@img/gis.png" alt="">
-                    </a>
-                </div>
-                <div class="info__img">
-                    <img src="@img/big.png" alt="">
-                    <a href="" class="yandex" data-tooltip="Посмотреть отзывы на Яндекс">
-                        <span class="link-counter">167</span>
-                        <img src="@img/yandex.png" alt="">
-                    </a>
+                <div class="feedback-flex">
+                    <div class="feedback-flex__links">
+                        <a href="" class="google" data-tooltip="Посмотреть отзывы на Google">
+                            <span class="link-counter">267</span>
+                            <img src="img/google.png" alt="">
+                        </a>
+                        <a href="" class="gis" data-tooltip="Посмотреть отзывы на 2ГИС">
+                            <span class="link-counter">123</span>
+                            <img src="img/gis.png" alt="">
+                        </a>
+                    </div>
+                    <div class="feedback-flex__img">
+                        <img src="img/big.png" alt="">
+                        <a href="" class="yandex" data-tooltip="Посмотреть отзывы на Яндекс">
+                            <span class="link-counter">167</span>
+                            <img src="img/yandex.png" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -69,4 +69,8 @@ document.addEventListener('click', function (e) {
         && document.querySelector('.victory__card._active') && !targetEl.classList.contains('victory__card-descr') && !targetEl.closest('.victory__card-descr')) {
         document.querySelector('.victory__card._active').classList.remove('_active')
     }
+
+    if (targetEl.classList.contains('footer__top-open')) {
+        toolTipElem.style.display = 'none'
+    }
 })
