@@ -35,12 +35,14 @@ if (popupAll.length)
         popupClose.addEventListener('click', function (e) {
             popup.classList.remove('_open');
             unLockPadding();
+            if (popup.id == 'qrcode') document.querySelector('body').classList.add('_noscroll');
         })
 
         popup.addEventListener('click', function (e) {
             if (e.target.classList.contains('popup')) {
                 popup.classList.remove('_open')
                 unLockPadding();
+                if (popup.id == 'qrcode') document.querySelector('body').classList.add('_noscroll');
             }
         })
     })

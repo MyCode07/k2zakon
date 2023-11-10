@@ -3,6 +3,15 @@ import { isMobile } from '../utils/isMobile.js';
 const menu = document.querySelector('.menu');
 const burgers = document.querySelectorAll('.burger');
 const menuLinks = document.querySelectorAll('.menu nav li a');
+const container = document.querySelector('.header ._container');
+
+let left = container.getBoundingClientRect().left;
+menu.style.left = left + 'px';
+
+window.addEventListener('resize', () => {
+    left = container.getBoundingClientRect().left
+    menu.style.left = left + 'px';
+})
 
 if (burgers.length) {
     burgers.forEach(burger => {
@@ -13,14 +22,7 @@ if (burgers.length) {
     })
 }
 
-document.addEventListener('click', function (e) {
-    let targetEl = e.target;
 
-    if (targetEl.tagName == 'NAV' && targetEl.closest('header') && window.innerWidth <= 768 && targetEl.classList.contains('_open')) {
-        burger.classList.remove('_active');
-        menu.classList.remove('_open');
-    }
-})
 
 if (menuLinks.length) {
     menuLinks.forEach(link => {
@@ -28,7 +30,10 @@ if (menuLinks.length) {
 
             if (menu.classList.contains('_open')) {
                 menu.classList.remove('_open');
-                burger.classList.remove('_active');
+
+                burgers.forEach(burger => {
+                    burger.classList.toggle('_active');
+                })
             }
         })
     })
@@ -82,3 +87,13 @@ if (submenuList.length) {
     }
 
 }
+
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
+    if (!targetEl.classList.contains('menu') && !targetEl.closest('.menu') && !targetEl.classList.contains('burger') && menu.classList.contains('_open')) {
+        menu.classList.remove('_open')
+        burgers.forEach(burger => {
+            burger.classList.toggle('_active');
+        })
+    }
+})
