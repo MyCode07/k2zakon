@@ -2,6 +2,14 @@
     padding: 30px 0;
     background-color: #f5f5f5;
 
+    @media (max-width: 992px) {
+        padding: 30px 0 75px 0;
+    }
+
+    &.has-title .footer__title {
+        display: block;
+    }
+
     // .footer__container
 
     &__container {
@@ -15,22 +23,26 @@
     // .footer__title
 
     &__title {
-        margin-top: 20px;
-        margin-bottom: 13px;
+        margin-bottom: 43px;
         display: block;
         color: #000;
         font-size: 20px;
         font-weight: 300;
 
-        a {
-            color: #d8160c;
-            font-weight: 500;
-        }
-
         @media (max-width: 768px) {
             text-align: center;
             font-size: 16px;
+            margin-bottom: 58px;
         }
+
+        a,
+        span {
+            color: #d8160c;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        display: none;
     }
 
     // .footer__top

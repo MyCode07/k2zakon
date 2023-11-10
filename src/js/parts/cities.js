@@ -36,6 +36,11 @@ let lat = null;
 let lon = null;
 
 
+if (headerCityChoice) {
+    headerCityChoice.addEventListener('click', () => headerCityChoose.classList.add('_hide'))
+}
+
+
 // Создание списка городов, добавление функции выбора и поиска города
 function createLiElements(data) {
     let ul = cityPopup.querySelector('ul');
@@ -75,7 +80,7 @@ function createLiElements(data) {
     }
     else {
         getPlace(addedNames, cities);
-        headerCityChoose.classList.remove('_open');
+        headerCityChoose.classList.remove('_hide');
         console.log('Определили город по IP');
     }
 
@@ -89,7 +94,7 @@ function createLiElements(data) {
             headerCityName.setAttribute('lon', lonValue);
 
             cityPopup.classList.remove('_open');
-            headerCityChoose.classList.add('_open');
+            headerCityChoose.classList.add('_hide');
 
             city = headerCityName.textContent;
             lat = headerCityName.getAttribute('lat');
@@ -266,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Кнопка модалки подтверждения города
     headerCityOk.addEventListener('click', () => {
-        headerCityChoose.classList.add('_open');
+        headerCityChoose.classList.add('_hide');
 
         city = headerCityName.textContent;
         lat = headerCityName.getAttribute('lat');
@@ -510,3 +515,30 @@ function changeMapLocation(lat, lon, hintContent, balloonContent) {
         myMap.setCenter([lat, lon], 15.52);
     }
 }
+
+
+
+function run(elem, num, time = 4000, step = 1) {
+    let n = 0;
+    let t = Math.floor(time / (num / step));
+    let interval = setInterval(() => {
+        n = n + step;
+        if (n == num) {
+            clearInterval(interval);
+        }
+        elem.innerHTML = n;
+    }, t);
+}
+
+
+document.addEventListener('DOMContentLoaded', function (e) {
+    const feedbackCounters = document.querySelectorAll('#feedback .link-counter');
+    if (feedbackCounters.length) {
+        feedbackCounters.forEach(item => {
+            // if (item.classList.contains('start')) {
+            let number = parseInt(item.textContent)
+            run(item, number);
+            // }
+        })
+    }
+})

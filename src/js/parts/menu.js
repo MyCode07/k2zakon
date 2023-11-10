@@ -1,13 +1,15 @@
 import { isMobile } from '../utils/isMobile.js';
 
 const menu = document.querySelector('.menu');
-const burger = document.querySelector('.burger');
+const burgers = document.querySelectorAll('.burger');
 const menuLinks = document.querySelectorAll('.menu nav li a');
 
-if (burger) {
-    burger.addEventListener('click', (е) => {
-        burger.classList.toggle('_active');
-        menu.classList.toggle('_open');
+if (burgers.length) {
+    burgers.forEach(burger => {
+        burger.addEventListener('click', (е) => {
+            burger.classList.toggle('_active');
+            menu.classList.toggle('_open');
+        })
     })
 }
 
