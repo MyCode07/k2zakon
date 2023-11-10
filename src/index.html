@@ -13,7 +13,7 @@
     <section class="section" id="victory">
         <div class="section__container _container">
             <div class="section__body">
-                <div class="filter__btn">
+                <div class="filter__btn" data-animate data-animate-top data-delay="0.3">
                     <button>
                         <label>Выберите категорию</label>
                         <svg width="17" height="9" viewBox="0 0 17 9" fill="none">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="grid">
-                    <div class="victory__card">
+                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                         <a data-fancybox="gallery-1" href="img/vic.png" class="victory__card-docimg">
                             <img class="lazyload" alt="" src="img/vic.png">
                         </a>
@@ -78,7 +78,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="victory__card">
+                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                         <a data-fancybox="gallery-2" href="img/documents.png" class="victory__card-docimg">
                             <img class="lazyload" alt="" src="img/documents.png">
                         </a>
@@ -116,7 +116,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="victory__card">
+                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                         <a data-fancybox="gallery-3" href="img/vic.png" class="victory__card-docimg">
                             <img class="lazyload" alt="" src="img/vic.png">
                         </a>
@@ -154,7 +154,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="victory__card">
+                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                         <a data-fancybox="gallery-4" href="img/vic.png" class="victory__card-docimg">
                             <img class="lazyload" alt="" src="img/vic.png">
                         </a>
@@ -192,7 +192,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="victory__card">
+                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                         <a data-fancybox="gallery-5" href="img/vic.png" class="victory__card-docimg">
                             <img class="lazyload" alt="" src="img/vic.png">
                         </a>
@@ -230,7 +230,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="victory__card">
+                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                         <a data-fancybox="gallery-6" href="img/vic.png" class="victory__card-docimg">
                             <img class="lazyload" alt="" src="img/vic.png">
                         </a>
@@ -270,7 +270,7 @@
                     </div>
                 </div>
 
-                <button class="view-more" href="">
+                <button class="view-more" href="" data-animate data-animate-bottom>
                     <span>Посмотреть еще</span>
                     <svg width="17" height="8" viewBox="0 0 17 8" fill="none">
                         <path d="M1 1L8.5 7L16 1" stroke="black" stroke-width="2" stroke-linecap="round"
@@ -285,7 +285,7 @@
         <div class="section__container _container">
             <div class="section__body">
                 <div class="top">
-                    <div class="swiper">
+                    <div class="swiper" data-animate data-animate-right>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <a href="">
@@ -307,21 +307,26 @@
                             </div>
                         </div>
                     </div>
-                    <p>Наши клиенты не просто получают <span>результат</span> , а <span>благодарят</span> ,
+                    <p data-animate data-animate-left>Наши клиенты не просто получают <span>результат</span> , а
+                        <span>благодарят</span> ,
                         <span>рекомедуют</span> и приводят знакомых
                     </p>
                 </div>
                 <div class="bottom">
                     <div>
-                        <h2>Работаем по всей России</h2>
+                        <h2 data-animate data-animate-left>Работаем по всей России</h2>
                         <ol>
-                            <li>Наша работа не знает юридических и географических границ</li>
-                            <li>Нас не смущают длительность перелётов и смена часовых поясов – мы эффективны на любых
+                            <li data-animate-stagger data-animate-left>Наша работа не знает юридических и
+                                географических границ</li>
+                            <li data-animate-stagger data-animate-left>Нас не смущают длительность перелётов и
+                                смена часовых поясов – мы эффективны на любых
                                 расстояниях</li>
                         </ol>
                     </div>
                     <div>
-                        <img src="img/icons/map.svg" alt="">
+                        <a href="https://k2zakon.ru/kontakty/" data-tooltip="Посмотреть контакты">
+                            <img data-animate data-animate-right src="img/icons/map.svg" alt="">
+                        </a>
                     </div>
                 </div>
             </div>

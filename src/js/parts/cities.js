@@ -40,6 +40,17 @@ if (headerCityChoice) {
     headerCityChoice.addEventListener('click', () => headerCityChoose.classList.add('_hide'))
 }
 
+const footerEmailCopy = document.querySelector('#footer-email-copy');
+if (footerEmailCopy) {
+    footerEmailCopy.addEventListener('click', () => {
+        var copyText = footerEmailCopy.querySelector("span").textContent;
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        navigator.clipboard.writeText(copyText);
+    })
+}
+
 
 // Создание списка городов, добавление функции выбора и поиска города
 function createLiElements(data) {

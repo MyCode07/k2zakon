@@ -11,10 +11,13 @@ import "./parts/map.js";
 import { toolTipAction } from "./parts/tooltip.js";
 import { stickyHeader } from "./parts/header.js";
 import { victoryCardsHover } from "./parts/victory-hover.js";
+import { animateAction, animateStaggerAction } from "./parts/animations.js";
 
 toolTipAction();
 stickyHeader();
 victoryCardsHover();
+animateAction();
+animateStaggerAction();
 
 // toTop();
 // replaceDomElements();
