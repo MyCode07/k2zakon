@@ -3,7 +3,7 @@ import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
 const popupAll = document.querySelectorAll('.popup');
 const popupOpenButtons = document.querySelectorAll('[data-open-popup]');
-const body = document.body;
+const qrcodeLinks = document.querySelectorAll('#qrcode .qrcode-link');
 
 if (popupOpenButtons.length)
     popupOpenButtons.forEach(btn => {
@@ -14,6 +14,16 @@ if (popupOpenButtons.length)
             if (popup) {
                 popup.classList.add('_open')
                 lockPadding();
+            }
+
+            if (id == 'qrcode') {
+                const index = [...btn.parentNode.children].indexOf(btn);
+
+                qrcodeLinks.forEach(item => {
+                    item.classList.remove('_active')
+                });
+
+                qrcodeLinks[index].classList.add('_active')
             }
         })
     })

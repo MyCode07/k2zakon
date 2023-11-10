@@ -297,11 +297,6 @@
                 }
             }
 
-            // .popup__container
-
-            &__container {
-            }
-
             // .popup__body
 
             &__body {
@@ -583,6 +578,144 @@
                 @media (max-width: 992px) {
                     font-size: 12px;
                     text-align: left;
+                }
+            }
+        }
+    }
+
+    &#qrcode {
+        .popup__body {
+            max-width: 405px;
+            padding: 20px 50px;
+        }
+
+        .popup__close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .qrcode-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            display: none;
+
+            &._active {
+                display: block;
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 32px;
+                font-weight: 500;
+
+                img,
+                svg {
+                    width: 33px;
+                    height: 33px;
+                    flex: 0 0 auto;
+                    margin-right: 10px;
+                }
+            }
+
+            a {
+                white-space: nowrap;
+                display: block;
+                margin: 27px 0;
+                padding: 16px 32px;
+                border-radius: 64px;
+                font-size: 20px;
+                font-weight: 500;
+                color: #ffffff;
+                transition: all 0.5s;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #fff !important;
+                    }
+                }
+
+               
+            }
+
+            label {
+                display: block;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            & > img {
+                margin: 24px 0;
+                display: block;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: 500;
+                color: #0d0d0d;
+            }
+
+            &.whatsapp {
+                div {
+                    color: #48c95f;
+                }
+
+                a {
+                    background-color: #48c95f;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            box-shadow: 0 0 20px 0 #48c95f;
+                        }
+                    }
+                }
+
+                label {
+                    color: #48c95f;
+                }
+            }
+
+            &.telegram {
+                div {
+                    color: #27a6e5;
+                }
+
+                a {
+                    background-color: #27a6e5;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            box-shadow: 0 0 20px 0 #27a6e5;
+                        }
+                    }
+                }
+
+                label {
+                    color: #27a6e5;
+                }
+            }
+
+            &.viber {
+                div {
+                    color: #7c509a;
+                }
+
+                a {
+                    background-color: #7c509a;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            box-shadow: 0 0 20px 0 #7c509a;
+                        }
+                    }
+                }
+
+                label {
+                    color: #7c509a;
                 }
             }
         }
