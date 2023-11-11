@@ -80,9 +80,13 @@
             top: 50%;
             transform: translate(-50%, -50%);
             width: 100vw;
-            min-height: 400vh;
-            z-index: 16;
+            min-height: 2000vh;
+            z-index: 17;
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+
+            @media (max-width: 992px) {
+                background: rgba(0, 0, 0, 0.6);
+            }
         }
 
         button {
@@ -94,6 +98,8 @@
             background-color: #d8160c;
             transition: all 0.5s;
             cursor: pointer;
+            position: relative;
+            z-index: 18;
 
             @media (max-width: 425px) {
                 margin-inline: auto;
@@ -105,6 +111,10 @@
                 font-size: 16px;
                 font-weight: 700;
                 pointer-events: none;
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
             }
 
             img,
@@ -129,7 +139,7 @@
             position: absolute;
             top: calc(100% + 40px);
             left: 0;
-            z-index: 17;
+            z-index: 18;
 
             transform: translate3d(0%, -10%, 0);
             overflow: hidden;
@@ -151,7 +161,6 @@
                 box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
 
                 color: #5e5e5e;
-                font-family: Inter;
                 font-size: 16px;
             }
 
@@ -232,10 +241,15 @@
 
 #victory-swiperblock {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 120px;
 
     @media (max-width: 992px) {
         padding-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        padding-bottom: 90px;
     }
 
     .top {
@@ -243,11 +257,8 @@
         align-items: center;
         justify-content: center;
 
-        margin-bottom: 120px;
-
         @media (max-width: 768px) {
             flex-direction: column-reverse;
-            margin-bottom: 90px;
         }
 
         p {
@@ -298,6 +309,10 @@
             }
         }
     }
+}
+
+#section-map {
+    padding-bottom: 20px;
 
     .bottom {
         display: flex;
@@ -360,7 +375,8 @@
                 }
             }
 
-            ol {
+            ol,
+            ul {
                 & > :not(:last-child) {
                     margin-bottom: 41px;
                 }

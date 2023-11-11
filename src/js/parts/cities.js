@@ -1,7 +1,5 @@
-
-// var json_data = { "jsonPath": "https:\/\/k2zakon.ru\/wp-content\/themes\/advokat\/js\/russian-cities.json" };
-var json_data = { "jsonPath": "files/russian-cities.json" };
-var myAjax = { "ajaxurl": "https:\/\/k2zakon.ru\/wp-admin\/admin-ajax.php" };
+var json_data = { "jsonPath": "https://k2zakon.test-yeremyan.site/wp-content/themes/blank-sheet/assets/files/russian-cities.json" };
+console.log(adminajaxurl);
 
 
 const cityPopup = document.querySelector('.popup#city');
@@ -328,7 +326,7 @@ function handleTextChange() {
 
         // Отправка названия города на сервер и получение информации о нем
         $.ajax({
-            url: myAjax.ajaxurl,
+            url: adminajaxurl.ajaxurl,
             method: 'POST',
             data: { action: 'my_ajax_action', city: currentText },
             dataType: 'json',
@@ -429,7 +427,7 @@ function handleTextChange() {
 
                     // Отправка координаты города на сервер для подбора ближайшего города с офисом
                     $.ajax({
-                        url: myAjax.ajaxurl,
+                        url: adminajaxurl.ajaxurl,
                         method: 'POST',
                         data: {
                             action: 'my_ajax_action_map',
