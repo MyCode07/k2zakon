@@ -1,8 +1,8 @@
 import { isMobile } from "../utils/isMobile.js";
 
 function updateTooltipPosition(e, tooltip) {
-    const xOffset = 10;
-    const yOffset = 10;
+    const xOffset = 20;
+    const yOffset = -10;
 
     // Учитываем смещение прокрутки страницы
     const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
@@ -44,25 +44,26 @@ export const toolTipAction = () => {
 
             item.addEventListener('mouseleave', () => toolTipElem.style.display = 'none');
         }
-        else {
-            item.addEventListener('click', (e) => {
-                if (item.hasAttribute('href')) {
-                    e.preventDefault();
-                    toolTipElem.addEventListener('click', () => { window.location.href = item.getAttribute('href') })
-                }
 
-                moveToolTip(e, tooltipText, promptText)
-            });
-        }
+        // else {
+        //     item.addEventListener('click', (e) => {
+        //         if (item.hasAttribute('href')) {
+        //             e.preventDefault();
+        //             toolTipElem.addEventListener('click', () => { window.location.href = item.getAttribute('href') })
+        //         }
+
+        //         moveToolTip(e, tooltipText, promptText)
+        //     });
+        // }
     })
 }
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
-    if (!targetEl.classList.contains('tooltip') && !targetEl.hasAttribute('data-tooltip') && !targetEl.parentNode.hasAttribute('data-tooltip')) {
-        toolTipElem.style.display = 'none'
-    }
+    // if (!targetEl.classList.contains('tooltip') && !targetEl.hasAttribute('data-tooltip') && !targetEl.parentNode.hasAttribute('data-tooltip')) {
+    //     toolTipElem.style.display = 'none'
+    // }
 
 
     if (!targetEl.classList.contains('victory__card-text') && !targetEl.closest('.victory__card-text')
