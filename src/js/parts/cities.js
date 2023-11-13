@@ -1,6 +1,6 @@
-var json_data = { "jsonPath": "https://k2zakon.test-yeremyan.site/wp-content/themes/blank-sheet/assets/files/russian-cities.json" };
-console.log(adminajaxurl);
+import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
+var json_data = { "jsonPath": "https://k2zakon.test-yeremyan.site/wp-content/themes/blank-sheet/assets/files/russian-cities.json" };
 
 const cityPopup = document.querySelector('.popup#city');
 const inputCity = cityPopup.querySelector('input[type="search"]');
@@ -25,9 +25,9 @@ const footerEmailText = footerEmail;
 
 
 const landingBannerCity = document.querySelector('.landing_banner-city');
-const yandexLink = document.querySelector('#yandex-link');
-const googleLink = document.querySelector('#google-link');
-const gisLink = document.querySelector('#gis-link');
+const yandexLink = document.querySelector('.yandex');
+const googleLink = document.querySelector('.google');
+const gisLink = document.querySelector('.gis');
 
 let city = null;
 let lat = null;
@@ -121,6 +121,8 @@ function createLiElements(data) {
                 secure: true,
                 'max-age': 31536000000,
             });
+
+            unLockPadding();
         });
     });
 
@@ -317,8 +319,7 @@ const defaultAddress = footerCityP.textContent;
 
 function handleTextChange() {
     const currentText = headerCityName.textContent;
-
-    if (currentText !== previousText) {
+    if (currentText.toLowerCase() !== previousText.toLowerCase()) {
         previousText = currentText;
 
         footerCity.classList.add('hide');
@@ -375,7 +376,9 @@ function handleTextChange() {
                         yandexLink.href = response.yandex_link;
                         if (linkCounter) {
                             linkCounter.classList.add('start')
-                            linkCounter.textContent = response.yandex_amount;
+                            // linkCounter.textContent = response.yandex_amount;
+                            let number = parseInt(response.yandex_amount)
+                            run(linkCounter, number);
                         }
                     }
                 }
@@ -385,7 +388,10 @@ function handleTextChange() {
                         googleLink.href = response.google_link;
                         if (linkCounter) {
                             linkCounter.classList.add('start')
-                            linkCounter.textContent = response.google_amount;
+                            // linkCounter.textContent = response.google_amount;
+
+                            let number = parseInt(response.google_amount)
+                            run(linkCounter, number);
                         }
                     }
                 }
@@ -395,7 +401,10 @@ function handleTextChange() {
                         gisLink.href = response.twogis_link;
                         if (linkCounter) {
                             linkCounter.classList.add('start')
-                            linkCounter.textContent = response.twogis_amount;
+                            // linkCounter.textContent = response.twogis_amount;
+
+                            let number = parseInt(response.twogis_amount)
+                            run(linkCounter, number);
                         }
                     }
                 }
@@ -446,6 +455,45 @@ function handleTextChange() {
                             console.log('Ближайший офис в г. ' + response.closest_city);
                             footerCity.classList.remove('hide');
                             footerMap.classList.remove('hide');
+
+                            if (yandexLink) {
+                                let linkCounter = yandexLink.querySelector('.link-counter');
+                                if ('yandex_link' in response && response.yandex_link !== '') {
+                                    yandexLink.href = response.yandex_link;
+                                    if (linkCounter) {
+                                        linkCounter.classList.add('start')
+                                        // linkCounter.textContent = response.yandex_amount;
+                                        let number = parseInt(response.yandex_amount)
+                                        run(linkCounter, number);
+                                    }
+                                }
+                            }
+                            if (googleLink) {
+                                let linkCounter = googleLink.querySelector('.link-counter');
+                                if ('google_link' in response && response.google_link !== '') {
+                                    googleLink.href = response.google_link;
+                                    if (linkCounter) {
+                                        linkCounter.classList.add('start')
+                                        // linkCounter.textContent = response.google_amount;
+
+                                        let number = parseInt(response.google_amount)
+                                        run(linkCounter, number);
+                                    }
+                                }
+                            }
+                            if (gisLink) {
+                                let linkCounter = gisLink.querySelector('.link-counter');
+                                if ('twogis_link' in response && response.twogis_link !== '') {
+                                    gisLink.href = response.twogis_link;
+                                    if (linkCounter) {
+                                        linkCounter.classList.add('start')
+                                        // linkCounter.textContent = response.twogis_amount;
+
+                                        let number = parseInt(response.twogis_amount)
+                                        run(linkCounter, number);
+                                    }
+                                }
+                            }
                         },
                         error: function (xhr, textStatus, errorThrown) {
                             // Обработка ошибки
@@ -492,13 +540,13 @@ var myMap;
 
 ymaps.ready(function () {
     myMap = new ymaps.Map('map', {
-        center: [50.603664, 36.571866],
+        center: [36.571866, 50.603664],
         zoom: 15.52,
     });
 
     //Добавьте метку (балун) на карту
     var myPlacemark = new ymaps.Placemark(
-        [50.603664, 36.571866],
+        [36.571866, 50.603664],
         {
             hintContent: 'Юристы K2',
             balloonContent: 'г. Белгород, ул. Свободная, 50, 4 этаж',
@@ -508,26 +556,34 @@ ymaps.ready(function () {
     myMap.geoObjects.add(myPlacemark);
 });
 
+
+
 function changeMapLocation(lat, lon, hintContent, balloonContent) {
     if (myMap && myMap.geoObjects) {
         myMap.geoObjects.removeAll();
     }
 
     var newPlacemark = new ymaps.Placemark(
-        [lat, lon],
+        [+lat, +lon],
         { hintContent: hintContent, balloonContent: balloonContent },
         { iconColor: '#d8160c', preset: 'islands#redDotIcon' }
     );
 
     if (myMap) {
         myMap.geoObjects.add(newPlacemark);
-        myMap.setCenter([lat, lon], 15.52);
+        myMap.setCenter([+lat, +lon], 15.52);
     }
+    console.log([+lat, +lon]);
 }
 
 
 
 function run(elem, num, time = 4000, step = 1) {
+    if (0 < num < 50) time = 1000;
+    else if (50 < num < 100) time = 2000;
+    else if (100 < num < 150) time = 3000;
+    else time = 4000
+
     let n = 0;
     let t = Math.floor(time / (num / step));
     let interval = setInterval(() => {
@@ -538,16 +594,3 @@ function run(elem, num, time = 4000, step = 1) {
         elem.innerHTML = n;
     }, t);
 }
-
-
-document.addEventListener('DOMContentLoaded', function (e) {
-    const feedbackCounters = document.querySelectorAll('#feedback .link-counter');
-    if (feedbackCounters.length) {
-        feedbackCounters.forEach(item => {
-            // if (item.classList.contains('start')) {
-            let number = parseInt(item.textContent)
-            run(item, number);
-            // }
-        })
-    }
-})

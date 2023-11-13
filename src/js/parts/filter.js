@@ -10,10 +10,11 @@ if (filters.length) {
 
             const ul = btn.nextElementSibling
             if (ul) {
-                const options = ul.querySelectorAll('li');
+                const options = ul.querySelectorAll('a');
                 if (options)
                     options.forEach(opt => {
                         opt.addEventListener('click', (e) => {
+                            e.preventDefault();
 
                             const label = opt.closest('.filter__btn').querySelector('label')
                             if (label) label.textContent = e.target.textContent
