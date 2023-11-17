@@ -7,6 +7,7 @@ import "./parts/victory-hover.js"
 import "./parts/filter.js"
 import "./parts/cities.js"
 import "./parts/map.js";
+import "./parts/read-more.js";
 
 import { toolTipAction } from "./parts/tooltip.js";
 import { stickyHeader } from "./parts/header.js";
