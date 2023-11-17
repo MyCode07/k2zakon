@@ -8,8 +8,8 @@
     margin-left: auto;
     margin-right: auto;
 
-    @media (max-width: 600px) {
-        max-width: 212px;
+    @media (max-width: 1366px) {
+        max-width: 199px;
         width: 100%;
     }
 
@@ -23,6 +23,12 @@
         .victory__card-docimg,
         .victory__card-person a {
             opacity: 0;
+        }
+
+        .victory__card-text {
+            label {
+                color: #d8160c;
+            }
         }
     }
 
@@ -60,6 +66,10 @@
             margin-top: -40%;
         }
 
+        @media (max-width:768px) {
+            margin-top: -51%;
+        }
+
         // .victory__card-person-img
 
         &-img {
@@ -89,7 +99,7 @@
         margin-top: 17px;
         color: #000;
         text-align: center;
-        font-family: Inter;
+        font-family: Ubuntu;
         font-size: 20px;
         font-weight: 500;
         line-height: 130%;
@@ -100,6 +110,10 @@
             margin-top: 2px;
             max-width: 100%;
             font-size: 16px;
+        }
+
+        label {
+            transition: all 0.3s ease 0s;
         }
     }
 

@@ -54,6 +54,22 @@ svg {
     height: auto;
 }
 
+h2 {
+    color: #0d0d0d;
+    font-size: 36px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+
+    @media (max-width: 1336px) {
+        font-size: 32px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+
 .breadcrumbs {
     padding: 30px 0;
 
@@ -283,5 +299,25 @@ label {
         transform: translate(-50%, 0);
         max-width: calc(100% - 40px);
         display: none !important;
+    }
+}
+
+._button {
+    width: 100%;
+    padding: 20px 35px;
+    background: #d8160c;
+    color: #fff;
+    border-radius: 64px;
+    font-size: 20px;
+    font-weight: 500;
+    width: fit-content;
+
+    @media (max-width: 1366px) {
+        padding: 16px 35px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        padding: 16px 14px;
     }
 }
