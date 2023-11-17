@@ -72,6 +72,8 @@ h2 {
 
 .breadcrumbs {
     padding: 30px 0;
+    position: relative;
+    z-index: 2;
 
     @media (max-width: 1366p) {
         padding: 20px 0 14px 0;

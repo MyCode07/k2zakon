@@ -4,7 +4,7 @@
 
 @@include('./html/header.html', {
 "text":"Сходим в суд",
-"bread-class":"_white"
+"bread-class":""
 })
 
 <main>
@@ -13,7 +13,8 @@
             <div class="section__body">
                 <div class="section__content">
                     <div class="section__info">
-                        <h1>Нужен опытный юрист для участия в судебном заседании в г.Петропавловск-Камчатский?</h1>
+                        <h1>Нужен опытный юрист для участия в судебном заседании в <br><span>
+                                г.Петропавловск - Камчатский</span> ?</h1>
                         <div class="_reverse">
                             <button class="_button">Нажмите, чтобы обсудить Ваше дело</button>
                             <ol>
@@ -36,7 +37,7 @@
                         <a href="">
                             <img src="img/main.png" alt="">
                         </a>
-                        <img src="img/papers.png" alt="">
+                        <img class="section__imagebox-back" src="img/papers.png" alt="">
                     </div>
                 </div>
             </div>
@@ -47,9 +48,9 @@
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__content">
-                    <h2 data-animate="">Сходим в суд вместо Вас в Петропавловске-Камчатстком</h2>
-                    <a href="https://k2zakon.ru/kontakty/" data-tooltip="Посмотреть контакты">
-                        <img data-animate="" src="img/icons/map.svg" alt="">
+                    <h2 data-animate>Сходим в суд вместо Вас в Петропавловске-Камчатстком</h2>
+                    <a href="https://k2zakon.ru/kontakty/" data-tooltip="Посмотреть контакты" class="sud-map">
+                        <img data-animate src="img/icons/map.svg" alt="">
                     </a>
                     <button class="_button">Нажмите, чтобы узнать цену для Вас</button>
                     <p>Стоимость участия - от 6000 руб. в зависимости от сложности дела и уровня привлекаемого
@@ -59,12 +60,11 @@
         </div>
     </section>
 
-    <section class="section" id="advantages">
+    <section class="section" id="advantages" data-replace-width="768">
         <div class="section__container _container">
             <div class="section__body">
-                <div class="section__content">
-                    <h2 class="_mobile-title">Ваше дело в надежных руках</h2>
-                    <div class="swiper" data-animate="">
+                <div class="section__content" data-replace-new-position="afterbegin">
+                    <div class="swiper" data-animate>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="victory__card" data-animate-stagger="" data-animate-opacity="">
@@ -122,8 +122,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section__info">
-                        <h2>Ваше дело в надежных руках</h2>
+                    <div class="section__info" data-replace-old-position="afterbegin">
+                        <h2 data-replace-element>Ваше дело в надежных руках</h2>
                         <ol>
                             <li>
                                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
@@ -166,12 +166,12 @@
         </div>
     </section>
 
-    <section class="section _pl  _pl-top" id="reputation">
+    <section class="section _pl" id="reputation">
         <div class="section__container _container">
             <div class="section__body">
                 <h2>Репутацию нужно заслужить, мы знаем как</h2>
                 <div class="reputation__flex">
-                    <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-animate="">
+                    <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-animate>
                         <div class="swiper-wrapper"
                             style="transition-duration: 0ms; transform: translate3d(-246px, 0px, 0px); transition-delay: 0ms;">
                             <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
@@ -197,40 +197,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="reputation__flex-img" data-animate="" data-delay="0.1">
+                    <div class="reputation__flex-img" data-animate data-delay="0.1">
                         <img src="img/big.png" alt="">
                         <div>
-                            <a href="" class="google" data-tooltip="Посмотреть отзывы на Google" data-animate="">
+                            <a href="" class="google" data-tooltip="Посмотреть отзывы на Google" data-animate>
                                 <span class="link-counter">267</span>
                                 <img src="img/google.png" alt="">
                             </a>
-                            <a href="" class="gis" data-tooltip="Посмотреть отзывы на 2ГИС" data-animate=""
+                            <a href="" class="gis" data-tooltip="Посмотреть отзывы на 2ГИС" data-animate
                                 data-delay="0.2">
                                 <span class="link-counter">123</span>
                                 <img src="img/gis.png" alt="">
                             </a>
-                            <a href="" class="yandex" data-tooltip="Посмотреть отзывы на Яндекс" data-animate=""
-                                data-delay="0.2">
-                                <span class="link-counter">167</span>
-                                <img src="img/yandex.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="feedback-flex">
-                        <div class="feedback-flex__links">
-                            <a href="" class="google" data-tooltip="Посмотреть отзывы на Google" data-animate="">
-                                <span class="link-counter">267</span>
-                                <img src="img/google.png" alt="">
-                            </a>
-                            <a href="" class="gis" data-tooltip="Посмотреть отзывы на 2ГИС" data-animate=""
-                                data-delay="0.2">
-                                <span class="link-counter">123</span>
-                                <img src="img/gis.png" alt="">
-                            </a>
-                        </div>
-                        <div class="feedback-flex__img" data-animate="" data-delay="0.1">
-                            <img src="img/big.png" alt="">
-                            <a href="" class="yandex" data-tooltip="Посмотреть отзывы на Яндекс" data-animate=""
+                            <a href="" class="yandex" data-tooltip="Посмотреть отзывы на Яндекс" data-animate
                                 data-delay="0.2">
                                 <span class="link-counter">167</span>
                                 <img src="img/yandex.png" alt="">
@@ -241,6 +220,7 @@
             </div>
         </div>
     </section>
+
 </main>
 
 @@include('./html/footer.html', {

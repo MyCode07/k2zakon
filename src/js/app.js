@@ -12,15 +12,16 @@ import { toolTipAction } from "./parts/tooltip.js";
 import { stickyHeader } from "./parts/header.js";
 import { victoryCardsHover } from "./parts/victory-hover.js";
 import { animateAction, animateStaggerAction } from "./parts/animations.js";
+import { replaceDomElements } from "./static/replace.js";
 
 toolTipAction();
 stickyHeader();
 victoryCardsHover();
 animateAction();
 animateStaggerAction();
+replaceDomElements();
 
 // toTop();
-// replaceDomElements();
 // runTicker()
 // accorden();
 // maskInputs('+7 999 999 999 999', '.phone')
@@ -29,7 +30,6 @@ animateStaggerAction();
 // import { accorden } from "./static/accordeon.js";
 // import { maskInputs } from "./static/inputmask.js";
 // import { runTicker } from "./static/ticker.js";
-// import { replaceDomElements } from "./static/replace.js";
 // import { toTop } from "./static/to-top.js";
 
 // import "./parts/menu.js";
