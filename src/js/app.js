@@ -4,6 +4,7 @@ import "./parts/popup.js";
 import "./parts/menu.js";
 
 import "./parts/victory-hover.js"
+import "./parts/person-card-hover.js"
 import "./parts/filter.js"
 import "./parts/cities.js"
 import "./parts/map.js";
@@ -18,6 +19,7 @@ import { replaceDomElements } from "./static/replace.js";
 toolTipAction();
 stickyHeader();
 victoryCardsHover();
+personCardsHover();
 animateAction();
 animateStaggerAction();
 replaceDomElements();
@@ -38,3 +40,5 @@ replaceDomElements();
 // import "./parts/mobile-controll.js";
 // import "./parts/login.js";
 // import "./parts/category-scroll.js";
+
+
