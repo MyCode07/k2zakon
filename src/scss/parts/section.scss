@@ -870,6 +870,29 @@
     button {
         margin: 90px 0;
         width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 55px;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        width: 428px;
+
+        span {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                div {
+                    opacity: 1;
+                    z-index: 2;
+                }
+            }
+        }
 
         @media (max-width: 1366px) {
             margin: 40px 0;
@@ -877,10 +900,42 @@
 
         @media (max-width: 768px) {
             margin: 36px 0 0 0;
+            height: 50px;
+            width: 320px;
         }
 
         @media (max-width: 475px) {
             width: 100%;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 4px 0 #00000040 inset;
+            transition: all 0.3s;
+            position: relative;
+            opacity: 0;
+            z-index: -1;
+
+            svg {
+                width: fit-content;
+                max-width: fit-content;
+                transition: all 0.3s;
+                fill: #d8160c;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #d8160c;
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
         }
     }
 
@@ -1509,14 +1564,14 @@
                         color: #d8160c;
                     }
 
-                    @media (max-width: 768px) {
+                    @media (max-width: 992px) {
                         text-align: center;
                         margin-bottom: 19px;
                         font-size: 16px;
                     }
                 }
 
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
                     margin-bottom: 15px;
                 }
             }
@@ -1528,7 +1583,10 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                width: 100%;
+
+                @media (max-width: 992px) {
+                    width: 100%;
+                }
 
                 .victory__card-person-img {
                     display: block;
@@ -1537,7 +1595,7 @@
                     width: 300px;
                     height: 300px;
 
-                    @media (max-width: 768px) {
+                    @media (max-width: 992px) {
                         margin-bottom: 10px;
                         width: 180px !important;
                         height: 180px !important;
@@ -1545,7 +1603,9 @@
                 }
 
                 ._button {
-                    width: 100%;
+                    @media (max-width: 992px) {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1645,6 +1705,7 @@
             }
         }
     }
+
     .view {
         // .view-btn
 
