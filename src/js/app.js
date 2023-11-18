@@ -19,7 +19,6 @@ import { replaceDomElements } from "./static/replace.js";
 toolTipAction();
 stickyHeader();
 victoryCardsHover();
-personCardsHover();
 animateAction();
 animateStaggerAction();
 replaceDomElements();
