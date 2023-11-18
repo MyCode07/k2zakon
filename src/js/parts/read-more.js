@@ -1,14 +1,14 @@
-const readbox = document.querySelector('.why__text-content');
-const viewButton = document.querySelector('.view-btn');
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
 
-if (readbox) {
-    viewButton.addEventListener('click', () => {
-        readbox.classList.toggle('_active')
+    if (targetEl.classList.contains('read-more')) {
+        const content = targetEl.closest('section').querySelector('.read-more__text-content');
+        content.classList.toggle('_active')
 
-        if (document.querySelector('.why__text-content._active')) {
-            viewButton.textContent = 'Скрыт'
-        } else {
-            viewButton.textContent = 'Читать подробнее...'
-        }
-    })
-}
+        if (content.classList.contains('_active')) targetEl.textContent = 'Скрыть'
+        else targetEl.textContent = 'Читать подробнее...'
+    }
+})
+
+
+

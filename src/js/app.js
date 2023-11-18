@@ -15,6 +15,7 @@ import { stickyHeader } from "./parts/header.js";
 import { victoryCardsHover } from "./parts/victory-hover.js";
 import { animateAction, animateStaggerAction } from "./parts/animations.js";
 import { replaceDomElements } from "./static/replace.js";
+import { runNumbers } from "./parts/run-numbers.js";
 
 toolTipAction();
 stickyHeader();
@@ -22,6 +23,7 @@ victoryCardsHover();
 animateAction();
 animateStaggerAction();
 replaceDomElements();
+runNumbers();
 
 // toTop();
 // runTicker()

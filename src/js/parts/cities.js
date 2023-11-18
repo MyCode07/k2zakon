@@ -578,7 +578,7 @@ function changeMapLocation(lat, lon, hintContent, balloonContent) {
 
 
 
-function run(elem, num, time = 4000, step = 1) {
+export function run(elem, num, time = 4000, step = 1) {
     if (0 < num < 50) time = 1000;
     else if (50 < num < 100) time = 2000;
     else if (100 < num < 150) time = 3000;
