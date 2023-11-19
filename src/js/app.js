@@ -9,6 +9,7 @@ import "./parts/filter.js"
 import "./parts/cities.js"
 import "./parts/map.js";
 import "./parts/read-more.js";
+import "./parts/services.js";
 
 import { toolTipAction } from "./parts/tooltip.js";
 import { stickyHeader } from "./parts/header.js";
@@ -41,5 +42,3 @@ runNumbers();
 // import "./parts/mobile-controll.js";
 // import "./parts/login.js";
 // import "./parts/category-scroll.js";
-
-

@@ -12,10 +12,7 @@ const observer = new IntersectionObserver((entries, self) => {
 
 
 function runNum(entry) {
-    console.log(entry);
-
     let nums = entry.querySelectorAll('.run');
-    console.log(nums);
     nums.forEach(item => {
         let number = parseInt(item.textContent)
         run(item, number);

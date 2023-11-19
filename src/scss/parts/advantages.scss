@@ -1,0 +1,179 @@
+.advantages {
+    padding-top: 40px;
+    padding-bottom: 90px;
+
+    @media (max-width: 1366px) {
+        padding-top: 20px;
+        padding-bottom: 24px;
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: 40px;
+    }
+
+    h2 {
+        text-align: left;
+        margin-bottom: 50px;
+
+        @media (max-width: 768px) {
+            max-width: 177px;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    ol {
+        text-align: left;
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        & > :not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: 12px;
+                width: 35px;
+                flex: 0 0 auto;
+                fill: none;
+            }
+
+            span {
+                color: #2b3131;
+                font-size: 24px;
+                font-weight: 400;
+
+                @media (max-width: 1366px) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    button {
+        margin-top: 30px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        max-width: 425px;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            margin-top: 10px;
+        }
+    }
+
+    .section__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+
+        @media (max-width: 1366px) {
+            padding: 54px 0;
+        }
+
+        @media (max-width: 768px) {
+            padding: 0;
+            align-items: center;
+        }
+    }
+
+    .section__flex-left {
+        max-width: 264px;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            max-width: 212px;
+        }
+    }
+
+    .victory__card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (max-width: 1366px) {
+            max-width: 264px;
+            width: 100%;
+        }
+
+        // .victory__card-docimg
+
+        &-docimg {
+            display: block;
+            height: 322px;
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+
+            @media (max-width: 768px) {
+                height: 200px;
+            }
+
+            cursor: pointer;
+            transition: all 0.5s;
+
+            opacity: 1 !important;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        // .victory__card-person
+
+        &-person {
+            margin-top: -32%;
+
+            @media (max-width: 1366px) {
+                margin-top: -40%;
+            }
+
+            @media (max-width: 768px) {
+                margin-top: -22%;
+            }
+
+            // .victory__card-person-img
+
+            &-img {
+                width: 120px;
+                height: 120px;
+
+                @media (max-width: 768px) {
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+
+            img {
+                border-radius: 50%;
+            }
+
+            a {
+                opacity: 1 !important;
+            }
+        }
+
+        // .victory__card-text
+
+        &-text {
+            margin-top: 8px;
+
+            @media (max-width: 1366px) {
+                margin-top: 5px;
+            }
+        }
+    }
+}

@@ -133,13 +133,16 @@
                     </div>
                     <label>Мы не увидим Ваш номер без Вашего желания</label>
                     <div class="popup__content-qrimages">
-                        <div data-tooltip="Увеличить этот QR код" class="qr-code" data-open-popup data-id="qrcode">
+                        <div data-tooltip="Увеличить этот QR код" class="qr-code" data-open-popup data-id="qrcode"
+                            data-type="whatsapp">
                             <img class="lazyload" alt="" src="@img/popup-whatsapp.png">
                         </div>
-                        <div data-tooltip="Увеличить этот QR код" class="qr-code" data-open-popup data-id="qrcode">
+                        <div data-tooltip="Увеличить этот QR код" class="qr-code" data-open-popup data-id="qrcode"
+                            data-type="telegram">
                             <img class="lazyload" alt="" src="@img/popup-telegram.png">
                         </div>
-                        <div data-tooltip="Увеличить этот QR код" class="qr-code" data-open-popup data-id="qrcode">
+                        <div data-tooltip="Увеличить этот QR код" class="qr-code" data-open-popup data-id="qrcode"
+                            data-type="viber">
                             <img class="lazyload" alt="" src="@img/popup-viber.png">
                         </div>
                     </div>
@@ -191,7 +194,7 @@
                         </path>
                     </svg>
                 </button>
-                <div class="qrcode-link whatsapp">
+                <div class="qrcode-link whatsapp" data-type="whatsapp">
                     <div>
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="0.5" y="0.5" width="32" height="32" rx="16" fill="#48C95F"></rect>
@@ -206,7 +209,7 @@
                     <img alt="" src="@img/popup-whatsapp.png">
                     <p>Отсканируйте QR код камерой телефона для перехода в чат</p>
                 </div>
-                <div class="qrcode-link telegram">
+                <div class="qrcode-link telegram" data-type="telegram">
                     <div>
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="32" height="32" rx="16" fill="#27A6E5"></rect>
@@ -221,7 +224,7 @@
                     <img alt="" src="@img/popup-telegram.png">
                     <p>Отсканируйте QR код камерой телефона для перехода в чат</p>
                 </div>
-                <div class="qrcode-link viber">
+                <div class="qrcode-link viber" data-type="viber">
                     <div>
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="32" height="32" rx="16" fill="#7C509A"></rect>

@@ -1,48 +1,59 @@
 import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
-
-const popupAll = document.querySelectorAll('.popup');
-const popupOpenButtons = document.querySelectorAll('[data-open-popup]');
 const qrcodeLinks = document.querySelectorAll('#qrcode .qrcode-link');
 
-if (popupOpenButtons.length)
-    popupOpenButtons.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const id = btn.getAttribute('data-id');
-            const popup = document.querySelector(`.popup#${id}`);
-            if (popup) {
-                popup.classList.add('_open')
-                lockPadding();
-            }
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
 
-            if (id == 'qrcode') {
-                const index = [...btn.parentNode.children].indexOf(btn);
+    if (targetEl.hasAttribute('data-open-popup')) {
+        e.preventDefault();
+        const id = targetEl.getAttribute('data-id');
+        const popup = document.querySelector(`.popup#${id}`);
+        if (popup) {
+            popup.classList.add('_open')
+            lockPadding();
+        }
 
-                qrcodeLinks.forEach(item => {
-                    item.classList.remove('_active')
-                });
+        if (id == 'qrcode') {
+            const type = targetEl.dataset.type;
+            qrcodeLinks.forEach(item => {
+                if (item.dataset.type != type) item.classList.remove('_active')
+                else item.classList.add('_active')
+            });
 
-                qrcodeLinks[index].classList.add('_active')
-            }
-        })
-    })
+        }
+    }
 
-if (popupAll.length)
-    popupAll.forEach(popup => {
-        const popupClose = popup.querySelector('.popup__close');
-
-        popupClose.addEventListener('click', function (e) {
-            popup.classList.remove('_open');
+    if (targetEl.classList.contains('popup')) {
+        targetEl.classList.remove('_open')
+        if (targetEl.id == 'qrcode' && document.querySelector('.popup#contacts._active')) {
+            document.querySelector('body').classList.add('_noscroll');
+        }
+        else {
             unLockPadding();
-            if (popup.id == 'qrcode') document.querySelector('body').classList.add('_noscroll');
-        })
+        }
+    }
 
-        popup.addEventListener('click', function (e) {
-            if (e.target.classList.contains('popup')) {
-                popup.classList.remove('_open')
-                unLockPadding();
-                if (popup.id == 'qrcode') document.querySelector('body').classList.add('_noscroll');
-            }
+    if (targetEl.classList.contains('popup__close')) {
+        const popup = targetEl.closest('.popup');
+        popup.classList.remove('_open');
+
+        if (popup.id == 'qrcode' && document.querySelector('.popup#contacts._active')) {
+            document.querySelector('body').classList.add('_noscroll');
+        }
+        else {
+            unLockPadding();
+        }
+    }
+})
+
+
+const socials = document.querySelectorAll('._socials');
+if (socials.length && window.innerWidth <= 768) {
+    socials.forEach(item => {
+        const links = item.querySelectorAll('a');
+        links.forEach(link => {
+            if (link.hasAttribute('data-open-popup')) link.removeAttribute('data-open-popup')
         })
     })
+}
