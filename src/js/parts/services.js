@@ -1,4 +1,4 @@
-const input = document.querySelector('.services-search');
+const input = document.querySelector('.services-search__input');
 const servicesGrid = document.querySelector('.services-grid');
 const links = document.querySelectorAll('.services-grid a');
 const emptySearch = document.querySelector('.empty-search');
