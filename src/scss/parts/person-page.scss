@@ -1,0 +1,78 @@
+.person-page {
+    background-image: url("@img/person-bage-bcki.png");
+    max-height: 788px !important;
+    padding-top: 54px !important;
+
+    @media (max-width: 768px) {
+        padding-top: 70px !important;
+    }
+
+    p {
+        color: #0d0d0d;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 129px;
+        margin-top: 30px;
+
+        @media (max-width: 1366px) {
+            margin-bottom: 70px;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 14px;
+            margin-bottom: 50px;
+            margin-top: 20px;
+            max-width: 250px;
+            width: 100%;
+        }
+
+        @media (max-width: 425px) {
+            font-size: 10px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            max-width: 183px;
+        }
+    }
+
+    .section__info {
+        padding-top: 60px;
+
+        @media (max-width: 992px) {
+            padding-top: 0;
+        }
+    }
+
+    .section__imagebox {
+        @media (max-width: 992px) {
+            top: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            right: -60px;
+        }
+
+        a {
+            width: 427px !important;
+
+            @media (max-width: 992px) {
+                width: 288px !important;
+            }
+        }
+    }
+
+    ol {
+        img {
+            width: 92px;
+
+            @media (max-width: 998px) {
+                width: 58px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding-left: 12px !important;
+            flex-direction: column-reverse !important;
+            width: fit-content !important;
+        }
+    }
+}
