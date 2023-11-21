@@ -40,18 +40,15 @@
         </div>
     </section>
 
-    <section class="section advantages _pl _pl-bottom" data-replace-width="768">
+    <section class="section advantages" data-replace-width="768">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__flex _stretch" data-replace-new-position="afterbegin">
                     <div class="section__flex-left">
                         <div class="swiper" data-animate data-animate-opacity>
-                            <div class="swiper-wrapper"
-                                style="transition-duration: 0ms; transform: translate3d(-528px, 0px, 0px); transition-delay: 0ms;">
-                                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="0"
-                                    style="width: 264px;">
-                                    <div class="victory__card" data-animate-stagger data-animate-opacity
-                                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                                         <a href class="victory__card-docimg">
                                             <img class="lazyload" alt src="img/vic.png">
                                         </a>
@@ -68,10 +65,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1"
-                                    style="width: 264px;">
-                                    <div class="victory__card" data-animate-stagger data-animate-opacity
-                                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                <div class="swiper-slide">
+                                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                                         <a href class="victory__card-docimg">
                                             <img class="lazyload" alt src="img/vic.png">
                                         </a>
@@ -88,10 +83,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2"
-                                    style="width: 264px;">
-                                    <div class="victory__card" data-animate-stagger data-animate-opacity
-                                        style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                <div class="swiper-slide">
+                                    <div class="victory__card" data-animate-stagger data-animate-opacity>
                                         <a href class="victory__card-docimg">
                                             <img class="lazyload" alt src="img/vic.png">
                                         </a>
@@ -161,9 +154,9 @@
         </div>
     </section>
 
-    @@include('html/reputation.html')
+    @@include('html/reputation.html',{"class": '_pl'})
 
-    <section class="section education _pl _pl-bottom">
+    <section class="section education">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__flex">
@@ -254,15 +247,15 @@
         </div>
     </section>
 
-    <section class="section  _pl _pl-bottom calendar"  data-replace-width="768">
+    <section class="section  _pl calendar" data-replace-width="768">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__flex" data-replace-new-position="afterbegin">
                     <div class="section__flex-left">
                         <img src="img/calendar.png" alt="">
                     </div>
-                    <div class="section__flex-right"  data-replace-old-position="afterbegin">
-                        <h2 data-replace-element >Подберем удобное время?</h2>
+                    <div class="section__flex-right" data-replace-old-position="afterbegin">
+                        <h2 data-replace-element>Подберем удобное время?</h2>
                         <p>Просто выберите удобное время в календаре — и встреча назначена!</p>
                         <button class="_button">Добавить встречу в мой календарь</button>
                     </div>
@@ -271,7 +264,7 @@
         </div>
     </section>
 
-    <section class="section _pl  _pl-bottom  features company">
+    <section class="section features company">
         <div class="section__container _container">
             <div class="section__body">
                 <h2>Наша компания</h2>
@@ -298,7 +291,7 @@
         </div>
     </section>
 
-    <section class="section _pl  _pl-bottom section-map">
+    <section class="section _pl section-map">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__flex">
@@ -329,8 +322,8 @@
 </main>
 
 @@include('./html/footer.html', {
-"class":"",
-"title":""
+"class":"has-title",
+"title":"Примем Вас в одном из <a herf=''>наших офисов</a>, либо приедем (прилетим) лично"
 })
 
 @@include('./html/scripts.html')

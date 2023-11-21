@@ -8,7 +8,7 @@
 })
 
 <main>
-    <section class="section _pl  _pl-bottom  features company">
+    <section class="section features company">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="features-flex">
@@ -34,7 +34,7 @@
         </div>
     </section>
 
-    <section class="section  _pl _pl-bottom rating">
+    <section class="section rating">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__content">
@@ -56,10 +56,10 @@
         </div>
     </section>
 
-    <section class="section advantages">
+    <section class="section _pl advantages">
         <div class="section__container _container">
             <div class="section__body">
-                <div class="section__flex _stretch">
+                <div class="section__flex _center">
                     <div class="section__flex-left">
                         <div class="swiper" data-animate data-animate-opacity>
                             <div class="swiper-wrapper"
@@ -198,11 +198,12 @@
         </div>
     </section>
 
-    @@include('html/reputation.html')
+    @@include('html/reputation.html', {"class": "about-repotation"})
 
     <section class="section clients">
         <div class="section__container _container">
             <div class="section__body">
+                <h2>Говорим на одном языке с клиентами из разных сфер</h2>
                 <ol class="grid">
                     <li class="grid-item">
                         <a href=""><img src="img/elpo.png" alt=""></a>
@@ -253,15 +254,81 @@
         </div>
     </section>
 
-    <section class="section slider">
-    <div class="section__container _container">
-    <div class="section__body">
-    
-    </div>
-    </div>
+    <section class="section about-slider">
+        <div class="section__container _container">
+            <div class="section__body">
+                <h2>Вам готовы помогать</h2>
+
+                <div class="about-slider__container">
+                    <button class="about-slider__prev">
+                        <img src="img/icons/slider-arrow.svg" alt="">
+                    </button>
+                    <button class="about-slider__next">
+                        <img src="img/icons/slider-arrow.svg" alt="">
+                    </button>
+
+                    <div class="about-slider__flex">
+                        <div class="about-slider__content">
+                            <h3 class="about-slider__name">Николай Кудинов</h3>
+                            <p>
+                                <span class="about-slider__pos">Старший юрист,<br> руководитель отдела</span> <span
+                                    class="city">в г. Петропавловск-Камчатский</span>
+                            </p>
+                            <ol>
+                                <li>
+                                    <img src="img/blue.png" alt="">
+                                </li>
+                                <li class="exp">
+                                    <span>22</span>
+                                    <label>года опыта</label>
+                                </li>
+                                <li class="param">
+                                    <span>536</span>
+                                    <label>сложных дел</label>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" data-name="Николай Кудинов" data-pos1="Старший юрист"
+                                    data-pos2="руководитель отдела в" data-exp-num="22" data-exp-text="года опыта"
+                                    data-param-num="536" data-param-text="сложных дел">
+                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div class="swiper-slide" data-name="Николай Кудинов 2" data-pos1="Младший юрист"
+                                    data-pos2="руководитель отдела в 2" data-exp-num="11" data-exp-text="год опыт"
+                                    data-param-num="125" data-param-text="сложных дел">
+                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div class="swiper-slide" data-name="Николай Кудинов 2" data-pos1="Младший юрист"
+                                    data-pos2="руководитель отдела в 2" data-exp-num="11" data-exp-text="год опыт"
+                                    data-param-num="125" data-param-text="сложных дел">
+                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div class="swiper-slide" data-name="Николай Кудинов 2" data-pos1="Младший юрист"
+                                    data-pos2="руководитель отдела в 2" data-exp-num="11" data-exp-text="год опыт"
+                                    data-param-num="125" data-param-text="сложных дел">
+                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div class="swiper-slide" data-name="Николай Кудинов 2" data-pos1="Младший юрист"
+                                    data-pos2="руководитель отдела в 2" data-exp-num="11" data-exp-text="год опыт"
+                                    data-param-num="125" data-param-text="сложных дел">
+                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section _pl why">
+    <section class="section _pl _pl-top why about-why">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__content">
@@ -377,11 +444,19 @@
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="section__container _container">
+            <div class="section__body">
+
+            </div>
+        </div>
+    </section>
 </main>
 
 @@include('./html/footer.html', {
-"class":"",
-"title":""
+"class":"has-title",
+"title":"Вот почему мы успешно работаем по всей стране"
 })
 
 @@include('./html/scripts.html')

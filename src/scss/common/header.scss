@@ -6,7 +6,8 @@
     transition: all 0.3s ease 0s;
 
     &._sticky {
-        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+        opacity: 0.96;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 
         @media (max-width: 992px) {
             box-shadow: none;
@@ -31,6 +32,10 @@
         height: 100px;
 
         @media (max-width: 992px) {
+            height: 80px;
+        }
+
+        @media (max-width: 768px) {
             height: 50px;
         }
     }
@@ -38,28 +43,31 @@
     // .header__left
 
     &__left {
+        flex: 1 1 auto;
+        width: calc(100% / 3);
+
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         @media (max-width: 992px) {
             display: none;
+            width: auto;
         }
 
         .burger {
-            margin-right: 65px;
-
-            @media (max-width: 1280px) {
-                margin-right: 35px;
-            }
+            margin-right: 10px;
         }
 
         ul {
             display: flex;
             align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
 
             & > :not(:last-child) {
-                margin-right: 65px;
+                margin-right: 55px;
 
                 @media (max-width: 1280px) {
                     margin-right: 35px;
@@ -78,6 +86,18 @@
     // .header__center
 
     &__center {
+        flex: 1 1 auto;
+        width: calc(100% / 3);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 992px) {
+            flex: unset;
+            display: block;
+            width: auto;
+        }
     }
 
     // .header__logo
@@ -85,7 +105,7 @@
     &__logo {
         display: block;
         flex: 0 0 auto;
-        margin: 0 20px;
+        margin: 0 10px;
 
         @media (max-width: 992px) {
             margin: 0;
@@ -93,9 +113,13 @@
 
         img,
         svg {
-            width: 188px;
+            width: 220px;
 
             @media (max-width: 992px) {
+                width: 165px;
+            }
+
+            @media (max-width: 768px) {
                 width: 95px;
             }
         }
@@ -104,9 +128,16 @@
     // .header__right
 
     &__right {
+        flex: 1 1 auto;
+        width: calc(100% / 3);
+
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 992px) {
+            width: auto;
+        }
 
         @media (max-width: 768px) {
             flex: 1 1 auto;
@@ -121,14 +152,27 @@
             display: none;
             margin-left: 15px;
 
-            @media (max-width: 768px) {
-                margin-left: 0;
-                width: 30px;
-                height: 30px;
+            @media (max-width: 992px) {
+                display: block;
             }
+
+            @media (max-width: 768px) {
+                margin-left: 10px;
+            }
+        }
+
+        .burger {
+            display: none;
+            width: 32px;
+            height: 32px;
+            margin-left: 15px;
 
             @media (max-width: 992px) {
                 display: block;
+            }
+
+            @media (max-width: 768px) {
+                margin-left: 10px;
             }
         }
     }
@@ -136,17 +180,9 @@
     // .header__city
 
     &__city {
-        margin-right: 76px;
         position: relative;
-
-        @media (max-width: 1280px) {
-            margin-right: 35px;
-        }
-
-        @media (max-width: 768px) {
-            margin-left: auto;
-            margin-right: auto;
-        }
+        margin-left: auto;
+        margin-right: auto;
 
         @media (max-width: 360px) {
             position: static;
@@ -274,17 +310,25 @@
 
     &__phone {
         color: #d8160c;
-        font-size: 28px;
+        font-size: 24px;
         line-height: normal;
         display: block;
         margin-bottom: 4px;
+        text-align: center;
+        white-space: nowrap;
 
         @media (max-width: 992px) {
             display: none;
         }
+
+        @media (max-width: 1096px) {
+            font-size: 22px;
+        }
     }
 
     ._socials {
+        margin-left: 10px;
+
         @media (max-width: 768px) {
             display: none;
         }
