@@ -339,10 +339,25 @@ const defaultEmail = footerEmail.href;
 const defaultEmailText = footerEmailText.textContent;
 const defaultAddress = footerCityP.textContent;
 
+
+function changeCityName(currentcity) {
+    const cities = document.querySelectorAll('.city');
+    if (!cities.length) return;
+
+    console.log('Смена города в .city на ' + currentcity );
+    cities.forEach(item => {
+        item.textContent = currentcity
+    })
+}
+
 function handleTextChange() {
     const currentText = headerCityName.textContent;
+
+
     if (currentText.toLowerCase() !== previousText.toLowerCase()) {
         previousText = currentText;
+
+        changeCityName(currentText)
 
         footerCity.classList.add('hide');
         footerMap.classList.add('hide');
@@ -477,6 +492,8 @@ function handleTextChange() {
                             console.log('Ближайший офис в г. ' + response.closest_city);
                             footerCity.classList.remove('hide');
                             footerMap.classList.remove('hide');
+
+                            changeCityName(response.closest_city)
 
                             if (yandexLink) {
                                 let linkCounter = yandexLink.querySelector('.link-counter');

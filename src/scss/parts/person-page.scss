@@ -52,11 +52,17 @@
             right: -60px;
         }
 
-        a {
+        img {
             width: 427px !important;
+            display: block;
+            position: relative;
 
             @media (max-width: 992px) {
                 width: 288px !important;
+            }
+
+            @media (max-width: 1366px) {
+                width: 298px;
             }
         }
     }
@@ -242,5 +248,9 @@
                 width: 400px;
             }
         }
+    }
+
+    ._button {
+        color: #fff !important;
     }
 }
