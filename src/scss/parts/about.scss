@@ -280,10 +280,7 @@
 }
 
 .about-slider {
-    
-    @media (max-width:992px){
-        overflow: hidden;
-    }
+    overflow: hidden;
 
     h2 {
         margin-bottom: 57px;
@@ -370,6 +367,23 @@
         @media (max-width: 992px) {
             padding: 0;
             display: block;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: -25px;
+            width: 60%;
+            height: 50px;
+            pointer-events: none;
+            background-color: #fff;
+            filter: blur(9.550000190734863px);
+            z-index: 2;
+
+            @media (max-width: 992px) {
+                display: none;
+            }
         }
     }
 
@@ -500,11 +514,6 @@
             max-width: 288px;
         }
 
-        // .swiper-wrapper
-
-        &-wrapper {
-        }
-
         // .swiper-slide
 
         &-slide {
@@ -513,6 +522,11 @@
             align-items: flex-end;
             transition: all 0.3s ease 0s;
             opacity: 0;
+            top: 10px;
+
+            @media (max-width: 992px) {
+                top: 20px;
+            }
 
             @media (max-width: 768px) {
                 height: 385px;
@@ -523,17 +537,15 @@
                 transition: all 0.3s ease 0s;
 
                 @media (max-width: 992px) {
-                    width: 71%;
+                    // width: 71%;
                 }
             }
 
             &.swiper-slide-active {
                 opacity: 1;
-                top: 0;
 
                 img {
                     width: 100%;
-                    height: 100%;
                     object-fit: contain;
 
                     @media (max-width: 992px) {
@@ -544,22 +556,20 @@
 
             &.swiper-slide-next {
                 opacity: 0.5;
-                top: 10px;
-
-                @media (max-width: 992px) {
-                    top: 20px;
-                }
             }
         }
     }
 }
 
 .about-why {
+    background-color: #fff;
     z-index: 2;
     position: relative;
     padding-bottom: 100px;
+    padding-top: 50px;
 
     @media (max-width: 768px) {
         padding-bottom: 20px;
+        padding-top: 30px;
     }
 }

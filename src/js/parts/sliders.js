@@ -9,7 +9,10 @@ const slideParamName = document.querySelector('.about-slider .param span');
 const slideParamText = document.querySelector('.about-slider .param label');
 
 const sliders = document.querySelectorAll('.swiper');
-if (sliders.length) {
+
+export const createSliders = () => {
+    if (!sliders.length) return;
+
     sliders.forEach(slider => {
 
         if (!slider.closest('.about-slider'))
@@ -39,7 +42,7 @@ if (sliders.length) {
                 grabCursor: true,
                 cardsEffect: {
                     perSlideOffset: 75,
-                    perSlideRotate:0,
+                    perSlideRotate: 0,
                     rotate: false,
                     slideShadows: false,
                 },
@@ -48,7 +51,6 @@ if (sliders.length) {
                 on: {
                     slideChange: (swiper) => {
                         const slide = swiper.slides[swiper.activeIndex];
-                        console.log(slide);
 
                         const name = slide.dataset.name
                         const pos1 = slide.dataset.pos1

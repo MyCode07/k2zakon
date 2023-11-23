@@ -9,6 +9,3 @@ document.addEventListener('click', function (e) {
         else targetEl.textContent = 'Читать подробнее...'
     }
 })
-
-
-

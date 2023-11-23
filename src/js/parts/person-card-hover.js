@@ -2,7 +2,7 @@ import { isMobile } from "../utils/isMobile.js";
 
 const personCards = document.querySelectorAll('.person__card');
 
-function personCardsHover() {
+export const personCardsHover = () => {
     if (!personCards) return;
 
     personCards.forEach(card => {
@@ -18,4 +18,3 @@ function personCardsHover() {
         }
     })
 }
-personCardsHover();
