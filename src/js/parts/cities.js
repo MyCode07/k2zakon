@@ -344,9 +344,19 @@ function changeCityName(currentcity) {
     const cities = document.querySelectorAll('.city');
     if (!cities.length) return;
 
-    console.log('Смена города в .city на ' + currentcity );
+    console.log('Смена города в .city на ' + currentcity);
     cities.forEach(item => {
         item.textContent = currentcity
+    })
+}
+
+function changeCityLogo(currentcitylogo) {
+    const cittLogos = document.querySelectorAll('.city-logo');
+    if (!cittLogos.length) return;
+
+    console.log('Смена лого города в .city-logo на ' + currentcitylogo);
+    cittLogos.forEach(item => {
+        item.src = currentcitylogo
     })
 }
 
@@ -369,6 +379,8 @@ function handleTextChange() {
             data: { action: 'my_ajax_action', city: currentText },
             dataType: 'json',
             success: function (response) {
+                changeCityLogo(response.city_logo);
+
                 if (
                     'phone_link' in response &&
                     response.phone_link !== '' &&
@@ -494,6 +506,8 @@ function handleTextChange() {
                             footerMap.classList.remove('hide');
 
                             changeCityName(response.closest_city)
+                            changeCityLogo(response.city_logo);
+
 
                             if (yandexLink) {
                                 let linkCounter = yandexLink.querySelector('.link-counter');

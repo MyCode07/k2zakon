@@ -21,7 +21,6 @@ export const createSliders = () => {
                     Autoplay,
                 ],
                 loop: true,
-                lazy: true,
                 slidesPerView: 1,
                 autoplay: {
                     delay: 3000,
@@ -46,7 +45,6 @@ export const createSliders = () => {
                     rotate: false,
                     slideShadows: false,
                 },
-                lazy: true,
                 slidesPerView: 1,
                 on: {
                     slideChange: (swiper) => {

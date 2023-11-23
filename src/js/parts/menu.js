@@ -3,7 +3,7 @@ import { isMobile } from '../utils/isMobile.js';
 const menu = document.querySelector('.menu');
 const burgers = document.querySelectorAll('.burger');
 const menuLinks = document.querySelectorAll('.menu nav li a');
-const container = document.querySelector('.header ._container');
+const container = document.querySelector('.header__container');
 
 let left = container.getBoundingClientRect().left;
 menu.style.left = left + 'px';

@@ -5,7 +5,6 @@ import "./parts/cities.js"
 import "./parts/map.js";
 import "./parts/read-more.js";
 import "./parts/services.js";
-import "./parts/education.js";
 
 import { toolTipAction } from "./parts/tooltip.js";
 import { stickyHeader } from "./parts/header.js";
@@ -14,9 +13,8 @@ import { animateAction, animateStaggerAction } from "./parts/animations.js";
 import { replaceDomElements } from "./static/replace.js";
 import { runNumbers } from "./parts/run-numbers.js";
 import { createSliders } from "./parts/sliders.js";
-import { personCardsHover } from "./parts/person-card-hover.js";
+import { checkCookies } from "./utils/cookie.js";
 
-personCardsHover();
 createSliders();
 toolTipAction();
 stickyHeader();
@@ -25,7 +23,7 @@ animateAction();
 animateStaggerAction();
 replaceDomElements();
 runNumbers();
-
+checkCookies();
 
 // import "./static/side-fixed.js";
 // import { accorden } from "./static/accordeon.js";
