@@ -26,7 +26,10 @@ document.addEventListener('click', function (e) {
 
     if (targetEl.classList.contains('popup')) {
         targetEl.classList.remove('_open')
-        if (targetEl.id == 'qrcode' && document.querySelector('.popup#contacts._open')) {
+        if (
+            (targetEl.id == 'qrcode' && document.querySelector('.popup#contacts._open')) ||
+            (targetEl.id == 'contacts' && document.querySelector('.popup#service._open'))
+        ) {
             document.querySelector('body').classList.add('_noscroll');
         }
         else {
@@ -38,7 +41,10 @@ document.addEventListener('click', function (e) {
         const popup = targetEl.closest('.popup');
         popup.classList.remove('_open');
 
-        if (popup.id == 'qrcode' && document.querySelector('.popup#contacts._open')) {
+        if (
+            (popup.id == 'qrcode' && document.querySelector('.popup#contacts._open')) ||
+            (popup.id == 'contacts' && document.querySelector('.popup#service._open'))
+        ) {
             document.querySelector('body').classList.add('_noscroll');
         }
         else {

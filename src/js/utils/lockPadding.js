@@ -1,6 +1,6 @@
 import { isMobile } from "./isMobile.js";
 
-const fixedElems = [...document.querySelectorAll('._fixed')].concat(document.querySelector('.popup'));
+const fixedElems = [...document.querySelectorAll('._fixed')].concat([...document.querySelectorAll('.popup')]);
 const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 const body = document.body;
 
