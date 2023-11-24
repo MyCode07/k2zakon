@@ -1,5 +1,6 @@
 .team {
     padding-bottom: 60px;
+    padding-top: 20px;
 
     @media (max-width: 768px) {
         padding-bottom: 40px;
@@ -28,6 +29,19 @@
             & > :not(:last-child) {
                 margin-bottom: 30px;
             }
+        }
+    }
+}
+
+.team-top {
+    padding-top: 0;
+
+    @media (max-width: 992px) {
+        margin-bottom: 0 !important;
+
+        &:after,
+        &:before {
+            display: none !important;
         }
     }
 }

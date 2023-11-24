@@ -459,6 +459,11 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                text-align: center;
+
+                &:has(img) {
+                    flex: 0 0 auto;
+                }
 
                 img {
                     width: 92px;

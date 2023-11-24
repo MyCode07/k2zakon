@@ -4,10 +4,65 @@
 
 @@include('./html/header.html', {
 "text":"Команда",
-"bread-class":""
+"bread-class":"_white"
 })
 
 <main>
+
+    <section class="section _pl _pl-bottom about-slider team-top">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="about-slider__container">
+                    <button class="about-slider__prev">
+                        <img src="img/icons/slider-arrow.svg" alt="">
+                    </button>
+                    <button class="about-slider__next">
+                        <img src="img/icons/slider-arrow.svg" alt="">
+                    </button>
+
+                    <div class="about-slider__flex">
+                        <div class="about-slider__content">
+                            <h3 class="about-slider__name">Николай Кудинов</h3>
+                            <p>
+                                <span class="about-slider__pos">Старший юрист,<br> руководитель отдела</span> в г. <span
+                                    class="city">Петропавловск-Камчатский</span>
+                            </p>
+                            <ol>
+                                <li>
+                                    <img class="city-logo" src="img/blue.png" alt="">
+                                </li>
+                                <li class="param-1">
+                                    <span>22</span>
+                                    <label>года опыта</label>
+                                </li>
+                                <li class="param-2">
+                                    <span>536</span>
+                                    <label>сложных дел</label>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" data-name="Николай Кудинов"
+                                    data-pos="Старший юрист <br> руководитель отдела" data-param1-num="22"
+                                    data-param1-text="года опыта" data-param2-num="536" data-param2-text="сложных дел">
+                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                                <div class="swiper-slide" data-name="Николай" data-pos="Старший <br> отдела"
+                                    data-param1-num="26" data-param1-text="лет опыта" data-param2-num="200"
+                                    data-param2-text="сложных дел">
+                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section team">
         <div class="section__container _container">
             <div class="section__body">
@@ -184,6 +239,7 @@
             </div>
         </div>
     </section>
+
 </main>
 
 @@include('./html/footer.html', {

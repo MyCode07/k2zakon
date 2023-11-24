@@ -45,7 +45,7 @@
 
     .section__imagebox {
         @media (max-width: 992px) {
-            top: 0 !important;
+            top: 15px;
         }
 
         @media (max-width: 768px) {
@@ -53,16 +53,15 @@
         }
 
         img {
-            width: 427px !important;
+            width: 427px;
+            height: 570px;
             display: block;
             position: relative;
+            object-fit: cover;
 
             @media (max-width: 992px) {
-                width: 288px !important;
-            }
-
-            @media (max-width: 1366px) {
-                width: 298px;
+                width: 288px;
+                height: 385px;
             }
         }
     }
