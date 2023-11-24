@@ -28,7 +28,7 @@ document.addEventListener('click', function (e) {
         targetEl.classList.remove('_open')
         if (
             (targetEl.id == 'qrcode' && document.querySelector('.popup#contacts._open')) ||
-            (targetEl.id == 'contacts' && document.querySelector('.popup#service._open'))
+            (targetEl.id == 'contacts' && document.querySelector('.popup._service._open'))
         ) {
             document.querySelector('body').classList.add('_noscroll');
         }
@@ -43,7 +43,7 @@ document.addEventListener('click', function (e) {
 
         if (
             (popup.id == 'qrcode' && document.querySelector('.popup#contacts._open')) ||
-            (popup.id == 'contacts' && document.querySelector('.popup#service._open'))
+            (popup.id == 'contacts' && document.querySelector('.popup._service._open'))
         ) {
             document.querySelector('body').classList.add('_noscroll');
         }
