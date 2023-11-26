@@ -35,10 +35,16 @@
             padding: 10px;
             font-size: 32px;
             line-height: normal;
-            color: #fff !important;
+            color: #fff;
             position: relative;
             margin-left: auto;
             text-align: center;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: #fff;
+                }
+            }
 
             @media (max-width: 1366px) {
                 font-size: 24px;
@@ -108,12 +114,18 @@
             border-radius: 100px;
             width: fit-content;
             z-index: 2;
-            color: #000 !important;
+            color: #000;
             max-width: 442px;
 
             position: absolute;
             left: 173px;
             bottom: -28px;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: #000;
+                }
+            }
 
             @media (max-width: 1366px) {
                 padding: 10px 24px;
@@ -176,6 +188,110 @@
                 @include adaptive-value("height", 381, 192, 1);
                 object-position: right;
             }
+        }
+    }
+}
+
+section.service-features {
+
+    h2 span{
+        font-weight: inherit;
+    }
+
+    .features-flex__img {
+        @media (max-width: 768px) {
+            width: 57.5%;
+        }
+
+        img {
+            @media (max-width: 768px) {
+                @include adaptive-value("height", 330, 250, 1);
+                object-position: 45%;
+            }
+        }
+    }
+
+    .features-flex__links {
+        width: 146px;
+    }
+
+    .proekt {
+        @media (max-width: 768px) {
+            width: 100%;
+            height: 151px;
+            padding-right: 5px;
+            padding-top: 0;
+        }
+    }
+
+    .depozit {
+        @media (max-width: 768px) {
+            left: 11px !important;
+            top: -20px;
+        }
+
+        span {
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .soprovojdenie {
+        flex-direction: row;
+        width: auto;
+        height: 140px;
+        left: 14%;
+
+        @media (max-width: 1366px) {
+            bottom: -28px;
+        }
+
+        @media (max-width: 992px) {
+            width: auto;
+            height: 150px;
+        }
+
+        @media (max-width: 768px) {
+            width: auto;
+            height: 65px;
+            max-width: 250px;
+            left: 32%;
+        }
+
+        @media (max-width: 425px) {
+            left: unset;
+            right: 0;
+            max-width: 65%;
+            bottom: -24px;
+        }
+
+        label {
+            text-align: left;
+            padding-left: 20px;
+
+            @media (max-width: 768px) {
+                padding-left: 7px;
+            }
+        }
+
+        span {
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
+        }
+    }
+
+    ._button {
+        @media (min-width: 769px) {
+            position: absolute;
+            right: 10%;
+            bottom: -28px;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-top: 44px;
         }
     }
 }

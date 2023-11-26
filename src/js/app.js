@@ -14,6 +14,7 @@ import { replaceDomElements } from "./static/replace.js";
 import { runNumbers } from "./parts/run-numbers.js";
 import { createSliders } from "./parts/sliders.js";
 import { checkCookies } from "./utils/cookie.js";
+import { tabelScroll } from "./parts/teble.js";
 
 createSliders();
 toolTipAction();
@@ -24,6 +25,7 @@ animateStaggerAction();
 replaceDomElements();
 runNumbers();
 checkCookies();
+tabelScroll();
 
 // import "./static/side-fixed.js";
 // import { accorden } from "./static/accordeon.js";

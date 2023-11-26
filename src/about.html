@@ -279,53 +279,51 @@
         </div>
     </section>
 
-    <section class="section _pl _pl-top about-slider">
+    <section class="section _pl _pl-top about-slider" data-slider-change>
         <div class="section__container _container">
             <div class="section__body">
                 <h2>Вам готовы помогать</h2>
 
                 <div class="about-slider__container">
-                    <button class="about-slider__prev">
+                    <button class="about-slider__prev" data-slider-change-btn data-slider-change="prev">
                         <img src="img/icons/slider-arrow.svg" alt="">
                     </button>
-                    <button class="about-slider__next">
+                    <button class="about-slider__next" data-slider-change-btn data-slider-change="next">
                         <img src="img/icons/slider-arrow.svg" alt="">
                     </button>
 
                     <div class="about-slider__flex">
                         <div class="about-slider__content">
-                            <h3 class="about-slider__name">Николай Кудинов</h3>
-                            <p>
-                                <span class="about-slider__pos">Старший юрист,<br> руководитель отдела</span> в г. <span
-                                    class="city">Петропавловск-Камчатский</span>
+                            <h3 data-slider-name class="about-slider__name">Николай Кудинов</h3>
+                            <p class="about-slider__info">
+                                <span class="about-slider__pos" data-slider-pos>Старший юрист,<br> руководитель
+                                    отдела</span> в г. <span class="city">Петропавловск-Камчатский</span>
                             </p>
-                            <ol>
+                            <ol class="about-slider__params">
                                 <li>
                                     <img class="city-logo" src="img/blue.png" alt="">
                                 </li>
-                                <li class="param-1">
+                                <li class="param-1" data-slider-param1>
                                     <span>22</span>
                                     <label>года опыта</label>
                                 </li>
-                                <li class="param-2">
+                                <li class="param-2" data-slider-param2>
                                     <span>536</span>
                                     <label>сложных дел</label>
                                 </li>
                             </ol>
                         </div>
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide" data-name="Николай Кудинов"
+                        <div class="about-slider__slider">
+                            <div class="about-slider__wrapper">
+                                <div class="about-slider__slide _active" data-slide-type="prev" data-name="Николай Кудинов"
                                     data-pos="Старший юрист <br> руководитель отдела" data-param1-num="22"
                                     data-param1-text="года опыта" data-param2-num="536" data-param2-text="сложных дел">
-                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
-                                    <div class="swiper-lazy-preloader"></div>
+                                    <img loading="lazy" src="img/person-1.png" alt="">
                                 </div>
-                                <div class="swiper-slide" data-name="Николай" data-pos="Старший <br> отдела"
+                                <div class="about-slider__slide" data-slide-type="next" data-name="Николай" data-pos="Старший <br> отдела"
                                     data-param1-num="26" data-param1-text="лет опыта" data-param2-num="200"
                                     data-param2-text="сложных дел">
-                                    <img loading="lazy" src="img/1x1.png" srcset="img/person-1.png" alt="">
-                                    <div class="swiper-lazy-preloader"></div>
+                                    <img loading="lazy" src="img/person-1.png" alt="">
                                 </div>
                             </div>
                         </div>
