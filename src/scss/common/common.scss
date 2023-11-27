@@ -359,6 +359,37 @@ label {
         color: #5e5e5e;
         border: 2px solid currentColor;
     }
+
+    &._tg {
+        background-color: #27a6e5;
+    }
+
+    &._wh {
+        background-color: #48c95f;
+    }
+
+    &._vb {
+        background-color: #7c509a;
+    }
+
+    &:not(._button-construct) {
+        &:has(img, svg) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 auto;
+            margin-right: 10px;
+
+            path {
+                fill: currentColor;
+            }
+        }
+    }
 }
 
 .filter__btn {

@@ -630,6 +630,9 @@
     }
 
     ._button {
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 }
 
@@ -666,6 +669,222 @@
 
         @media (max-width: 768px) {
             margin-top: 20px;
+            width: 100%;
+        }
+    }
+}
+
+.error-404 {
+    padding-bottom: 40px;
+
+    // .error-404__blok
+
+    &__blok {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .error-404__img
+
+    &__img {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -55px;
+            width: 100%;
+            height: 125px;
+            pointer-events: none;
+            background-color: #fff;
+            filter: blur(24px);
+
+            @media (max-width: 768px) {
+                height: 222px;
+                bottom: -175px;
+            }
+        }
+
+        img {
+            @include adaptive-value("width", 848, 324, 1);
+        }
+    }
+
+    // .error-404__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            margin-bottom: 16px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            color: #0d0d0d;
+            font-size: 20px;
+            margin-bottom: 30px;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    // .error-404__buttons
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 24px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+            gap: 12px 20px;
+
+            flex-wrap: wrap;
+        }
+
+        a {
+            width: fit-content;
+            display: block;
+
+            svg {
+                width: 80px;
+                height: 80px;
+                flex: 0 0 auto;
+
+                @media (max-width: 768px) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+
+        ._button {
+            @media (max-width: 768px) {
+                width: 74%;
+            }
+        }
+    }
+}
+
+.error-404-2 {
+    @include adaptive-value("margin-top", 220, 60, 1);
+
+    @media (max-width: 1366px) {
+        padding-bottom: 30px;
+    }
+
+    .section__flex {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            flex-direction: row;
+        }
+
+        // .section__flex-left
+
+        &-left {
+            flex: 0 0 auto;
+            width: fit-content;
+
+            @media (max-width: 768px) {
+                margin-right: 8px;
+            }
+
+            img {
+                width: 295px;
+
+                @media (max-width: 1240px) {
+                    width: 200px;
+                }
+
+                @media (max-width: 768px) {
+                    margin-left: -20px;
+                    width: 119px;
+                }
+            }
+        }
+
+        // .section__flex-right
+
+        &-right {
+            max-width: 500px;
+
+            color: #0d0d0d;
+
+            @media (max-width: 768px) {
+                width: fit-content;
+            }
+
+            label {
+                font-size: 240px;
+                font-weight: 400;
+                margin-bottom: 30px;
+                display: block;
+
+                @media (max-width: 1240px) {
+                    font-size: 170px;
+                }
+
+                @media (max-width: 1024px) {
+                    font-size: 120px;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 96px;
+                    margin-bottom: 0px;
+                }
+            }
+
+            span {
+                font-size: 32px;
+                font-weight: 500;
+                margin: 20px 0;
+                display: block;
+
+                @media (max-width: 768px) {
+                    font-size: 20px;
+                    margin: 12px 0;
+                }
+            }
+
+            ._text {
+                @media (max-width: 768px) {
+                    max-width: 185px;
+                    width: 100%;
+                }
+            }
+
+            p,
+            a {
+                font-size: 20px;
+                font-weight: 400;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
+            }
+
+            a {
+                color: #d8160c;
+                text-decoration-line: underline;
+            }
         }
     }
 }

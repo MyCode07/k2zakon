@@ -12,16 +12,20 @@ export const lockPadding = () => {
             });
 
         body.style.paddingRight = scrollbarWidth + 'px';
-        body.classList.add('_noscroll')
     }
+
+    body.classList.add('_noscroll')
 }
 
 export const unLockPadding = () => {
-    if (fixedElems.length)
-        fixedElems.forEach(item => {
-            item.style.paddingRight = 0 + 'px';
-        });
+    if (!isMobile.any()) {
+        if (fixedElems.length)
+            fixedElems.forEach(item => {
+                item.style.paddingRight = 0 + 'px';
+            });
 
-    body.style.paddingRight = 0 + 'px';
+        body.style.paddingRight = 0 + 'px';
+    }
+
     body.classList.remove('_noscroll')
 }
