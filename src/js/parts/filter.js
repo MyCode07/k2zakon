@@ -33,16 +33,10 @@ if (filters.length) {
 }
 
 function toggleTarget(target, targets, classname) {
-    if (!target.classList.contains(classname)) {
-        targets.forEach(item => {
-            if (item.classList.contains(classname)) item.classList.remove(classname)
-        })
-
-        target.classList.toggle(classname)
-    }
-    else {
-        target.classList.remove(classname)
-    }
+    targets.forEach(item => {
+        if (item.classList.contains(classname)) item.classList.remove(classname)
+    })
+    target.classList.add(classname)
 }
 
 

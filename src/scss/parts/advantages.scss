@@ -90,10 +90,19 @@
 
     .section__flex-right {
         width: auto;
+        max-width: none;
+
+        ._button {
+            @media (min-width: 1367px) {
+                margin-top: 60px;
+            }
+        }
     }
 
     .section__flex-left {
         width: auto;
+
+        max-width: 270px;
     }
 
     .victory__card {
@@ -204,6 +213,24 @@
 
                 @media (max-width: 768px) {
                     height: 297px;
+                }
+            }
+        }
+    }
+
+    &:has(.victory-swiperblock__title) {
+        .swiper {
+            margin-top: -20px;
+            width: 270px;
+            padding: 20px;
+            box-shadow: none;
+
+            &-slide {
+                height: auto !important;
+
+                img {
+                    box-shadow: 0px 0px 14.89655px 0px rgba(0, 0, 0, 0.17);
+                    height: 325px !important;
                 }
             }
         }
