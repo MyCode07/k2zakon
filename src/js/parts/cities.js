@@ -23,8 +23,6 @@ const footerDesktopPhone = document.querySelector('.footer__contact#footer-phone
 const footerEmail = document.querySelector('#footer-email');
 const footerEmailText = footerEmail;
 
-
-const landingBannerCity = document.querySelector('.landing_banner-city');
 const yandexLink = document.querySelector('.yandex');
 const googleLink = document.querySelector('.google');
 const gisLink = document.querySelector('.gis');
@@ -333,10 +331,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // Отслеживание изменения города
 let previousText = headerCityName.textContent;
 
-const defaultTelefon = headerTelefone.href;
-const defaultTelefonText = headerTelefoneText.textContent;
-const defaultEmail = footerEmail.href;
-const defaultEmailText = footerEmailText.textContent;
+const defaultTelefon = adminajaxurl.defalut_phone_link;
+const defaultTelefonText = adminajaxurl.defalut_phone;
+const defaultEmail = 'mailto:' + adminajaxurl.defalut_email;
+const defaultEmailText = footerEmailText.defalut_email;
 const defaultAddress = footerCityP.textContent;
 
 
@@ -363,7 +361,6 @@ function changeCityLogo(currentcitylogo) {
 function handleTextChange() {
     const currentText = headerCityName.textContent;
 
-
     if (currentText.toLowerCase() !== previousText.toLowerCase()) {
         previousText = currentText;
 
@@ -380,7 +377,7 @@ function handleTextChange() {
             dataType: 'json',
             success: function (response) {
                 changeCityLogo(response.city_logo);
-
+                console.log(response);
                 if (
                     'phone_link' in response &&
                     response.phone_link !== '' &&
@@ -495,6 +492,7 @@ function handleTextChange() {
                         dataType: 'json',
                         success: function (response) {
                             footerCityP.textContent = response.city_full_address;
+                            console.log(response);
                             changeMapLocation(
                                 response.closest_latitude,
                                 response.closest_longitude,
@@ -573,15 +571,6 @@ function handleTextChange() {
                 console.log('Запрос завершен.');
             },
         });
-
-        // if (landingBannerLocation) {
-        //     if (previousText !== 'Вся Россия') {
-        //         landingBannerCity.textContent = currentText;
-        //         landingBannerLocation.classList.remove('hide');
-        //     } else {
-        //         landingBannerLocation.classList.add('hide');
-        //     }
-        // }
     }
 
     // Рекурсивно вызываем функцию для постоянного отслеживания изменений

@@ -7,6 +7,7 @@ document.addEventListener('click', function (e) {
 
     if (targetEl.hasAttribute('data-open-popup')) {
         e.preventDefault();
+        
         const id = targetEl.getAttribute('data-id');
         const popup = document.querySelector(`.popup#${id}`);
         if (popup) {

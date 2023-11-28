@@ -27,10 +27,11 @@ function moveToolTip(e, tooltipText, promptText) {
     updateTooltipPosition(e, toolTipElem);
 }
 
-const tooltips = document.querySelectorAll('[data-tooltip]');
 const toolTipElem = document.querySelector('.tooltip');
 
 export const toolTipAction = () => {
+    var tooltips = document.querySelectorAll('[data-tooltip]');
+
     if (!tooltips.length) return;
 
     tooltips.forEach(item => {

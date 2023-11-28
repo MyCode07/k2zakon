@@ -1,3 +1,7 @@
+import { toolTipAction } from "./tooltip.js";
+import { victoryCardsHover } from "./victory-hover.js";
+
+
 const filters = document.querySelectorAll('.filter__btn');
 if (filters.length) {
     filters.forEach(item => {
@@ -49,5 +53,17 @@ document.addEventListener('click', function (e) {
 
     if (targetEl.closest('.filter__btn ul li') || targetEl.classList.contains('filter__btn')) {
         filter.classList.remove('_active')
+
+        setTimeout(() => {
+            toolTipAction();
+            victoryCardsHover();
+        }, 1000);
+    }
+
+    if (targetEl.classList.contains('view-more')) {
+        setTimeout(() => {
+            toolTipAction();
+            victoryCardsHover();
+        }, 1000);
     }
 })

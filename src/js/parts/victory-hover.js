@@ -1,8 +1,9 @@
 import { isMobile } from "../utils/isMobile.js";
 
-const victoryCards = document.querySelectorAll('.victory__card');
 
 export const victoryCardsHover = () => {
+    var victoryCards = document.querySelectorAll('.victory__card');
+
     if (!victoryCards) return;
 
     victoryCards.forEach(card => {

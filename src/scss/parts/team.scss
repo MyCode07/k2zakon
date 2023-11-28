@@ -35,8 +35,10 @@
 
 .team-top {
     padding-top: 0;
+    padding-bottom: 20px;
 
     @media (max-width: 992px) {
+        padding-bottom: 0;
         margin-bottom: 0 !important;
 
         &:after,

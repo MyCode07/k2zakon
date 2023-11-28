@@ -25,9 +25,11 @@ export const createSliders = () => {
             ],
             loop: true,
             slidesPerView: 1,
+            spaceBetween: 40,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
+                pauseOnMouseEnter: true
             },
             pagination: pagination
         })

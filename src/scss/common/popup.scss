@@ -71,6 +71,7 @@
     // .popup__container
 
     &__container {
+        width: fit-content;
     }
 
     // .popup__body
@@ -181,6 +182,7 @@
                     color: #0d0d0d;
                     padding: 7px;
                     transition: all 0.5s;
+                    cursor: pointer;
 
                     @media (max-width: 992px) {
                         line-height: 16px;
@@ -191,6 +193,20 @@
                         font-weight: 600;
                     }
                 }
+            }
+        }
+
+        .popup__body {
+            min-width: 985px;
+
+            @media (max-width: 1024px) {
+                min-width: 0;
+            }
+        }
+
+        .popup__container {
+            @media (max-width: 992px) {
+                width: 100%;
             }
         }
     }
@@ -309,10 +325,16 @@
 
             &__body {
                 width: 100%;
-                max-width: 850px;
+                max-width: 927px;
                 background: none;
                 box-shadow: none;
                 padding: 0 !important;
+
+                min-width: 927px;
+
+                @media (max-width: 992px) {
+                    min-width: 0;
+                }
             }
 
             // .popup__top

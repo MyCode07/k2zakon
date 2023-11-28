@@ -196,6 +196,16 @@ section.service-features {
         font-weight: inherit;
     }
 
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 890px;
+
+        @media (min-width: 1367px) {
+            font-size: 32px;
+        }
+    }
+
     .features-flex__img {
         @media (max-width: 768px) {
             width: 57.5%;
