@@ -27,6 +27,13 @@ runNumbers();
 checkCookies();
 tabelScroll();
 
+
+if (Fancybox) {
+    Fancybox.bind('[data-fancybox]', {
+        compact: false
+    });
+}
+
 // import "./static/side-fixed.js";
 // import { accorden } from "./static/accordeon.js";
 // import { maskInputs } from "./static/inputmask.js";
