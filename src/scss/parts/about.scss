@@ -289,6 +289,22 @@
             filter: grayscale(1);
             transition: filter 0.3s ease 0s;
 
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+
+                img {
+                    max-height: 90px;
+                    object-fit: contain;
+
+                    @media (max-width:425px){
+                        max-height: 60px;
+                    }
+                }
+            }
+
             @media (any-hover: hover) {
                 &:hover {
                     filter: grayscale(0);
@@ -540,6 +556,10 @@
         max-width: 427px;
         width: 100%;
 
+        @media (max-width: 1366px) {
+            max-width: 370px;
+        }
+
         @media (max-width: 992px) {
             margin-left: auto;
             margin-right: auto;
@@ -630,5 +650,82 @@
     @media (max-width: 768px) {
         padding-bottom: 20px;
         padding-top: 30px;
+    }
+}
+
+.about-numbers {
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    @media (max-width: 768px) {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .section__flex {
+        max-width: 940px;
+    }
+
+    .section__flex-right {
+        @media (min-width: 769px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    // .about-numbers__numbers
+
+    &__numbers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 26px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        ol {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 54px;
+
+            @media (max-width: 768px) {
+                gap: 12px;
+                margin-bottom: 28px;
+            }
+
+            li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                label,
+                span {
+                    display: block;
+                    color: #d8160c;
+                }
+
+                span {
+                    font-size: 52px;
+                    font-weight: 700;
+
+                    @media (max-width: 768px) {
+                        font-size: 32px;
+                    }
+                }
+
+                label {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+        }
     }
 }

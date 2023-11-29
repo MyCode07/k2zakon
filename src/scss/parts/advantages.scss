@@ -92,6 +92,11 @@
         width: auto;
         max-width: none;
 
+        @media (min-width: 769px) {
+            flex: 1 1 auto;
+            padding-left: 40px;
+        }
+
         ._button {
             @media (min-width: 1367px) {
                 margin-top: 60px;
@@ -101,8 +106,6 @@
 
     .section__flex-left {
         width: auto;
-
-        max-width: 270px;
     }
 
     .victory__card {
@@ -199,13 +202,11 @@
         .swiper {
             max-width: 324px;
             width: 100%;
-            margin-right: 40px;
             padding: 20px;
             margin-top: -20px;
 
             @media (max-width: 768px) {
                 max-width: 250px;
-                margin-right: 0;
             }
 
             .victory__card-docimg {
@@ -227,6 +228,16 @@
 
             &-slide {
                 height: auto !important;
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 100%;
+                }
+
+                .victory-swiperblock__title {
+                    flex: 1 1 auto;
+                }
 
                 img {
                     box-shadow: 0px 0px 14.89655px 0px rgba(0, 0, 0, 0.17);
