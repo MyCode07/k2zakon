@@ -841,6 +841,61 @@
             }
         }
     }
+
+    &#lowers {
+        h2 {
+        }
+    }
+
+    &#sale {
+        .popup__body {
+            max-width: 914px;
+            min-width: 914px;
+
+            @media (max-width: 992px) {
+                width: calc(100vw - 40px);
+                min-width: 0;
+            }
+        }
+
+        h2 {
+            margin-bottom: 0;
+
+            @media (min-width: 769px) {
+                font-size: 32px;
+                max-width: none;
+            }
+        }
+
+        h3 {
+            margin: 40px 0;
+
+            color: #d8160c;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: normal;
+
+            @media (max-width: 768px) {
+                font-size: 36px;
+                margin: 20px 0;
+            }
+        }
+
+        h4 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 40px;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        button {
+        }
+    }
 }
 
 .none {

@@ -170,7 +170,7 @@
 .feedback__card {
     width: 100%;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
-    
+
     a {
         display: block;
         height: 100%;
@@ -210,6 +210,8 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
+
+            filter: drop-shadow(267px 588px 258px rgba(0, 0, 0, 0.11)) drop-shadow(12px 12px 40px rgba(0, 0, 0, 0.32));
         }
     }
 
