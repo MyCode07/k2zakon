@@ -37,22 +37,34 @@ table {
     margin-bottom: 22px;
 
     @media (max-width: 992px) {
-        height: 2px;
+        height: 4px;
         background-color: #cbcbcb;
         position: relative;
         pointer-events: none;
-        display: block;
+        border-radius: 100px;
     }
 
     span {
         display: block;
         content: "";
-        height: 2px;
+        height: 4px;
         left: 0;
         top: 0;
         position: absolute;
         background-color: #d8160c;
+        border-radius: 100px;
         width: 100%;
+    }
+}
+
+.table-container {
+    @media (max-width: 922px) {
+        transform: rotateX(180deg);
+        padding-bottom: 10px;
+    }
+
+    table {
+        transform: rotateX(180deg);
     }
 }
 
@@ -183,10 +195,18 @@ table th[data-index="4"] {
 
     .table-container {
         overflow-x: auto;
-    }
 
-    .table-container::-webkit-scrollbar {
-        display: none;
+        &::-webkit-scrollbar {
+            height: 4px;
+            background-color: #cbcbcb;
+            border-radius: 100px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            height: 4px;
+            background-color: #d8160c;
+            border-radius: 100px;
+        }
     }
 
     .table-container .table-tarif th:first-child,

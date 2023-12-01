@@ -16,7 +16,10 @@ window.addEventListener('resize', () => {
 if (burgers.length) {
     burgers.forEach(burger => {
         burger.addEventListener('click', (е) => {
-            burger.classList.toggle('_active');
+            burgers.forEach(burger => {
+                burger.classList.toggle('_active');
+            })
+
             menu.classList.toggle('_open');
         })
     })

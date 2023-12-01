@@ -526,23 +526,23 @@
             // .form__input
 
             &__input {
-                border: 2px solid #d1d1d1;
-                border-radius: 50px;
-                padding: 14px 32px;
-                width: 100%;
-                font-size: 16px;
                 margin: 0;
-                box-shadow: 0 0 8px 0 #0000004d;
                 margin-bottom: 15px;
-                background-color: #fff;
-
-                @media (max-width: 768px) {
-                    padding: 12px 24px;
-                    font-size: 14px;
-                }
+                width: 100%;
 
                 input {
+                    border: 2px solid #d1d1d1;
+                    border-radius: 50px;
+                    padding: 14px 32px;
                     width: 100%;
+                    font-size: 16px;
+                    box-shadow: 0 0 8px 0 #0000004d;
+                    background-color: #fff;
+
+                    @media (max-width: 768px) {
+                        padding: 12px 24px;
+                        font-size: 14px;
+                    }
 
                     ::placeholder {
                         text-align: center;
@@ -577,27 +577,6 @@
                 }
             }
 
-            button {
-                margin-inline: auto;
-                margin-bottom: 15px;
-                background-color: #d8160c;
-                border-radius: 64px;
-                padding: 16px 32px;
-                color: #fff;
-                font-size: 16px;
-                font-weight: 500;
-                cursor: pointer;
-                width: 240px;
-                transition: all 0.5s;
-
-                white-space: nowrap;
-
-                @media (max-width: 992px) {
-                    width: 100%;
-                    font-size: 14px;
-                }
-            }
-
             label {
                 display: block;
                 width: 100%;
@@ -615,12 +594,79 @@
                 }
             }
         }
+
+        form {
+            button,
+            .wpcf7-submit {
+                margin-inline: auto;
+                margin-bottom: 15px;
+                background-color: #d8160c;
+                border-radius: 64px;
+                padding: 16px 32px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                width: 240px;
+                transition: all 0.5s;
+
+                white-space: nowrap;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                @media (max-width: 992px) {
+                    width: 100%;
+                    font-size: 14px;
+                }
+            }
+
+            .wpcf7-spinner {
+                position: absolute;
+                bottom: 70px;
+
+                @media (max-width: 992px) {
+                    bottom: 63px;
+                }
+            }
+
+            .wpcf7-response-output {
+                display: none !important;
+            }
+
+            .validate {
+                display: none;
+                color: #dc3232;
+                font-size: 16px;
+                font-weight: normal;
+                text-align: center;
+
+                &._active {
+                    display: block;
+                }
+            }
+
+            label {
+                display: block;
+                margin: 0 0 10px;
+                font-size: 16px;
+                line-height: 12px;
+                text-align: center;
+                color: #000000;
+            }
+        }
     }
 
     &#qrcode {
         .popup__body {
             max-width: 405px;
             padding: 20px 50px;
+
+            @media (max-width: 768px) {
+                padding: 20px 30px;
+            }
         }
 
         .popup__close {
@@ -647,6 +693,10 @@
                 font-size: 32px;
                 font-weight: 500;
 
+                @media (max-width: 768px) {
+                    font-size: 28px;
+                }
+
                 img,
                 svg {
                     width: 33px;
@@ -666,6 +716,12 @@
                 font-weight: 500;
                 color: #ffffff;
                 transition: all 0.5s;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                    margin: 15px 0;
+                    padding: 16px;
+                }
 
                 @media (any-hover: hover) {
                     &:hover {
@@ -896,8 +952,54 @@
         button {
         }
     }
+
+    &#fail,
+    &#sent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    &#fail {
+        .icon {
+            position: relative;
+
+            span {
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                background-color: #d8160c;
+                left: 50%;
+                top: 50%;
+                border-radius: 100px;
+                display: block;
+
+                &:first-child {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+
+                &:last-child {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+        }
+    }
 }
 
 .none {
+    display: none !important;
+}
+
+.other-terms {
     display: none !important;
 }

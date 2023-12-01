@@ -204,6 +204,7 @@
             width: 100%;
             padding: 20px;
             margin-top: -20px;
+            margin-bottom: -20px;
 
             @media (max-width: 768px) {
                 max-width: 250px;
@@ -220,6 +221,12 @@
     }
 
     &:has(.victory-swiperblock__title) {
+        .section__flex-left {
+            @media (max-width: 768px) {
+                max-width: 270px;
+            }
+        }
+
         .swiper {
             margin-top: -20px;
             width: 270px;

@@ -344,7 +344,7 @@ function changeCityName(currentcity) {
 
     console.log('Смена города в .city на ' + currentcity);
     cities.forEach(item => {
-        item.textContent = currentcity
+        if (!item.closest('.no-city-change')) item.textContent = currentcity
     })
 }
 
@@ -354,7 +354,7 @@ function changeCityLogo(currentcitylogo) {
 
     console.log('Смена лого города в .city-logo на ' + currentcitylogo);
     cittLogos.forEach(item => {
-        item.src = currentcitylogo
+        if (!item.closest('.no-city-change')) item.src = currentcitylogo
     })
 }
 

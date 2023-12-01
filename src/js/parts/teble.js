@@ -4,7 +4,8 @@ const table = document.querySelector('.table-container');
 export const tabelScroll = () => {
     if (!table) return;
 
-    const scrollbarThumb = document.querySelector('.table-scrollbar span');
+    const scrollbar = document.querySelector('.table-scrollbar');
+    const scrollbarThumb = scrollbar.querySelector('span');
     const tableElem = table.querySelector('table');
 
     const tableWidth = tableElem.getBoundingClientRect().width;

@@ -15,6 +15,7 @@ import { runNumbers } from "./parts/run-numbers.js";
 import { createSliders } from "./parts/sliders.js";
 import { checkCookies } from "./utils/cookie.js";
 import { tabelScroll } from "./parts/teble.js";
+import { maskInputs } from "./static/inputmask.js";
 
 createSliders();
 toolTipAction();
@@ -26,6 +27,7 @@ replaceDomElements();
 runNumbers();
 checkCookies();
 tabelScroll();
+maskInputs('+7 (999) 999-99-99', 'input[name="your_phone"]')
 
 
 if (Fancybox) {
@@ -33,14 +35,3 @@ if (Fancybox) {
         compact: false
     });
 }
-
-// import "./static/side-fixed.js";
-// import { accorden } from "./static/accordeon.js";
-// import { maskInputs } from "./static/inputmask.js";
-// import { runTicker } from "./static/ticker.js";
-// import { toTop } from "./static/to-top.js";
-
-// toTop();
-// runTicker()
-// accorden();
-// maskInputs('+7 999 999 999 999', '.phone')

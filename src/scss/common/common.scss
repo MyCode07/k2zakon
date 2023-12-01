@@ -347,9 +347,13 @@ label {
     font-weight: 500;
     width: fit-content;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media (max-width: 1366px) {
         padding: 16px 35px;
+        font-size: 18px;
     }
 
     @media (max-width: 768px) {
@@ -595,6 +599,10 @@ label {
         pointer-events: none;
 
         transition: all 0.3s ease 0s;
+
+        @media (max-width: 992px) {
+            max-width: calc(100% - 44px);
+        }
     }
 
     &._active {
@@ -796,6 +804,10 @@ label {
     flex-direction: column-reverse;
     overflow: hidden;
 
+    @media (max-width: 768px) {
+        padding-bottom: 20px;
+    }
+
     .fancybox__caption {
         text-align: center;
         line-height: 1.2;
@@ -811,6 +823,10 @@ label {
 
         @include adaptive-value("font-size", 16, 12, 1);
         @include adaptive-value("margin-bottom", 50, 20, 1);
+
+        @media (max-width: 768px) {
+            padding-top: 50px;
+        }
 
         &:before {
             position: absolute;
@@ -829,11 +845,23 @@ label {
             font-weight: 700;
             display: block;
             @include adaptive-value("font-size", 27, 14, 1);
-            @include adaptive-value("margin-bottom", 20, 12, 1);
+            margin-bottom: 20px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 10px;
+            }
         }
     }
 
     .fancybox__content {
         flex: 1 1 auto;
+    }
+}
+
+.fancybox__container:has(.fancybox__slide.has-caption) {
+    .fancybox__footer {
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 }
