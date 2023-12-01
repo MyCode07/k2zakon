@@ -150,6 +150,26 @@
     }
 }
 
+.hero__bgi {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    picture {
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+    }
+}
+
 .hero-slider {
     padding-top: 80px;
     padding-bottom: 40px;
