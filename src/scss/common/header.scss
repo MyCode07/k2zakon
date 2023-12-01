@@ -355,43 +355,4 @@
     }
 }
 
-.cookie-notification {
-    position: relative;
-    background-color: #f5f5f5;
-    padding: 10px 0;
 
-    font-size: 16px;
-    font-weight: 400;
-    line-height: normal;
-    color: #a7a7a7;
-
-    display: none;
-
-    &._active {
-        display: flex;
-    }
-
-    @media (max-width: 768px) {
-        font-size: 10px;
-    }
-
-    // .cookie-notification__flex
-
-    &__flex {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    a,
-    .cookie-accept {
-        text-decoration: underline;
-        transition: all 0.3s ease 0s;
-
-        @media (any-hover: hover) {
-            &:hover {
-                color: #d8160c;
-            }
-        }
-    }
-}

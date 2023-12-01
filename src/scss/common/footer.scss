@@ -88,20 +88,6 @@
                 margin-bottom: 15px;
             }
 
-            & > :last-child {
-                display: none;
-            }
-
-            @media (max-width: 768px) {
-                & > :nth-child(2) {
-                    display: none;
-                }
-
-                & > :last-child {
-                    display: block;
-                }
-            }
-
             &:hover span:before {
                 max-width: 100%;
             }
@@ -125,7 +111,6 @@
         }
 
         span {
-            display: block;
             position: relative;
 
             &:after {

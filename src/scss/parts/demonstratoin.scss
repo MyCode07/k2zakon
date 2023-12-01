@@ -37,6 +37,7 @@
             width: 75%;
         }
 
+        & > picture img,
         & > img {
             position: relative;
             border-radius: 0px 500px 500px 123px;
@@ -240,5 +241,3 @@
         }
     }
 }
-
-
