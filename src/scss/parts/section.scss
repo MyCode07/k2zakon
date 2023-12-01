@@ -320,12 +320,19 @@
             & > :first-child {
                 border-radius: 0px 500px 500px 123px;
                 background: linear-gradient(191deg, #dad9cc 21.47%, #c1c2b1 57.3%);
+                overflow: hidden;
 
                 @media (max-width: 992px) {
                     @include adaptive-value("height", 381, 192, 1);
                     object-position: right;
                     object-fit: cover;
                     min-width: 204px;
+                }
+
+                img {
+                    height: 100%;
+                    object-position: right;
+                    object-fit: cover;
                 }
             }
 

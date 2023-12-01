@@ -27,6 +27,12 @@
         }
     }
 
+    &:not(.callback-text)h2 {
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+
     .callback-person {
         width: 310px;
         height: 310px;

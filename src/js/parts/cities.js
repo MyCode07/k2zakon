@@ -354,8 +354,24 @@ function changeCityLogo(currentcitylogo) {
 
     console.log('Смена лого города в .city-logo на ' + currentcitylogo);
     cittLogos.forEach(item => {
-        if (!item.closest('.no-city-change')) item.src = currentcitylogo
+
+        if (!item.closest('.no-city-change')) {
+            laodPictureSource(item, currentcitylogo)
+            item.src = currentcitylogo
+        }
     })
+}
+
+function laodPictureSource(image, url) {
+    const picture = image.closest('picture');
+    if (picture) {
+        let source = picture.querySelectorAll('source');
+        if (source.length) {
+            source.forEach(sour => {
+                sour.srcset = url
+            })
+        }
+    }
 }
 
 function handleTextChange() {
