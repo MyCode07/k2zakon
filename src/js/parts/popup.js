@@ -1,3 +1,4 @@
+import { isMobile } from "../utils/isMobile.js";
 import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
 const qrcodeLinks = document.querySelectorAll('#qrcode .qrcode-link');
@@ -55,6 +56,7 @@ document.addEventListener('click', function (e) {
 })
 
 
+
 const socials = document.querySelectorAll('._socials');
 if (socials.length && window.innerWidth <= 768) {
     socials.forEach(item => {
@@ -64,3 +66,4 @@ if (socials.length && window.innerWidth <= 768) {
         })
     })
 }
+

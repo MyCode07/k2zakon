@@ -366,9 +366,11 @@ function laodPictureSource(image, url) {
     const picture = image.closest('picture');
     if (picture) {
         let source = picture.querySelectorAll('source');
+        console.log(source);
         if (source.length) {
             source.forEach(sour => {
                 sour.srcset = url
+                sour.dataset.lazySrcset = url
             })
         }
     }

@@ -61,10 +61,10 @@ table {
     @media (max-width: 922px) {
         transform: rotateX(180deg);
         padding-bottom: 10px;
-    }
 
-    table {
-        transform: rotateX(180deg);
+        table {
+            transform: rotateX(180deg);
+        }
     }
 }
 
@@ -212,6 +212,10 @@ table th[data-index="4"] {
     .table-container .table-tarif th:first-child,
     .table-container table tr td:first-child {
         width: 180px;
+        background: #fff linear-gradient(#f5f5f5, #f5f5f5);
+        background-repeat: no-repeat;
+        background-size: 1px 100%;
+        background-position: right;
     }
 
     table tr td:first-child {

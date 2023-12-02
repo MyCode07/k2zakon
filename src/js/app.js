@@ -16,6 +16,7 @@ import { createSliders } from "./parts/sliders.js";
 import { checkCookies } from "./utils/cookie.js";
 import { tabelScroll } from "./parts/teble.js";
 import { maskInputs } from "./static/inputmask.js";
+import { constractBtnAction } from "./parts/constracs-btn.js";
 
 createSliders();
 toolTipAction();
@@ -28,7 +29,7 @@ runNumbers();
 checkCookies();
 tabelScroll();
 maskInputs('+7 (999) 999-99-99', 'input[name="your_phone"]')
-
+constractBtnAction();
 
 if (Fancybox) {
     Fancybox.bind('[data-fancybox]', {
