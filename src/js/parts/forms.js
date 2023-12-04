@@ -1,6 +1,6 @@
 "use strict"
 
-const url = '';
+const url = adminajaxurl.ajaxurl;
 
 document.addEventListener('DOMContentLoaded', function () {
     const forms = document.querySelectorAll('form')
@@ -11,59 +11,42 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
 
                 let error = validateForm(form)
-
                 let formData = new FormData(form);
 
-                if (formFile && formFile.files[0]) {
-                    formData.append('file', formFile.files[0]);
-                }
+                console.log(error);
 
                 if (error === 0) {
                     form.classList.add('_sending');
-
                     let response = await fetch(url, {
                         method: 'POST',
                         body: formData
                     });
 
-
                     if (response.ok) {
                         sentMessage(form)
                         form.reset();
                         form.classList.remove('_sending');
-
-                        setTimeout(() => {
-                            resetForm(form)
-                        }, 5000);
                     }
                     else {
                         failMessage(form)
                         form.classList.remove('_sending');
-
-                        setTimeout(() => {
-                            resetForm(form)
-                        }, 5000);
                     }
                 }
 
                 else {
                     fillAllFields(form)
-
                     form.classList.remove('_sending');
-                    setTimeout(() => {
-                        resetForm(form)
-                    }, 5000);
                 }
-
             })
-
-            checkCheckBoxes(form)
         })
     }
 
     function validateForm(form) {
         let error = 0;
-        const formReq = [...form.querySelectorAll('[data-required] input')].concat([...form.querySelectorAll('[data-required] textarea')])
+        let formReq = [...form.querySelectorAll('[data-required] input')].concat([...form.querySelectorAll('[data-required] textarea')])
+        const phone = form.querySelector('input[name="your_phone"]')
+        const email = form.querySelector('input[type="email"]')
+        const validateContact = form.querySelector('.validate-contact')
 
         for (let i = 0; i < formReq.length; i++) {
             const input = formReq[i]
@@ -74,23 +57,50 @@ document.addEventListener('DOMContentLoaded', function () {
             input.addEventListener('input', function () {
                 formRemoveError(input);
                 validateInput()
-                resetForm(form)
             })
 
             function validateInput() {
+
+                if (phone.value == '' && email.value == '') {
+                    validateContact.classList.add('_active');
+                }
+
                 if (input.getAttribute('type') === 'email') {
                     if (emailTest(input)) {
                         formAddError(input);
                         error++;
                     }
+                    else {
+                        validateContact.classList.remove('_active');
+                    }
+
+                    if (phone.value == '') {
+                        phone.closest('.form__input').removeAttribute('data-required')
+                        email.closest('.form__input').setAttribute('data-required', true)
+                    }
+                    else {
+                        phone.closest('.form__input').setAttribute('data-required', true)
+                        email.closest('.form__input').removeAttribute('data-required')
+                    }
                 }
                 else {
-                    if (input.getAttribute('name') === 'phone') {
+                    if (input.getAttribute('name') === 'your_phone') {
                         if (/[_]/.test(input.value) || input.value.length < 18) {
                             formAddError(input);
                             error++;
                         }
+                        else {
+                            validateContact.classList.remove('_active');
+                        }
 
+                        if (email.value == '') {
+                            email.closest('.form__input').removeAttribute('data-required')
+                            phone.closest('.form__input').setAttribute('data-required', true)
+                        }
+                        else {
+                            email.closest('.form__input').setAttribute('data-required', true)
+                            phone.closest('.form__input').removeAttribute('data-required')
+                        }
                     }
                     else {
                         if (input.value.length < 2) {
@@ -99,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                 }
+
+                formReq = [...form.querySelectorAll('[data-required] input')].concat([...form.querySelectorAll('[data-required] textarea')])
             }
         }
 
@@ -106,11 +118,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function formAddError(input) {
-        input.closest('.form__input').classList.add('_error');
+        const validate = input.closest('.form__input').querySelector('.validate')
+        if (validate) validate.classList.add('_active');
+
     }
 
     function formRemoveError(input) {
-        input.closest('.form__input').classList.remove('_error');
+        const validate = input.closest('.form__input').querySelector('.validate')
+        if (validate) validate.classList.remove('_active');
     }
 
     function emailTest(input) {
@@ -118,80 +133,49 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function sentMessage(form) {
-        const submitBtn = form.querySelector('.form__button button')
-
-        submitBtn.classList.add('_sent');
+        popup.classList.add('_open');
+        document.body.classList.add('_noscroll');
     }
 
     function failMessage(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.add('_fail');
+
     }
 
     function fillAllFields(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.add('_error');
+
     }
 
     function resetForm(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.remove('_error');
-        submitBtn.classList.remove('_fail');
-        submitBtn.classList.remove('_sent');
+
     }
 
 
-    const formFile = document.querySelector('input[name="file"]');
-    if (formFile) {
-        formFile.addEventListener('change', () => {
-            uploadFile(formFile.files[0]);
-        });
+    function submitEmail(popup) {
 
-        function uploadFile(file) {
-            if (!['application/msword', 'application/pdf', 'application/vnd.ms-powerpoint', 'text/plain'].includes(file.type)) {
-                alert('Разрешены только текстовые документы.');
-                document.querySelector('#filename').innerHTML = '';
-                formFile.value = '';
-                return;
+    }
+
+    function setSentFormCookie() {
+        const options = {
+            path: '/',
+        };
+        const name = 'sent_mail';
+        const value = true
+
+        if (options.expires instanceof Date) options.expires = options.expires.toUTCString();
+
+        let updatedCookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+
+        for (let optionKey in options) {
+            updatedCookie += '; ' + optionKey;
+
+            let optionValue = options[optionKey];
+
+            if (optionValue !== true) {
+                updatedCookie += '=' + optionValue;
             }
-            if (file.size > 2 * 1024 * 1024) {
-                alert('Файл должен быть менее 2 МБ.');
-                return;
-            }
-
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                document.querySelector('#filename').innerHTML = file.name;
-            };
-
-            reader.onerror = function (e) {
-                alert('Ошибка');
-            };
-
-            reader.readAsDataURL(file);
         }
-    }
 
+        document.cookie = updatedCookie;
+        console.log(name + ' обновлен в Cookie');
+    }
 });
-
-function checkCheckBoxes(form) {
-    const checkBoxContainers = form.querySelectorAll('[data-checkbox-container]')
-    if (checkBoxContainers.length) {
-        checkBoxContainers.forEach(container => {
-            const cehckboxes = container.querySelectorAll('input[type="checkbox"]')
-
-            if (cehckboxes.length) {
-                cehckboxes.forEach(checkbox => {
-                    checkbox.addEventListener('input', () => {
-                        cehckboxes.forEach(item => {
-                            if (item != checkbox) {
-                                item.checked = false
-                            }
-                        })
-                    })
-                })
-            }
-        })
-    }
-}

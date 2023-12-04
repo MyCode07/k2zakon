@@ -5,6 +5,7 @@ var json_data = { "jsonPath": "https://k2zakon.test-yeremyan.site/wp-content/the
 const cityPopup = document.querySelector('.popup#city');
 const inputCity = cityPopup.querySelector('input[type="search"]');
 const cityPopupImg = cityPopup.querySelector('.popup__content-img');
+const cityPopupChack = cityPopup.querySelector('.popup__content-chack');
 
 const headerCity = document.querySelector('.header__city-btn');
 const headerCityName = headerCity.querySelector('span');
@@ -69,6 +70,12 @@ function copyToClipboard(text) {
     }
 }
 
+if (cityPopupImg) {
+    cityPopupImg.addEventListener('click', () => {
+        cityPopupImg.classList.add('none')
+        cityPopupChack.classList.add('_active')
+    })
+}
 
 // Создание списка городов, добавление функции выбора и поиска города
 function createLiElements(data) {
@@ -150,6 +157,7 @@ function createLiElements(data) {
         const filterValue = inputCity.value.toLowerCase();
         let matchedCount = 0;
         cityPopupImg.classList.add('none');
+        cityPopupChack.classList.remove('_active');
 
         if (filterValue === '') {
             cities.forEach((city, index) => {
@@ -178,6 +186,7 @@ function createLiElements(data) {
         }
     });
 }
+
 
 // Определение местонахождения пользователя по IP
 async function getPlace(addedNames, cities) {

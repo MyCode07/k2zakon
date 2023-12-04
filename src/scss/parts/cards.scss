@@ -194,6 +194,19 @@
     height: 100%;
     position: relative;
 
+    @media (any-hover: hover) {
+        &:hover {
+            p,
+            .more {
+                max-height: 64px;
+            }
+
+            .more {
+                margin-top: 6px;
+            }
+        }
+    }
+
     @media (max-width: 992px) {
         max-width: 320px;
         margin-left: auto;
@@ -229,14 +242,21 @@
 
         h3 {
             font-size: 20px;
+            margin-bottom: 2px;
         }
 
         p {
             font-size: 14px;
-            margin: 2px 0;
+
+            @media (any-hover: hover) {
+                max-height: 0;
+                transition: all 0.3s ease 0s;
+                overflow: hidden;
+            }
         }
 
         ol {
+            margin-top: 2px;
             display: flex;
             gap: 30px;
 
@@ -280,8 +300,17 @@
             display: block;
             width: fit-content;
             font-size: 14px;
-            margin-top: 6px;
             text-decoration: underline;
+
+            @media (any-hover: hover) {
+                max-height: 0;
+                transition: all 0.3s ease 0s;
+                overflow: hidden;
+            }
+
+            @media (any-hover: none) {
+                margin-top: 6px;
+            }
         }
 
         .city {

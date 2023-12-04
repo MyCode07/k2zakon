@@ -9,7 +9,7 @@ export const tabelScroll = () => {
     const tableElem = table.querySelector('table');
 
     const tableWidth = tableElem.getBoundingClientRect().width;
-    const containerWidth = table.getBoundingClientRect().width; console.log(containerWidth);
+    const containerWidth = table.getBoundingClientRect().width;
 
     let scrollLeft = table.scrollLeft
     let scrollPercent = scrollLeft / (tableWidth - containerWidth)
