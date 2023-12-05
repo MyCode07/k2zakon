@@ -59,6 +59,14 @@
         }
     }
 
+    .about-slider__wrapper {
+        top: -20px;
+
+        @media (max-width: 992px) {
+            top: 0;
+        }
+    }
+
     .about-slider__slide {
         @media (max-width: 992px) {
             top: 0;
