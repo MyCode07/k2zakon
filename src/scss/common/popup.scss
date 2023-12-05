@@ -8,8 +8,8 @@
     z-index: 30;
     overflow-y: auto;
 
-    padding-bottom: 30px;
     @include adaptive-value("padding-top", 100, 50, 1);
+    @include adaptive-value("padding-bottom", 100, 50, 1);
 
     opacity: 0;
     visibility: hidden;
@@ -24,6 +24,18 @@
         .popup__body {
             transform: translate3d(0, 0, 0);
         }
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1440px) and (min-width: 769px) and (max-height: 768px) {
+        display: block;
+    }
+
+    @media (max-width: 768px) and (max-height: 580px) {
+        display: block;
     }
 
     &._dark {
@@ -365,14 +377,6 @@
             position: absolute;
             right: 0;
             top: 0;
-
-            @media (max-width: 768px) {
-                img,
-                svg {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
         }
 
         .popup__content {
@@ -578,7 +582,7 @@
                         pointer-events: none;
                     }
 
-                    @media (max-width: 992px) {
+                    @media (max-width: 768px) {
                         display: none;
                     }
                 }
@@ -967,7 +971,7 @@
             margin-bottom: 30px;
             margin-left: auto;
             margin-right: auto;
-            max-width: 80%;
+            max-width: 85%;
         }
 
         .popup__content-service {
@@ -1063,15 +1067,17 @@
 
         h2 {
             margin-bottom: 0;
+            text-align: center;
 
             @media (min-width: 769px) {
                 font-size: 32px;
-                max-width: none;
+                max-width: 90%;
             }
         }
 
         h3 {
             margin: 40px 0;
+            text-align: center;
 
             color: #d8160c;
             font-size: 64px;
@@ -1089,6 +1095,7 @@
             font-weight: 500;
             line-height: normal;
             margin-bottom: 40px;
+            text-align: center;
 
             @media (max-width: 768px) {
                 font-size: 20px;
@@ -1097,19 +1104,12 @@
         }
 
         button {
+            text-align: center;
         }
     }
 
     &#fail,
     &#sent {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        @media (max-width: 1366px) and (min-width: 769px) and (max-height: 768px) {
-            display: block;
-        }
-
         .icon {
             width: 70px;
             height: 70px;
@@ -1267,6 +1267,12 @@
                     max-width: none;
                 }
             }
+        }
+    }
+
+    &#service {
+        @media (max-width: 768px) {
+            display: block;
         }
     }
 }
