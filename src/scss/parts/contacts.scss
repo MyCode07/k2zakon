@@ -34,7 +34,7 @@
                 font-size: 20px;
                 font-weight: 500;
 
-                @media (max-width: 1366px) {
+                @media (max-width: 1440px) {
                     font-size: 18px;
                     margin: 18px 0;
                 }
@@ -48,7 +48,7 @@
                 width: 180px;
                 height: 180px;
 
-                @media (max-width: 1366px) {
+                @media (max-width: 1440px) {
                     width: 160px;
                     height: 160px;
                 }
@@ -111,7 +111,7 @@
             font-size: 32px;
             font-weight: 500;
 
-            @media (max-width: 1366px) {
+            @media (max-width: 1440px) {
                 font-size: 28px;
             }
 
@@ -202,7 +202,7 @@
     h2 {
         margin-bottom: 34px;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             margin-bottom: 20px;
         }
     }
@@ -231,7 +231,7 @@
         @media (min-width: 769px) {
             width: calc(50% - 10px);
 
-            @media (max-width: 1366px) {
+            @media (max-width: 1440px) {
                 max-width: 400px;
             }
         }

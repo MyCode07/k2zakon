@@ -74,6 +74,7 @@ if (cityPopupImg) {
     cityPopupImg.addEventListener('click', () => {
         cityPopupImg.classList.add('none')
         cityPopupChack.classList.add('_active')
+        document.querySelector('#city .all').classList.add('none')
     })
 }
 
@@ -158,6 +159,9 @@ function createLiElements(data) {
         let matchedCount = 0;
         cityPopupImg.classList.add('none');
         cityPopupChack.classList.remove('_active');
+
+        document.querySelector('#city .all').classList.remove('none')
+
 
         if (filterValue === '') {
             cities.forEach((city, index) => {
@@ -346,12 +350,17 @@ const defaultEmail = 'mailto:' + adminajaxurl.defalut_email;
 const defaultEmailText = footerEmailText.defalut_email;
 const defaultAddress = footerCityP.textContent;
 
-
+let closestCityHasOffiice = ''
 function changeCityName(currentcity) {
     const cities = document.querySelectorAll('.city');
     if (!cities.length) return;
 
+    if (currentcity.toLowerCase == 'вся россия') {
+        currentcity = closestCityHasOffiice;
+    }
+
     console.log('Смена города в .city на ' + currentcity);
+
     cities.forEach(item => {
         if (!item.closest('.no-city-change')) item.textContent = currentcity
     })
@@ -405,6 +414,9 @@ function handleTextChange() {
             success: function (response) {
                 changeCityLogo(response.city_logo);
                 console.log(response);
+
+                closestCityHasOffiice = response.city_name
+
                 if (
                     'phone_link' in response &&
                     response.phone_link !== '' &&
@@ -530,8 +542,8 @@ function handleTextChange() {
                             footerCity.classList.remove('hide');
                             footerMap.classList.remove('hide');
 
-                            changeCityName(response.closest_city)
                             changeCityLogo(response.city_logo);
+                            closestCityHasOffiice = response.closest_city
 
 
                             if (yandexLink) {

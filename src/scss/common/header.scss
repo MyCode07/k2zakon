@@ -4,11 +4,10 @@
     z-index: 16;
     background-color: #fff;
     transition: all 0.3s ease 0s;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 
     &._sticky {
         opacity: 0.96;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 
         @media (max-width: 992px) {
             box-shadow: none;
@@ -34,6 +33,7 @@
 
         @media (max-width: 992px) {
             height: 80px;
+            position: relative;
         }
 
         @media (max-width: 768px) {
@@ -202,9 +202,12 @@
     // .header__city
 
     &__city {
-        position: relative;
         margin-left: auto;
         margin-right: auto;
+
+        @media (min-width: 993px) {
+            position: relative;
+        }
 
         // .header__city-btn
 
@@ -246,9 +249,13 @@
             transition: all 0.5s;
 
             @media (max-width: 992px) {
-                transform: translate(0, 10px);
+                transform: translate(0, 0);
                 border-radius: 14px;
                 background-color: #fff;
+                right: 20px;
+                left: unset;
+                top: 2px;
+                min-width: 198px;
             }
 
             &._hide {
@@ -355,4 +362,8 @@
     }
 }
 
-
+@media (max-width: 992px) {
+    body:has(.cookie-notification._active) .header__city-choose {
+        top: -4px;
+    }
+}

@@ -11,7 +11,7 @@
 
     .features-flex__img {
         img {
-            @media (min-width: 1366px) {
+            @media (min-width: 1440px) {
                 height: 513px;
             }
 
@@ -45,8 +45,8 @@
         height: 255px;
         justify-content: flex-start;
 
-        @media (max-width: 1366px) {
-            height: 200px;
+        @media (max-width: 1440px) {
+            height: 190px;
         }
 
         @media (max-width: 992px) {
@@ -61,7 +61,7 @@
         span {
             font-size: 140px;
 
-            @media (max-width: 1336px) {
+            @media (max-width: 1440px) {
                 font-size: 110px;
             }
 
@@ -92,11 +92,11 @@
             }
         }
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             width: 180px;
             height: 180px;
             top: -15px;
-            right: -45px;
+            right: -90px;
         }
 
         @media (max-width: 992px) {
@@ -114,7 +114,7 @@
         span {
             font-size: 100px;
 
-            @media (max-width: 1336px) {
+            @media (max-width: 1440px) {
                 font-size: 80px;
             }
 
@@ -146,11 +146,11 @@
             }
         }
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             width: 150px;
             height: 150px;
-            left: calc(100% - 10px);
-            bottom: -60px;
+            left: calc(100% + 60px);
+            bottom: -12px;
         }
 
         @media (max-width: 992px) {
@@ -171,7 +171,7 @@
         span {
             font-size: 92px;
 
-            @media (max-width: 1336px) {
+            @media (max-width: 1440px) {
                 font-size: 70px;
             }
 
@@ -494,7 +494,7 @@
         font-weight: 400;
         line-height: normal;
 
-        @media (max-width:1366px){
+        @media (max-width:1440px){
             margin-bottom: 40px;
         }
 
@@ -565,7 +565,7 @@
         max-width: 427px;
         width: 100%;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             max-width: 340px;
         }
 
@@ -593,7 +593,7 @@
         top: 50px;
         height: 490px;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             height: 400px;
         }
 
@@ -646,6 +646,7 @@
         &._active {
             opacity: 1;
             transform: translate(0, 0);
+            z-index:1;
 
             img {
                 width: 100%;

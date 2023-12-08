@@ -23,12 +23,12 @@ if (input) {
                 else link.closest('li').classList.add('none');
             });
 
-            [...links].every(link => {
-                const listItemText = link.textContent.toLowerCase();
-
-                if (!listItemText.includes(filterValue)) emptySearch.classList.add('_active');
-                else emptySearch.classList.remove('_active');
+            let onEmpty = [...links].every(link => {
+                return link.closest('li').classList.contains('none');
             });
+
+            if (onEmpty) emptySearch.classList.add('_active');
+            else emptySearch.classList.remove('_active');
         }
     })
 }

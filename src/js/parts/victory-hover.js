@@ -11,7 +11,7 @@ export const victoryCardsHover = () => {
 
         if (!isMobile.any()) {
             cardText.addEventListener("mouseenter", () => card.classList.add('_active'));
-            cardText.addEventListener("mouseleave", () => card.classList.remove('_active'));
+            card.addEventListener("mouseleave", () => card.classList.remove('_active'));
         }
         else {
             cardText.addEventListener("click", (e) => card.classList.toggle('_active'));

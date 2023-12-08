@@ -7,6 +7,7 @@ const slideParam1Name = document.querySelector('[data-slider-change] [data-slide
 const slideParam1Text = document.querySelector('[data-slider-change] [data-slider-param1] label');
 const slideParam2Name = document.querySelector('[data-slider-change] [data-slider-param2] span');
 const slideParam2Text = document.querySelector('[data-slider-change] [data-slider-param2] label');
+const slideCity = document.querySelector('[data-slider-change] [data-slider-city]');
 
 const sliders = document.querySelectorAll('.swiper');
 
@@ -19,6 +20,9 @@ export const createSliders = () => {
 
         if (paginationElem) pagination = { el: paginationElem, clickable: true }
 
+        let delay = 3000;
+        if (slider.closest('.whatsapp-slider')) delay = 30000
+
         new Swiper(slider, {
             modules: [
                 Autoplay, Pagination
@@ -27,7 +31,7 @@ export const createSliders = () => {
             slidesPerView: 1,
             spaceBetween: 40,
             autoplay: {
-                delay: 3000,
+                delay: delay,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
             },
@@ -43,33 +47,33 @@ const slideChange = (slide) => {
     const param1Text = slide.dataset.param1Text
     const param2Num = slide.dataset.param2Num
     const param2Text = slide.dataset.param2Text
+    const cityLogoUrl = slide.dataset.cityLogo
 
-    slideName.textContent = name
+    slideName.innerHTML = name
     slidePos.innerHTML = pos
-    slideParam1Name.textContent = param1Num
-    slideParam1Text.textContent = param1Text
-    slideParam2Name.textContent = param2Num
-    slideParam2Text.textContent = param2Text
+    slideParam1Name.innerHTML = param1Num
+    slideParam1Text.innerHTML = param1Text
+    slideParam2Name.innerHTML = param2Num
+    slideParam2Text.innerHTML = param2Text
+
+    slideCity.querySelector('img').src = cityLogoUrl
+    const sources = slideCity.querySelectorAll('source');
+    if (sources.length) sources.forEach(img => img.srcset = cityLogoUrl)
 }
 
 const slides = document.querySelectorAll('[data-slider-change] .about-slider__slide');
 const sldierBtns = document.querySelectorAll('[data-slider-change-btn]');
 if (sldierBtns.length) {
     sldierBtns.forEach(btn => {
-        const type = btn.dataset.sliderChange
-
         btn.addEventListener('click', () => {
             slides.forEach(slide => {
-                if (slide.dataset.slideType == type) {
+                if (slide.classList.contains('_active')) {
+                    slide.classList.remove('_active')
+                }
+                else {
                     slide.classList.add('_active')
                     slideChange(slide)
                 }
-                else slide.classList.remove('_active')
-            })
-
-            sldierBtns.forEach(item => {
-                if (item.dataset.sliderChange == type) item.classList.add('_disabled')
-                else item.classList.remove('_disabled')
             })
         })
     })

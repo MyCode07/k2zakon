@@ -93,16 +93,12 @@ h4 {
 }
 
 .breadcrumbs {
-    padding: 30px 0;
+    padding: 15px 0;
     position: relative;
     z-index: 2;
 
-    @media (max-width: 1366p) {
-        padding: 20px 0 14px 0;
-    }
-
     @media (max-width: 768px) {
-        padding: 9px 0 18px 0;
+        padding: 9px 0 12px 0;
     }
 
     &._white {
@@ -118,6 +114,10 @@ h4 {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+
+        @media (max-width: 768px) {
+            font-size: 10px;
+        }
 
         li {
             display: flex;
@@ -339,7 +339,7 @@ label {
 
 ._button {
     width: 100%;
-    padding: 20px 35px;
+    padding: 15px 30px;
     background: #d8160c;
     color: #fff;
     border-radius: 64px;
@@ -351,8 +351,8 @@ label {
     align-items: center;
     justify-content: center;
 
-    @media (max-width: 1366px) {
-        padding: 16px 35px;
+    @media (max-width: 1440px) {
+        padding: 12px 24px;
         font-size: 18px;
     }
 
@@ -371,14 +371,38 @@ label {
 
     &._tg {
         background-color: #27a6e5;
+        transition: box-shadow 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #fff !important;
+                box-shadow: 0 0 20px 0 #27a6e5;
+            }
+        }
     }
 
     &._wh {
         background-color: #48c95f;
+        transition: box-shadow 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0 0 20px 0 #48c95f;
+                color: #fff !important;
+            }
+        }
     }
 
     &._vb {
+        transition: box-shadow 0.3s ease 0s;
         background-color: #7c509a;
+
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: 0 0 20px 0 #7c509a;
+                color: #fff !important;
+            }
+        }
     }
 
     &:not(._button-construct) {
@@ -405,7 +429,7 @@ label {
     position: relative;
     margin-bottom: 30px;
 
-    @media (max-width: 1366px) {
+    @media (max-width: 1440px) {
         margin-bottom: 15px;
     }
 
@@ -417,11 +441,7 @@ label {
         width: 100vw;
         min-height: 100vh;
         z-index: 17;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-
-        @media (max-width: 992px) {
-            background: rgba(0, 0, 0, 0.6);
-        }
+        background: rgba(0, 0, 0, 0.8);
     }
 
     button {
@@ -736,7 +756,7 @@ label {
         }
     }
 
-    @media (max-width: 1366px) {
+    @media (max-width: 1440px) {
         margin: 40px 0;
     }
 
@@ -868,4 +888,8 @@ label {
             display: none;
         }
     }
+}
+
+.fancybox__content {
+    padding: 0 !important;
 }

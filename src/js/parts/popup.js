@@ -15,7 +15,8 @@ const getSentFormCookie = () => {
     return false;
 }
 
-const sendEmail = getSentFormCookie(); console.log('sendEmail ' + sendEmail);
+const sendEmail = getSentFormCookie();
+console.log('sendEmail ' + sendEmail);
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;

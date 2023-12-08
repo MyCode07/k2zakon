@@ -7,7 +7,7 @@
         flex-wrap: wrap;
         justify-content: center;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             margin-bottom: 60px;
         }
 
@@ -23,11 +23,18 @@
         &-item {
             width: calc(100% / 3 - 40px);
 
-            @media (max-width: 768px) {
-                width: calc(100% / 2 - 40px);
+            @media (max-width: 1440px) {
+                width: calc(25% - 3 / 4 * 37px);
             }
 
-            @media (max-width: 475px) {
+            @media (max-width: 992px) {
+                width: calc(100% / 3 - 2 / 3 * 37px);
+            }
+            @media (max-width: 768px) {
+                width: calc(50% - 37px);
+            }
+
+            @media (max-width: 540px) {
                 width: 100%;
             }
         }
@@ -36,7 +43,7 @@
     .grid._has-items {
         min-height: 515px;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             min-height: 274px;
         }
     }
@@ -90,7 +97,7 @@
         &-left {
             max-width: 252px;
 
-            @media (max-width: 1366px) {
+            @media (max-width: 1440px) {
                 max-width: 233px;
             }
 
@@ -126,7 +133,7 @@
             .swiper-slide {
                 height: 310px;
 
-                @media (max-width: 1366px) {
+                @media (max-width: 1440px) {
                     height: 314px;
                 }
 
@@ -157,7 +164,7 @@
         font-size: 16px;
         line-height: normal;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             margin-bottom: 16px;
         }
     }

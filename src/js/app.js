@@ -22,10 +22,12 @@ createSliders();
 toolTipAction();
 stickyHeader();
 victoryCardsHover();
+
 animateAction();
 animateStaggerAction();
 replaceDomElements();
 runNumbers();
+
 checkCookies();
 tabelScroll();
 maskInputs('+7 (999) 999-99-99', 'input[name="your_phone"]')

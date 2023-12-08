@@ -47,10 +47,13 @@
 
 .team-top {
     padding-top: 0;
-    padding-bottom: 20px;
+    padding-bottom: 0;
+
+    &:after {
+        z-index: 1;
+    }
 
     @media (max-width: 992px) {
-        padding-bottom: 0;
         margin-bottom: 0 !important;
 
         &:after,
@@ -59,8 +62,13 @@
         }
     }
 
+    .about-slider__slider {
+        position: relative;
+        top: 80px;
+    }
+
     .about-slider__wrapper {
-        top: -20px;
+        top: 0;
 
         @media (max-width: 992px) {
             top: 0;
@@ -68,6 +76,8 @@
     }
 
     .about-slider__slide {
+        top: 0;
+
         @media (max-width: 992px) {
             top: 0;
         }

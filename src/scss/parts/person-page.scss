@@ -14,7 +14,7 @@
         margin-bottom: 129px;
         margin-top: 30px;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             margin-bottom: 70px;
         }
 
@@ -27,7 +27,7 @@
         }
 
         @media (max-width: 425px) {
-            font-size: 10px;
+            font-size: 12px;
             margin-top: 10px;
             margin-bottom: 30px;
             max-width: 183px;
@@ -78,6 +78,12 @@
             width: fit-content !important;
             max-width: 90px;
         }
+    }
+
+    &._shadow:after {
+        background-color: #f5f5f5;
+        box-shadow: 0px 0px 25px 30px #f5f5f5 !important;
+        z-index: 1 !important;
     }
 }
 

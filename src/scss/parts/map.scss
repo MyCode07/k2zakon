@@ -20,7 +20,7 @@
             margin-left: 66px;
             flex: 1 1 auto;
 
-            @media (max-width: 1366px) {
+            @media (max-width: 1440px) {
                 padding-top: 46px;
                 margin-left: 30px;
             }
@@ -39,7 +39,7 @@
             margin-bottom: 61px;
             text-align: left;
 
-            @media (max-width: 1366px) {
+            @media (max-width: 1440px) {
                 margin-bottom: 85px;
             }
 
@@ -64,7 +64,7 @@
                 margin-bottom: 41px;
             }
 
-            @media (max-width: 1366px) {
+            @media (max-width: 1440px) {
                 & > :not(:last-child) {
                     margin-bottom: 20px;
                 }
@@ -114,12 +114,12 @@
     padding-top: 30px;
     padding-bottom: 24px;
 
-    @media (max-width: 1366px) {
+    @media (max-width: 1440px) {
         padding-top: 10px;
     }
 
     h2 {
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             max-width: 560px;
         }
 

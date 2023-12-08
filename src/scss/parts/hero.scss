@@ -11,7 +11,7 @@
     padding-bottom: 120px;
     max-height: 759px;
 
-    @media (max-width: 1366px) {
+    @media (max-width: 1440px) {
         padding-top: 78px;
         padding-bottom: 100px;
     }
@@ -20,11 +20,13 @@
         @include adaptive-value("padding-bottom", 80, 40, 1);
     }
 
-    &:after {
-        transform: translate(0, 0);
-        clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
-        z-index: 1;
-        bottom: -1px;
+    &:not(._shadow) {
+        &:after {
+            transform: translate(0, 0);
+            clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
+            z-index: 1;
+            bottom: -1px;
+        }
     }
 
     ol {
@@ -102,7 +104,7 @@
     button {
         margin: 90px 0;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             margin: 40px 0;
         }
 
@@ -174,6 +176,10 @@
     padding-top: 80px;
     padding-bottom: 40px;
 
+    @media (max-width: 1440px) {
+        padding-top: 60px;
+    }
+
     @media (max-width: 992px) {
         padding-top: 10px;
     }
@@ -187,7 +193,7 @@
     h1 {
         max-width: 622px;
 
-        @media (min-width: 1367px) {
+        @media (min-width: 1441px) {
             font-size: 36px;
         }
 
@@ -228,7 +234,7 @@
     }
 
     .about-slider__slider {
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             max-width: 340px;
         }
     }
@@ -236,7 +242,7 @@
     .about-slider__wrapper {
         top: 0;
 
-        @media (max-width: 1366px) and (min-width: 993px) {
+        @media (max-width: 1440px) and (min-width: 993px) {
             height: 470px;
         }
 
@@ -270,6 +276,10 @@
         display: block;
         margin-top: -80px;
 
+        @media (max-width: 1440px) {
+            margin-top: -140px;
+        }
+
         @media (max-width: 992px) {
             margin-top: 0;
         }
@@ -292,7 +302,7 @@
     .lowers {
         margin-top: 70px;
 
-        @media (max-width: 1366px) {
+        @media (max-width: 1440px) {
             margin-top: 40px;
         }
 
