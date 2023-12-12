@@ -35,6 +35,5 @@ constractBtnAction();
 
 if (Fancybox) {
     Fancybox.bind('[data-fancybox]', {
-        compact: false
     });
 }

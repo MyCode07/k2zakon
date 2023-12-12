@@ -62,9 +62,21 @@
         }
     }
 
+    .about-slider__flex {
+        margin-top: -80px;
+
+        @media (max-width: 992px) {
+            margin-top: -20px;
+        }
+    }
+
     .about-slider__slider {
         position: relative;
         top: 80px;
+
+        @media (max-width: 992px) {
+            top: 20px;
+        }
     }
 
     .about-slider__wrapper {
@@ -80,6 +92,12 @@
 
         @media (max-width: 992px) {
             top: 0;
+        }
+    }
+
+    .about-slider__name {
+        @media (max-width: 992px) {
+            margin-bottom: 0;
         }
     }
 }
