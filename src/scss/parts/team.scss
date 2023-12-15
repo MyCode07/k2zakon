@@ -63,7 +63,7 @@
     }
 
     .about-slider__flex {
-        margin-top: -80px;
+        margin-top: 0;
 
         @media (max-width: 992px) {
             margin-top: -20px;
@@ -72,11 +72,9 @@
 
     .about-slider__slider {
         position: relative;
-        top: 80px;
+        top: 0;
 
-        @media (max-width: 992px) {
-            top: 20px;
-        }
+       
     }
 
     .about-slider__wrapper {

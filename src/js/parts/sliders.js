@@ -56,9 +56,11 @@ const slideChange = (slide) => {
     slideParam2Name.innerHTML = param2Num
     slideParam2Text.innerHTML = param2Text
 
-    slideCity.querySelector('img').src = cityLogoUrl
-    const sources = slideCity.querySelectorAll('source');
-    if (sources.length) sources.forEach(img => img.srcset = cityLogoUrl)
+    if (slideCity) {
+        slideCity.querySelector('img').src = cityLogoUrl
+        const sources = slideCity.querySelectorAll('source');
+        if (sources.length) sources.forEach(img => img.srcset = cityLogoUrl)
+    }
 }
 
 const slides = document.querySelectorAll('[data-slider-change] .about-slider__slide');
