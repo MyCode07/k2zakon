@@ -242,10 +242,6 @@
     .about-slider__wrapper {
         top: 0;
 
-        @media (max-width: 1440px) and (min-width: 993px) {
-            height: 470px;
-        }
-
         @media (min-width: 993px) {
             left: 0;
         }
@@ -276,10 +272,6 @@
     .about-slider__flex {
         display: block;
         margin-top: -80px;
-
-        @media (max-width: 1440px) {
-            margin-top: -140px;
-        }
 
         @media (max-width: 992px) {
             margin-top: 0;

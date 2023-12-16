@@ -242,7 +242,13 @@
         &-image {
             width: 100%;
             height: 105%;
-            
+
+            picture {
+                height: 100%;
+                display: block;
+                width: 100%;
+            }
+
             img {
                 display: block;
                 height: 100%;
@@ -253,7 +259,7 @@
                     width: 260px;
                     margin-left: auto;
                     margin-right: auto;
-                    height: 105%;
+                    height: 100%;
                 }
 
                 filter: drop-shadow(267px 588px 258px rgba(0, 0, 0, 0.11))

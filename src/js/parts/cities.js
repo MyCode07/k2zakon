@@ -309,36 +309,36 @@ function getCityCookie() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Использование переменной json_data.jsonPath для загрузки данных JSON с городами и выполнение функции createLiElements
-    $.getJSON(json_data.jsonPath, createLiElements);
+// document.addEventListener('DOMContentLoaded', () => {
+// Использование переменной json_data.jsonPath для загрузки данных JSON с городами и выполнение функции createLiElements
+$.getJSON(json_data.jsonPath, createLiElements);
 
-    // Кнопка модалки подтверждения города
-    headerCityOk.addEventListener('click', () => {
-        headerCityChoose.classList.add('_hide');
+// Кнопка модалки подтверждения города
+headerCityOk.addEventListener('click', () => {
+    headerCityChoose.classList.add('_hide');
 
-        city = headerCityName.textContent;
-        lat = headerCityName.getAttribute('lat');
-        lon = headerCityName.getAttribute('lon');
+    city = headerCityName.textContent;
+    lat = headerCityName.getAttribute('lat');
+    lon = headerCityName.getAttribute('lon');
 
-        setCityCookie('city', city, {
-            secure: true,
-            'max-age': 31536000000,
-        });
-
-        setCityCookie('lat', lat, {
-            secure: true,
-            'max-age': 31536000000,
-        });
-
-        setCityCookie('lon', lon, {
-            secure: true,
-            'max-age': 31536000000,
-        });
+    setCityCookie('city', city, {
+        secure: true,
+        'max-age': 31536000000,
     });
 
-    handleTextChange();
+    setCityCookie('lat', lat, {
+        secure: true,
+        'max-age': 31536000000,
+    });
+
+    setCityCookie('lon', lon, {
+        secure: true,
+        'max-age': 31536000000,
+    });
 });
+
+// handleTextChange();
+// });
 
 
 // Отслеживание изменения города
@@ -615,6 +615,7 @@ function handleTextChange() {
     // Рекурсивно вызываем функцию для постоянного отслеживания изменений
     requestAnimationFrame(handleTextChange);
 }
+handleTextChange();
 
 // Создаем карту
 var myMap;
