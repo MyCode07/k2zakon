@@ -459,10 +459,12 @@ body:has(.new-font) {
         table td,
         table th {
             font-size: 12px !important;
+            width: 70px;
         }
 
-        .clients {
-            padding-top: 32px;
+        .table-container .table-tarif th:first-child,
+        .table-container table tr td:first-child {
+            width: 120px;
         }
 
         .view-more span {

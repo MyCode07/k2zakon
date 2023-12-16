@@ -893,3 +893,59 @@ label {
 .fancybox__content {
     padding: 0 !important;
 }
+
+@media (any-hover: none) {
+    .fancybox__footer:has(.fancybox__caption) {
+        position: relative;
+        order: -1;
+
+        .fancybox__thumbs {
+            display: none !important;
+            visibility: hidden;
+        }
+
+        .fancybox__caption {
+            text-align: center;
+            line-height: 1.2;
+            max-width: 1120px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 16px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 20px;
+            color: #000;
+
+            @include adaptive-value("font-size", 16, 12, 1);
+            @include adaptive-value("margin-bottom", 50, 0, 1);
+
+            @media (max-width: 768px) {
+                padding-top: 50px;
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                top: -10px;
+                background-color: rgba($color: #fff, $alpha: 0.8);
+                height: calc(100% + 10px);
+                width: 120vw;
+                left: 50%;
+                transform: translate(-50%, 0);
+                box-shadow: 0 35px 20px -8px #ffffffcc;
+                z-index: -1;
+            }
+
+            b {
+                font-weight: 700;
+                display: block;
+                @include adaptive-value("font-size", 27, 14, 1);
+                margin-bottom: 20px;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
