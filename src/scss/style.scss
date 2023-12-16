@@ -105,23 +105,27 @@ body:has(.new-font) {
     @media (min-width: 769px) {
         .menu nav a,
         .header__left a {
-            font-size: 22px;
+            font-size: 24px;
         }
 
         .header__logo img,
         .header__logo svg {
-            width: 203px;
+            width: 207px;
         }
 
         .header__phone {
-            font-size: 30px;
+            font-size: 24px;
             font-weight: 500;
         }
 
         .header__left,
         .header__right {
-            width: calc(50% - 147px);
+            width: calc(50% - 151px);
             flex: 0 0 auto;
+        }
+
+        .header__body {
+            height: 86px;
         }
 
         .header__center {
@@ -132,10 +136,14 @@ body:has(.new-font) {
             margin-right: 0;
         }
 
+        .header__city {
+            margin-left: 0;
+        }
+
         ._socials label,
         .header__city-btn,
         .breadcrumbs ul {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         h1 {
@@ -145,11 +153,11 @@ body:has(.new-font) {
 
         ._button {
             font-size: 24px;
-            font-weight: 700;
-            height: 60px;
+            font-weight: 500;
+            height: 54px;
 
             @media (max-width: 1440px) {
-                height: 50px;
+                height: 46px;
             }
         }
 
@@ -236,6 +244,12 @@ body:has(.new-font) {
             font-weight: 700;
         }
 
+        section.service-features .proekt {
+            background-color: #d8160c;
+            justify-content: center;
+            padding-bottom: 40px;
+        }
+
         .features-flex .features-link span {
             font-size: 100px;
         }
@@ -294,7 +308,8 @@ body:has(.new-font) {
 
         .whatsapp-slider p,
         .whatsapp-slider ._button {
-            max-width: 575px;
+            max-width: 557px;
+            width: 100%;
         }
 
         .whatsapp-slider p {
@@ -310,7 +325,7 @@ body:has(.new-font) {
 
         .section-map .section__flex ol,
         .section-map .section__flex ul {
-            font-size: 24px;
+            font-size: 16px;
             font-weight: 400;
         }
 
@@ -331,7 +346,12 @@ body:has(.new-font) {
         }
 
         .footer__bottom {
-            font-size: 16px;
+            font-size: 14px;
+
+            p strong,
+            button {
+                font-size: 16px;
+            }
         }
 
         .popup#qrcode .qrcode-link a {
@@ -366,11 +386,173 @@ body:has(.new-font) {
             font-size: 10px;
         }
 
+        ._button {
+            height: 46px;
+            font-size: 16px;
+        }
+
         h1 {
             font-size: 22px;
             text-align: left;
             font-weight: 700;
             margin-bottom: -20px;
+        }
+
+        .about-slider__wrapper {
+            left: -5%;
+            height: 420px;
+        }
+
+        .hero-slider ._button {
+            width: 75%;
+            bottom: 15px;
+        }
+
+        .hero-slider .person__card-info h3 {
+            font-size: 22px;
+        }
+
+        .person__card-info ol li img {
+            width: 48px;
+        }
+
+        .person__card-info ol {
+            gap: 15px;
+            align-items: center;
+        }
+
+        .person__card-info ol li {
+            flex-direction: row;
+        }
+
+        .person__card-info ol li span {
+            font-size: 50px;
+        }
+
+        .person__card-info ol li label {
+            text-align: left;
+            margin-left: 4px;
+        }
+
+        .about-slider__container button {
+            top: 52px;
+        }
+
+        .features-flex .features-link label {
+            font-size: 12px !important;
+        }
+
+        .features-flex .features-link span {
+            font-size: 50px !important;
+        }
+
+        section.service-features ._button {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-size: 16px !important;
+        }
+
+        table td,
+        table th {
+            font-size: 12px !important;
+        }
+
+        .clients {
+            padding-top: 32px;
+        }
+
+        .view-more span {
+            font-size: 12px !important;
+        }
+
+        .view-more svg {
+            margin-top: 3px;
+        }
+
+        .callback-text .section__flex-left p,
+        .victory-swiperblock .section__flex p {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+
+            a,
+            span {
+                font-weight: 400;
+            }
+        }
+
+        .victory-swiperblock {
+            padding-bottom: 34px;
+        }
+
+        .whatsapp-slider ._button {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-slider p {
+            font-size: 10px;
+        }
+
+        .about-why h2 {
+            padding: 0 10%;
+        }
+
+        .read-more__text .read-more,
+        .read-more__text-content {
+            font-size: 12px;
+        }
+
+        .section-map {
+            padding-top: 40px;
+        }
+
+        .section-map .section__flex h2 {
+            margin-bottom: 20px;
+        }
+
+        .section-map .section__flex ol,
+        .section-map .section__flex ul {
+            font-size: 12px;
+        }
+
+        .read-more__text:before {
+            box-shadow: 0px -15px 9px 0px #fff;
+        }
+
+        .footer__title {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer__top-open {
+            margin-bottom: 43px;
+        }
+
+        .footer__contact {
+            margin-bottom: 15px;
+        }
+
+        .footer__center {
+            margin-bottom: 20px;
+        }
+
+        .footer__bottom {
+            font-size: 12px;
+        }
+
+        .footer__bottom div {
+            margin-bottom: 40px;
+        }
+
+        .footer {
+            padding: 30px 0 80px 0;
         }
     }
 }
