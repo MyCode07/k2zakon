@@ -97,3 +97,280 @@
 // load contacts
 @import "parts/contacts";
 
+body:has(.new-font) {
+    * {
+        font-family: "Ubuntu", "sans-serif";
+    }
+
+    @media (min-width: 769px) {
+        .menu nav a,
+        .header__left a {
+            font-size: 22px;
+        }
+
+        .header__logo img,
+        .header__logo svg {
+            width: 203px;
+        }
+
+        .header__phone {
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .header__left,
+        .header__right {
+            width: calc(50% - 147px);
+            flex: 0 0 auto;
+        }
+
+        .header__center {
+            flex: 0 0 auto;
+        }
+
+        .header__left ul {
+            margin-right: 0;
+        }
+
+        ._socials label,
+        .header__city-btn,
+        .breadcrumbs ul {
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 45px;
+            font-weight: 700;
+        }
+
+        ._button {
+            font-size: 24px;
+            font-weight: 700;
+            height: 60px;
+
+            @media (max-width: 1440px) {
+                height: 50px;
+            }
+        }
+
+        .person__card-info h3 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .person__card-info p {
+            overflow: unset;
+            max-height: unset;
+            font-size: 16px;
+        }
+
+        .person__card-info ol li span {
+            font-size: 45px;
+        }
+
+        .person__card-info ol li label {
+            font-size: 14px;
+        }
+
+        .person__card-info ol li img {
+            width: 62px;
+            max-height: 75px;
+            object-fit: contain;
+        }
+
+        .about-slider__wrapper {
+            @media (min-width: 1441px) {
+                height: 500px;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .about-slider__container button {
+                top: 80%;
+            }
+
+            .about-slider__next {
+                right: -20px;
+            }
+
+            .about-slider__prev {
+                left: -50px;
+            }
+        }
+
+        .hero-slider .lowers {
+            @media (min-width: 1441px) {
+                margin-top: 86px;
+            }
+        }
+
+        .lowers-item {
+            max-width: none;
+
+            &:last-child {
+                min-width: 33%;
+
+                span {
+                    max-width: 280px;
+                }
+            }
+        }
+
+        .lowers-item label {
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .lowers-item span {
+            font-size: 16px;
+        }
+
+        .section-map .section__flex h2,
+        h2 {
+            font-size: 30px !important;
+            font-weight: 700;
+        }
+
+        .features-flex .features-link label {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .features-flex .features-link span {
+            font-size: 100px;
+        }
+
+        .table-month td:first-child,
+        table td,
+        .table-pay td {
+            font-weight: 400;
+        }
+
+        .table-date,
+        .table-date {
+            td {
+                &:not(:first-child) {
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .table .section__buttons {
+            justify-content: space-between;
+        }
+
+        .table-pay td {
+            &:not(:first-child) {
+                font-weight: 700;
+                font-size: 24px;
+            }
+        }
+
+        .table-option td:first-child {
+            font-weight: 400;
+        }
+
+        @media (min-width: 1441px) {
+            .clients h2 {
+                margin-bottom: 60px;
+            }
+        }
+
+        .whatsapp-slider h2,
+        .callback-text .section__flex-left p,
+        .victory-swiperblock .section__flex p {
+            font-size: 30px;
+            font-weight: 400;
+
+            span,
+            a {
+                font-weight: 400;
+            }
+        }
+
+        .callback-text .section__flex-left {
+            padding-right: 72px;
+        }
+
+        .whatsapp-slider p,
+        .whatsapp-slider ._button {
+            max-width: 575px;
+        }
+
+        .whatsapp-slider p {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .read-more__text .read-more,
+        .read-more__text-content {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .section-map .section__flex ol,
+        .section-map .section__flex ul {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .section-map .section__flex ol li,
+        .section-map .section__flex ul li {
+            font-weight: 400;
+        }
+
+        .footer__title {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .footer__contact,
+        .footer__top-open {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .footer__bottom {
+            font-size: 16px;
+        }
+
+        .popup#qrcode .qrcode-link a {
+            padding: 7px 32px;
+        }
+
+        .popup#contacts form .clone-submit,
+        .popup#contacts form button,
+        .popup#contacts form .wpcf7-submit {
+            padding: 10px 32px;
+        }
+
+        @media (max-width: 1440px) {
+            .popup#contacts .form__input input {
+                padding: 4px 24px;
+            }
+
+            .popup#contacts .popup__content-qrimages div {
+                width: 80px;
+                height: 80px;
+            }
+
+            .popup#contacts .popup__content-socialbuttons a,
+            .popup#contacts .popup-form h3 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header__city-btn {
+            font-size: 10px;
+        }
+
+        h1 {
+            font-size: 22px;
+            text-align: left;
+            font-weight: 700;
+            margin-bottom: -20px;
+        }
+    }
+}
