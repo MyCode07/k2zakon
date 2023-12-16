@@ -146,9 +146,27 @@ body:has(.new-font) {
             font-size: 14px;
         }
 
+        .hero-slider {
+            .section__flex {
+                align-items: stretch;
+            }
+
+            .section__flex-left {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 100%;
+            }
+
+            ._button {
+                margin-bottom: 12%;
+            }
+        }
+
         h1 {
             font-size: 45px;
             font-weight: 700;
+            max-width: none;
         }
 
         ._button {
@@ -159,6 +177,10 @@ body:has(.new-font) {
             @media (max-width: 1440px) {
                 height: 46px;
             }
+        }
+
+        .hero-slider .person__card-info {
+            max-width: 392px;
         }
 
         .person__card-info h3 {
@@ -186,19 +208,23 @@ body:has(.new-font) {
             object-fit: contain;
         }
 
-        .about-slider__wrapper {
-            @media (min-width: 1441px) {
+        @media (min-width: 1441px) {
+            .about-slider__wrapper {
                 height: 500px;
+            }
+
+            .about-slider__slider {
+                max-width: 417px;
+            }
+
+            .about-slider__next {
+                right: -65px;
             }
         }
 
         @media (min-width: 993px) {
             .about-slider__container button {
                 top: 80%;
-            }
-
-            .about-slider__next {
-                right: -20px;
             }
 
             .about-slider__prev {
@@ -236,12 +262,33 @@ body:has(.new-font) {
         .section-map .section__flex h2,
         h2 {
             font-size: 30px !important;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         .features-flex .features-link label {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 500;
+        }
+
+        @media (min-width: 1441px) {
+            section.service-features .depozit {
+                top: -31px;
+                justify-content: center;
+                padding-bottom: 20px;
+            }
+
+            section.service-features .soprovojdenie {
+                bottom: -50px;
+                left: calc(100% - 57px);
+            }
+
+            section.service-features ._button {
+                right: 0;
+            }
+
+            section.service-features .features-flex__img img {
+                height: 500px;
+            }
         }
 
         section.service-features .proekt {
@@ -290,6 +337,10 @@ body:has(.new-font) {
             }
         }
 
+        .table ._button-construct {
+            margin: 0;
+        }
+
         .whatsapp-slider h2,
         .callback-text .section__flex-left p,
         .victory-swiperblock .section__flex p {
@@ -299,6 +350,20 @@ body:has(.new-font) {
             span,
             a {
                 font-weight: 400;
+            }
+        }
+
+        .victory-swiperblock .section__flex {
+            .section__flex-left {
+                max-width: 302px;
+            }
+
+            .swiper {
+                width: 302px;
+            }
+
+            .swiper-slide {
+                height: 427px;
             }
         }
 
@@ -450,6 +515,38 @@ body:has(.new-font) {
             width: 75%;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        section.service-features .features-flex__links {
+            width: 95px;
+        }
+
+        section.service-features .features-flex__img {
+            width: 71%;
+        }
+
+        section.service-features .proekt {
+            height: 131px;
+        }
+
+        section.service-features .depozit {
+            top: -18px;
+            left: 37px;
+        }
+
+        section.service-features .soprovojdenie {
+            min-width: 240px;
+            left: calc(100% - 15px);
+
+            span {
+                margin-left: 10px;
+                flex: 0 0 auto;
+            }
+        }
+
+        .company .depozit {
+            width: 112px;
+            height: 112px;
         }
 
         h2 {

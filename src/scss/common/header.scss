@@ -221,6 +221,14 @@
             font-family: Inter;
             font-size: 13px;
 
+            transition: color 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: #d8160c;
+                }
+            }
+
             img,
             svg {
                 width: 12px;

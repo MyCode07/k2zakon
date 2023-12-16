@@ -226,13 +226,20 @@
         }
 
         &-left {
-            width: 53%;
+            width: 57%;
+        }
+
+        &-right {
+            width: 43%;
+            position: relative;
+            left: -5%;
         }
 
         &-right,
         &-left {
             @media (max-width: 992px) {
                 width: 100%;
+                left: 0;
             }
         }
     }

@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { isMobile } from '../utils/isMobile.js';
 
 const slideName = document.querySelector('[data-slider-change] [data-slider-name]');
 const slidePos = document.querySelector('[data-slider-change] [data-slider-pos]');
@@ -65,6 +66,7 @@ const slideChange = (slide) => {
 
 const slides = document.querySelectorAll('[data-slider-change] .about-slider__slide');
 const sldierBtns = document.querySelectorAll('[data-slider-change-btn]');
+const aboutSlider = document.querySelector('.about-slider__slider');
 if (sldierBtns.length) {
     sldierBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -81,3 +83,32 @@ if (sldierBtns.length) {
     })
 }
 
+if (aboutSlider && isMobile.any() && window.innerWidth <= 992) {
+    let move = 0;
+    
+    aboutSlider.addEventListener('touchstart', (event) => {
+        const touch = event.targetTouches[0];
+        const midpoint = Math.floor(screen.width / 2);
+        const px = touch.pageX;
+        move = px;
+    })
+
+    aboutSlider.addEventListener('touchend', (event) => {
+        const touch = event.changedTouches[0];
+        const midpoint = Math.floor(screen.width / 2);
+        const px = touch.pageX;
+
+        const deltamove = Math.abs(move - px)
+        if (deltamove >= 50) {
+            slides.forEach(slide => {
+                if (slide.classList.contains('_active')) {
+                    slide.classList.remove('_active')
+                }
+                else {
+                    slide.classList.add('_active')
+                    slideChange(slide)
+                }
+            })
+        }
+    })
+}
