@@ -43,6 +43,18 @@
             }
         }
     }
+
+    .person__card-info ol li {
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+
+    .person__card-img {
+        @media (max-width: 768px) {
+            height: 340px;
+        }
+    }
 }
 
 .team-top {
@@ -73,8 +85,6 @@
     .about-slider__slider {
         position: relative;
         top: 0;
-
-       
     }
 
     .about-slider__wrapper {
@@ -93,7 +103,22 @@
         }
     }
 
+    .about-slider__params li {
+        @media (min-width: 993px) {
+            justify-content: center;
+
+            label {
+                padding-bottom: 15px;
+            }
+        }
+    }
+
     .about-slider__name {
+        @media (min-width: 1441px) {
+            font-size: 45px;
+            font-weight: 700;
+        }
+
         @media (max-width: 992px) {
             margin-bottom: 0;
         }

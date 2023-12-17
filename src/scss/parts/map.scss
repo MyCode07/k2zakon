@@ -128,34 +128,42 @@
         }
     }
 
+    // .sud-map__link
+
+    &__link {
+        margin: 25px 0 60px;
+        width: 100%;
+
+        max-width: 740px;
+
+        @media (max-width: 1440px) {
+            max-width: 540px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            margin: 30px 0;
+        }
+    }
+
     .section__content {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        .sud-map {
-            margin: 10px 0;
-
-            @media (max-width: 768px) {
-                margin: 20px 0 30px 0;
-            }
-        }
-
         p {
-            max-width: 766px;
             width: 100%;
             margin-top: 30px;
             color: #0d0d0d;
             text-align: center;
-            font-size: 24px;
-            font-weight: 400;
+            font-size: 16px;
 
-            @media (max-width: 1336px) {
+            @media (max-width: 1440px) {
                 margin-top: 20px;
             }
 
             @media (max-width: 768px) {
-                font-size: 16px;
+                font-size: 14px;
             }
         }
 

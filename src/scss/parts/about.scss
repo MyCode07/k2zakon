@@ -276,6 +276,10 @@
 .clients {
     padding-bottom: 30px;
 
+    @media (max-width: 768px) {
+        padding-top: 20px;
+    }
+
     h2 {
         margin-bottom: 60px;
 
@@ -769,7 +773,7 @@
             margin-bottom: 54px;
 
             @media (max-width: 768px) {
-                gap: 12px;
+                gap: 15px;
                 margin-bottom: 28px;
             }
 
@@ -785,17 +789,20 @@
                 }
 
                 span {
-                    font-size: 52px;
+                    font-size: 100px;
                     font-weight: 700;
 
                     @media (max-width: 768px) {
-                        font-size: 32px;
+                        font-size: 50px;
                     }
                 }
 
                 label {
                     font-size: 16px;
-                    font-weight: 400;
+
+                    @media (max-width: 768px) {
+                        font-size: 14px;
+                    }
                 }
             }
         }
