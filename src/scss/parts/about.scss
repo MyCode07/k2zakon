@@ -61,6 +61,7 @@
         @media (max-width: 768px) {
             width: 104px;
             height: 112px;
+            padding-bottom: 20px;
         }
 
         span {
@@ -81,6 +82,14 @@
 
         label {
             font-size: 24px;
+
+            @media (max-width: 1440px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 992px) {
+                font-size: 14px;
+            }
         }
     }
 
@@ -105,8 +114,8 @@
         @media (max-width: 1440px) {
             width: 180px;
             height: 180px;
-            top: -15px;
-            right: -90px;
+            top: -35px;
+            right: -45px;
         }
 
         @media (max-width: 992px) {
@@ -119,6 +128,7 @@
             height: 106px;
             right: -53px;
             top: -10px;
+            padding-bottom: 10px;
         }
 
         span {
@@ -147,9 +157,9 @@
         height: 180px;
         background-color: #d8160c;
         color: #fff;
-        left: calc(100% - 67px);
-        bottom: -24px;
-        padding-bottom:28px;
+        left: calc(100% - 47px);
+        bottom: -34px;
+        padding-bottom: 28px;
 
         @media (any-hover: hover) {
             &:hover {
@@ -160,8 +170,8 @@
         @media (max-width: 1440px) {
             width: 150px;
             height: 150px;
-            left: calc(100% + 60px);
-            bottom: -12px;
+            left: calc(100% + 10px);
+            bottom: -30px;
         }
 
         @media (max-width: 992px) {
@@ -174,9 +184,7 @@
             height: 80px;
             left: calc(100% + 28px);
             bottom: -10px;
-        }
-
-        @media (max-width: 425px) {
+            padding-bottom: 10px;
         }
 
         span {
@@ -351,6 +359,10 @@
 
     h2 {
         margin-bottom: 10px;
+
+        @media (max-width: 992px) {
+            margin-bottom: -25px;
+        }
     }
 
     // .about-slider__container
@@ -532,6 +544,10 @@
             align-items: center;
             text-align: center;
 
+            @media (max-width: 992px) {
+                flex-direction: row;
+            }
+
             &:has(img) {
                 flex: 0 0 auto;
             }
@@ -556,7 +572,7 @@
                 line-height: 1;
 
                 @media (max-width: 992px) {
-                    font-size: 40px;
+                    font-size: 50px;
                 }
             }
 
@@ -566,6 +582,8 @@
 
                 @media (max-width: 992px) {
                     font-size: 12px;
+                    margin-left: 4px;
+                    text-align: left;
                 }
             }
         }

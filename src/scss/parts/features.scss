@@ -38,7 +38,8 @@
         justify-content: center;
         flex-direction: column;
         padding: 10px;
-        font-size: 32px;
+        font-size: 30px;
+        font-weight: 500;
         line-height: normal;
         color: #fff;
         position: relative;
@@ -52,6 +53,10 @@
 
         @media (max-width: 1440px) {
             font-size: 24px;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 20px;
         }
 
         @media (max-width: 768px) {
@@ -128,11 +133,10 @@
         z-index: 2;
         color: #000;
         max-width: 442px;
-
         position: absolute;
-
         bottom: -28px;
         left: calc(100% - 81px);
+        gap: 20px;
 
         @media (any-hover: hover) {
             &:hover {
@@ -152,6 +156,7 @@
             font-size: 12px;
             max-width: 161px;
             bottom: -22px;
+            gap: 7px;
 
             left: unset;
             right: 10%;
