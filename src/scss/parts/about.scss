@@ -40,10 +40,15 @@
         }
     }
 
+    .features-link span {
+        font-weight: 700;
+    }
+
     .proekt {
         background-color: #2b3131;
-        height: 255px;
-        justify-content: flex-start;
+        height: 272px;
+        justify-content: center;
+        padding-bottom: 40px;
 
         @media (max-width: 1440px) {
             height: 190px;
@@ -59,7 +64,7 @@
         }
 
         span {
-            font-size: 140px;
+            font-size: 150px;
 
             @media (max-width: 1440px) {
                 font-size: 110px;
@@ -73,6 +78,10 @@
                 font-size: 52px;
             }
         }
+
+        label {
+            font-size: 24px;
+        }
     }
 
     .depozit {
@@ -80,11 +89,12 @@
         color: #0d0d0d;
         width: 203px;
         height: 203px;
-        justify-content: flex-start;
+        justify-content: center;
         filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
 
         right: -19px;
         top: -43px;
+        padding-bottom: 28px;
 
         @media (any-hover: hover) {
             &:hover {
@@ -139,6 +149,7 @@
         color: #fff;
         left: calc(100% - 67px);
         bottom: -24px;
+        padding-bottom:28px;
 
         @media (any-hover: hover) {
             &:hover {
@@ -258,7 +269,11 @@
     padding-bottom: 30px;
 
     h2 {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
+
+        @media (max-width: 1440px) {
+            margin-bottom: 30px;
+        }
     }
 
     ._button {
@@ -469,7 +484,6 @@
 
     &__name {
         color: #0d0d0d;
-        font-family: Ubuntu;
         font-size: 32px;
         font-style: normal;
         font-weight: 500;
@@ -684,6 +698,12 @@
     @media (max-width: 768px) {
         padding-bottom: 20px;
         padding-top: 30px;
+    }
+
+    h2 {
+        @media (max-width: 768px) {
+            padding: 0 10%;
+        }
     }
 }
 

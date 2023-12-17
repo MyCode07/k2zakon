@@ -97,7 +97,6 @@
         margin-top: 17px;
         color: #000;
         text-align: center;
-        font-family: Ubuntu;
         font-size: 20px;
         font-weight: 500;
         line-height: 130%;
@@ -281,16 +280,17 @@
         padding: 12px 20px;
 
         h3 {
-            font-size: 20px;
             margin-bottom: 2px;
+            font-size: 24px;
+            font-weight: 500;
 
-            @media (max-width: 768px) {
-                font-size: 16px;
+            @media (max-width: 992px) {
+                font-size: 22px;
             }
         }
 
         p {
-            font-size: 14px;
+            font-size: 16px;
 
             @media (max-width: 768px) {
                 font-size: 12px;
@@ -308,11 +308,20 @@
             gap: 30px;
             margin-top: 4px;
 
+            @media (max-width: 992px) {
+                gap: 15px;
+                align-items: center;
+            }
+
             li {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+
+                @media (max-width: 992px) {
+                    flex-direction: row;
+                }
 
                 &:has(img) {
                     flex: 0 0 auto;
@@ -324,12 +333,12 @@
                 }
 
                 span {
-                    font-size: 40px;
                     font-weight: 700;
                     line-height: 1;
+                    font-size: 45px;
 
-                    @media (max-width: 768px) {
-                        font-size: 24px;
+                    @media (max-width: 992px) {
+                        font-size: 50px;
                     }
                 }
 
@@ -337,16 +346,20 @@
                     font-size: 14px;
                     font-weight: 400;
 
-                    @media (max-width: 768px) {
+                    @media (max-width: 992px) {
+                        text-align: left;
                         font-size: 12px;
+                        margin-left: 4px;
                     }
                 }
 
                 img {
-                    width: 43px;
+                    width: 62px;
+                    max-height: 75px;
+                    object-fit: contain;
 
-                    @media (max-width: 768px) {
-                        width: 28px;
+                    @media (max-width: 992px) {
+                        width: 48px;
                     }
                 }
             }

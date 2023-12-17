@@ -216,29 +216,56 @@ section.service-features {
 
     .features-flex__img {
         @media (max-width: 768px) {
-            width: 57.5%;
+            width: 71%;
         }
 
         img {
             @media (min-width: 1441px) {
-                height: 503px;
+                height: 500px;
             }
 
             @media (max-width: 768px) {
                 @include adaptive-value("height", 330, 250, 1);
-                object-position: 45%;
+                object-position: 65%;
             }
         }
     }
 
     .features-flex__links {
         @media (max-width: 768px) {
-            width: 146px;
+            width: 95px;
+        }
+
+        label {
+            font-size: 24px;
+            font-weight: 500;
+
+            @media (max-width: 1440px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+        }
+
+        span {
+            font-size: 100px;
+
+            @media (max-width: 1440px) {
+                font-size: 70px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 50px;
+            }
         }
     }
 
     .proekt {
         background-color: #d8160c;
+        justify-content: center;
+        padding-bottom: 40px;
 
         label {
             max-width: 199px;
@@ -250,17 +277,20 @@ section.service-features {
 
         @media (max-width: 768px) {
             width: 100%;
-            height: 151px;
+            height: 131px;
             padding-right: 5px;
             padding-top: 0;
+            padding-bottom: 20px;
         }
     }
 
     .depozit {
         background-color: #2b3131;
         color: #fff;
-        top: -11px;
+        top: -31px;
         right: -68px;
+        justify-content: center;
+        padding-bottom: 20px;
 
         @media (any-hover: hover) {
             &:hover {
@@ -269,8 +299,11 @@ section.service-features {
         }
 
         @media (max-width: 768px) {
-            right: -11px;
-            top: -20px;
+            right: -44px;
+            top: -18px;
+            width: 112px;
+            height: 112px;
+            padding-bottom: 10px;
         }
 
         span {
@@ -283,12 +316,13 @@ section.service-features {
     .soprovojdenie {
         background-color: #fff;
         color: #2b3131;
-        bottom: -75px;
 
         flex-direction: row;
         width: auto;
         height: 140px;
         min-width: 202%;
+        bottom: -50px;
+        left: calc(100% - 57px);
 
         @media (any-hover: hover) {
             &:hover {
@@ -299,24 +333,24 @@ section.service-features {
         @media (max-width: 1440px) {
             height: 110px;
             min-width: 180%;
-            bottom: 0;
+            left: calc(100% + 20px);
+            bottom: -15px;
         }
 
         @media (max-width: 992px) {
             width: auto;
-            bottom: -10px;
+            left: calc(100% - 57px);
         }
 
         @media (max-width: 768px) {
             width: auto;
             height: 65px;
             max-width: 250px;
-            left: calc(100% - 26px);
+            min-width: 240px;
+            left: calc(100% - 15px);
         }
 
         @media (max-width: 425px) {
-            max-width: 65%;
-            min-width: 200px;
             bottom: -24px;
         }
 
@@ -331,27 +365,30 @@ section.service-features {
 
         span {
             @media (max-width: 768px) {
-                font-size: 24px;
+                margin-left: 10px;
+                flex: 0 0 auto;
             }
         }
     }
 
     ._button {
-        @media (min-width: 769px) {
+        @media (min-width: 993px) {
             position: absolute;
-            right: 10%;
+            right: 0;
             bottom: -75px;
             z-index: 2;
 
             @media (max-width: 1440px) {
-                right: 5%;
-                bottom: 0;
+                right: 15px;
+                bottom: -40px;
             }
         }
 
-        @media (max-width: 768px) {
-            width: 100%;
+        @media (max-width: 992px) {
             margin-top: 44px;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

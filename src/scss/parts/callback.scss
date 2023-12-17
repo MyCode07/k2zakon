@@ -12,17 +12,9 @@
 
     h2 {
         text-align: left;
-        color: #0d0d0d;
-        font-size: 28px;
-        font-weight: 500;
         margin-bottom: 70px;
 
-        @media (max-width: 1440px) {
-            font-size: 24px;
-        }
-
         @media (max-width: 768px) {
-            font-size: 20px;
             margin-bottom: 21px;
         }
     }
@@ -70,9 +62,9 @@
         max-width: 1020px;
 
         &-left {
-            padding-right: 108px;
             width: auto;
             flex: 1 1 auto;
+            padding-right: 72px;
 
             @media (max-width: 1440px) {
                 padding-right: 50px;
@@ -84,23 +76,10 @@
 
             p {
                 color: #0d0d0d;
-                font-style: normal;
-                line-height: 130%;
-                font-weight: 500;
-                font-size: 28px;
-
-                @media (max-width: 1440px) {
-                    font-size: 24px;
-                }
 
                 @media (max-width: 768px) {
-                    font-size: 20px;
                     margin-left: auto;
                     margin-right: auto;
-                }
-
-                a {
-                    color: #d8160c;
                 }
             }
 

@@ -40,7 +40,6 @@
             margin-right: 3px;
 
             color: #000;
-            font-family: Inter;
             @include adaptive-value("font-size", 18, 12, 1);
             @include adaptive-value("line-height", 18, 12, 1);
             font-weight: 700;

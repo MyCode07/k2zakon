@@ -29,7 +29,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 100px;
+        height: 86px;
 
         @media (max-width: 992px) {
             height: 80px;
@@ -44,8 +44,8 @@
     // .header__left
 
     &__left {
-        flex: 1 1 auto;
-        width: calc(50% - 120px);
+        width: calc(50% - 151px);
+        flex: 0 0 auto;
 
         display: flex;
         align-items: center;
@@ -64,7 +64,6 @@
             display: flex;
             align-items: center;
             margin-left: auto;
-            margin-right: auto;
             justify-content: center;
 
             & > :not(:last-child) {
@@ -78,8 +77,12 @@
             li {
                 a {
                     color: #000;
-                    font-size: 20px;
+                    font-size: 24px;
                     position: relative;
+
+                    @media (max-width: 1096px) {
+                        font-size: 20px;
+                    }
 
                     &:before {
                         position: absolute;
@@ -114,11 +117,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex: 0 0 auto;
 
         @media (max-width: 992px) {
             flex: unset;
             display: block;
             width: auto;
+        }
+
+        @media (max-width: 768px) {
+            margin-right: 10px;
         }
     }
 
@@ -135,7 +143,7 @@
 
         img,
         svg {
-            width: 220px;
+            width: 207px;
 
             @media (max-width: 992px) {
                 width: 165px;
@@ -150,8 +158,8 @@
     // .header__right
 
     &__right {
-        flex: 1 1 auto;
-        width: calc(50% - 120px);
+        width: calc(50% - 151px);
+        flex: 0 0 auto;
 
         display: flex;
         align-items: center;
@@ -202,11 +210,14 @@
     // .header__city
 
     &__city {
-        margin-left: auto;
         margin-right: auto;
 
         @media (min-width: 993px) {
             position: relative;
+        }
+
+        @media (max-width: 768px) {
+            margin-left: auto;
         }
 
         // .header__city-btn
@@ -218,8 +229,7 @@
             width: 100%;
 
             color: #000;
-            font-family: Inter;
-            font-size: 13px;
+            font-size: 14px;
 
             transition: color 0.3s ease 0s;
 
@@ -227,6 +237,10 @@
                 &:hover {
                     color: #d8160c;
                 }
+            }
+
+            @media (max-width: 768px) {
+                font-size: 10px;
             }
 
             img,
@@ -303,7 +317,6 @@
                 font-size: 12px;
                 font-weight: 400;
                 white-space: nowrap;
-                font-family: Inter;
 
                 span {
                     font-size: 14px;
@@ -345,19 +358,20 @@
 
     &__phone {
         color: #d8160c;
-        font-size: 28px;
         line-height: normal;
         display: block;
         margin-bottom: 4px;
         text-align: center;
         white-space: nowrap;
+        font-size: 24px;
+        font-weight: 500;
 
         @media (max-width: 992px) {
             display: none;
         }
 
         @media (max-width: 1096px) {
-            font-size: 22px;
+            font-size: 20px;
         }
     }
 
