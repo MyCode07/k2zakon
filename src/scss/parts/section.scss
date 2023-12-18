@@ -346,6 +346,7 @@
                 overflow: hidden;
                 object-fit: cover;
                 object-position: right;
+                width: 100%;
 
                 @media (max-width: 1440px) {
                     object-position: bottom;
@@ -372,6 +373,8 @@
                     }
                 }
             }
+
+           
 
             div {
                 width: 100%;

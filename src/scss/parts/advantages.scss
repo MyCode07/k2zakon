@@ -15,8 +15,11 @@
         text-align: left;
         margin-bottom: 50px;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1440px) {
             margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
             text-align: center;
             margin-left: auto;
             margin-right: auto;

@@ -974,7 +974,8 @@
                 }
             }
 
-            & > img {
+            & > img,
+            & > picture {
                 margin: 24px auto;
                 display: block;
                 width: 300px;
