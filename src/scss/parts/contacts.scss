@@ -31,11 +31,10 @@
                 display: block;
                 margin: 24px 0;
                 text-align: center;
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 500;
 
                 @media (max-width: 1440px) {
-                    font-size: 18px;
                     margin: 18px 0;
                 }
 
@@ -58,7 +57,10 @@
                 }
             }
 
-            p {
+            ._button {
+                @media (max-width: 1096px) and (min-width: 993px) {
+                    padding: 16px 8px;
+                }
             }
         }
 
@@ -129,12 +131,36 @@
 
     .whatsapp {
         color: #48c95f;
+
+        @media (any-hover: hover) {
+            &:hover {
+                .contacts__top {
+                    color: #48c95f;
+                }
+            }
+        }
     }
     .telegram {
         color: #27a6e5;
+
+        @media (any-hover: hover) {
+            &:hover {
+                .contacts__top {
+                    color: #27a6e5;
+                }
+            }
+        }
     }
     .viber {
         color: #7c509a;
+
+        @media (any-hover: hover) {
+            &:hover {
+                .contacts__top {
+                    color: #7c509a;
+                }
+            }
+        }
     }
 
     .big-tel {
@@ -285,10 +311,14 @@
             flex: 1 1 auto;
 
             p {
-                @include adaptive-value("font-size", 16, 14, 1);
                 @include adaptive-value("margin-bottom", 4, 0, 1);
                 display: block;
                 color: #0d0d0d;
+                font-size: 16px;
+
+                @media (max-width: 992px) {
+                    font-size: 14px;
+                }
 
                 @media (max-width: 768px) {
                     max-width: 199px;
@@ -300,6 +330,11 @@
                 color: #d8160c;
                 font-weight: 500;
                 @include adaptive-value("font-size", 20, 16, 1);
+                font-size: 20px;
+
+                @media (max-width: 992px) {
+                    font-size: 16px;
+                }
             }
         }
     }

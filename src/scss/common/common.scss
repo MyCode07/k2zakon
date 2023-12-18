@@ -97,7 +97,7 @@ h3 {
     font-weight: 400;
 
     @media (max-width: 992px) {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     span,
@@ -107,16 +107,20 @@ h3 {
     }
 }
 
-.text-center p {
-    font-size: 30px;
-    font-weight: 500;
+.text-center {
+    p {
+        font-size: 45px;
+        font-weight: 500;
 
-    @media (max-width: 1440px) {
-        font-size: 26px;
+        @media (max-width: 992px) {
+            font-size: 22px;
+        }
     }
 
-    @media (max-width: 768px) {
-        font-size: 16px;
+    &._bold {
+        p {
+            font-weight: 700;
+        }
     }
 }
 
@@ -383,13 +387,13 @@ label {
 
     @media (max-width: 1440px) {
         padding: 12px 24px;
-        font-size: 20px;
-        height: 46px;
     }
 
-    @media (max-width: 768px) {
-        font-size: 16px;
+    @media (max-width: 992px) {
+        font-size: 20px;
         padding: 16px 14px;
+        height: 50px;
+        font-size: 16px;
     }
 
     // ._button-border
@@ -430,7 +434,7 @@ label {
 
         @media (any-hover: hover) {
             &:hover {
-                box-shadow: 0 0 20px 0 #7c509a;
+                box-shadow: 0 0 20px 0 #7c509a !important;
                 color: #fff !important;
             }
         }
@@ -472,7 +476,6 @@ label {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 55px;
         padding: 0;
         overflow: hidden;
         position: relative;
@@ -497,12 +500,7 @@ label {
             }
         }
 
-        @media (max-width: 1440px) {
-            width: 400px;
-        }
-
         @media (max-width: 768px) {
-            height: 50px;
             width: 75%;
         }
 
@@ -788,7 +786,7 @@ label {
         transition: color 0.3s ease 0s;
 
         @media (max-width: 768px) {
-            font-size: 12px;
+            font-size: 14px;
         }
 
         &:after {

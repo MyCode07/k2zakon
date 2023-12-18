@@ -30,6 +30,10 @@
         @media (max-width: 768px) {
             width: 102px;
         }
+
+        span{
+            text-align: center;
+        }
     }
 
     .features-link {
@@ -100,11 +104,11 @@
     .depozit {
         background-color: #2b3131;
         border-radius: 50%;
-        width: 236px;
-        height: 236px;
+        width: 216px;
+        height: 216px;
         z-index: 1;
-        right: -53px;
-        top: -20px;
+        right: -63px;
+        top: -10px;
 
         @media (max-width: 1440px) {
             width: 200px;
@@ -134,8 +138,8 @@
         color: #000;
         max-width: 442px;
         position: absolute;
-        bottom: -28px;
-        left: calc(100% - 81px);
+        bottom: -25px;
+        left: calc(100% - 71px);
         gap: 20px;
 
         @media (any-hover: hover) {

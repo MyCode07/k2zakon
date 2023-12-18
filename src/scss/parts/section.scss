@@ -213,7 +213,6 @@
 
         ._button {
             @media (max-width: 768px) {
-                max-width: 240px;
                 width: 100%;
             }
         }
@@ -221,6 +220,12 @@
 }
 
 .feedback-gallery {
+    padding-bottom: 40px;
+
+    @media (max-width: 992px) {
+        padding-bottom: 20px;
+    }
+
     .filter__btn {
         margin-bottom: 50px;
 
@@ -244,6 +249,7 @@
 
         @media (max-width: 768px) {
             gap: 24px 12px;
+            margin-bottom: 20px;
         }
 
         &-item {
@@ -412,6 +418,8 @@
     .link-counter {
         pointer-events: none;
         // opacity: 0;
+
+        text-align: center;
 
         &.start {
             opacity: 1;
@@ -609,12 +617,12 @@
             left: 0;
         }
 
-        img {
+        label {
+            width: 125px;
             width: 125px;
 
             @media (max-width: 992px) {
                 width: 86px;
-                margin-left: 11px;
             }
         }
 
@@ -636,8 +644,8 @@
 
             @media (max-width: 992px) {
                 font-size: 36px;
-                padding: 0;
-                width: 100%;
+                padding: 0 20px 0 0;
+                width: auto;
             }
         }
     }
@@ -667,7 +675,7 @@
 }
 
 .whatsapp-slider {
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 40px;
 
     @media (max-width: 768px) {
@@ -777,7 +785,7 @@
 
 .text-center {
     text-align: center;
-    padding: 30px 0;
+    padding: 30px 0 40px 0;
 
     @media (max-width: 768px) {
         padding: 50px 0;
@@ -785,7 +793,6 @@
 
     p {
         color: #2b3131;
-        max-width: 900px;
         margin-left: auto;
         margin-right: auto;
 
@@ -870,6 +877,11 @@
         h1 {
             margin-bottom: 16px;
 
+            @media (max-width: 992px) {
+                font-size: 32px;
+                font-weight: 500;
+            }
+
             @media (max-width: 768px) {
                 margin-bottom: 10px;
             }
@@ -879,10 +891,6 @@
             color: #0d0d0d;
             font-size: 24px;
             margin-bottom: 30px;
-
-            @media (max-width: 1440px) {
-                font-size: 20px;
-            }
 
             @media (max-width: 992px) {
                 font-size: 16px;
@@ -937,6 +945,8 @@
 
 .error-404-2 {
     @include adaptive-value("margin-top", 220, 60, 1);
+
+    padding-bottom: 20px;
 
     @media (max-width: 1440px) {
         padding-bottom: 30px;
@@ -1006,16 +1016,13 @@
             }
 
             span {
-                font-size: 30px;
-                font-weight: 500;
+                font-size: 45px;
+                font-weight: 700;
                 margin: 20px 0;
                 display: block;
 
-                @media (max-width: 1440px) {
-                    font-size: 26px;
-                }
-
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
+                    font-weight: 500;
                     font-size: 20px;
                     margin: 12px 0;
                 }
@@ -1032,10 +1039,6 @@
             a {
                 font-size: 24px;
                 font-weight: 400;
-
-                @media (max-width: 1440px) {
-                    font-size: 20px;
-                }
 
                 @media (max-width: 992px) {
                     font-size: 16px;

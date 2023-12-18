@@ -131,8 +131,9 @@
     }
 
     .link-counter {
-        // pointer-events: none;
-        // opacity: 0;
+        pointer-events: none;
+        opacity: 0;
+        text-align: center;
 
         &.start {
             opacity: 1;

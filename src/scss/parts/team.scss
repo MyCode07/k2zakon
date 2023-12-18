@@ -51,9 +51,14 @@
     }
 
     .person__card-img {
+
         @media (max-width: 768px) {
             height: 340px;
         }
+    }
+
+    .person__card-info ol li img{
+        width: 43px;
     }
 }
 
@@ -128,10 +133,6 @@
 
     .about-slider__info {
         @media (min-width: 993px) {
-            font-size: 20px;
-        }
-
-        @media (min-width: 1441px) {
             margin-bottom: 135px;
         }
     }

@@ -339,12 +339,17 @@
 
                     border-radius: 64px;
                     padding: 12px 15px;
-                    font-size: 12px;
+                    font-size: 14px;
                     cursor: pointer;
                     width: max-content;
                     white-space: nowrap;
                     transition: all 0.5s;
+
+                    @media (max-width: 768px) {
+                        font-size: 10px;
+                    }
                 }
+
                 & > :first-child {
                     background-color: #d8160c;
                     color: #fff;

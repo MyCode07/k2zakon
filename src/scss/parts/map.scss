@@ -123,10 +123,6 @@
     padding-top: 30px;
     padding-bottom: 24px;
 
-    @media (max-width: 1440px) {
-        padding-top: 10px;
-    }
-
     h2 {
         @media (max-width: 1440px) {
             max-width: 560px;
@@ -169,10 +165,6 @@
 
             @media (max-width: 1440px) {
                 margin-top: 20px;
-            }
-
-            @media (max-width: 768px) {
-                font-size: 14px;
             }
         }
 

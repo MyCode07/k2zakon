@@ -13,25 +13,26 @@
 
     h2 {
         text-align: left;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
 
         @media (max-width: 1440px) {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         @media (max-width: 768px) {
+            margin-bottom: 20px;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        &:empty {
+            margin-bottom: 0 !important;
         }
     }
 
     ol {
         text-align: left;
-
-        @media (max-width: 768px) {
-            margin-bottom: 50px;
-        }
 
         & > :not(:last-child) {
             margin-bottom: 30px;
@@ -65,6 +66,8 @@
 
         @media (max-width: 768px) {
             margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
@@ -100,6 +103,10 @@
         @media (min-width: 769px) {
             flex: 1 1 auto;
             padding-left: 40px;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: 50px;
         }
 
         ._button {
@@ -227,7 +234,7 @@
 
     &:has(.victory-swiperblock__title) {
         .section__flex-left {
-            @media (max-width: 768px) {
+            @media (max-width: 1440px) {
                 max-width: 270px;
             }
         }
@@ -255,6 +262,28 @@
                     box-shadow: 0px 0px 14.89655px 0px rgba(0, 0, 0, 0.17);
                     height: 325px !important;
                 }
+            }
+        }
+
+        button {
+            @media (max-width: 768px) {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    &.hide-list {
+        @media (max-width: 768px) {
+            .section__flex {
+                flex-direction: column;
+            }
+
+            .section__flex-right {
+                margin-bottom: 0 !important;
+            }
+
+            ol {
+                display: none !important;
             }
         }
     }
