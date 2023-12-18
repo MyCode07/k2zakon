@@ -185,10 +185,6 @@
     h1 {
         max-width: 622px;
 
-        @media (min-width: 1441px) {
-            font-size: 36px;
-        }
-
         @media (max-width: 992px) {
             text-align: center;
             margin-bottom: 0;
@@ -305,20 +301,47 @@
     .person__card-info {
         max-width: 392px;
 
-        p {
-            overflow: unset;
-            max-height: unset;
-        }
-
         @media (max-width: 992px) {
             width: 100vw;
             margin-left: -20px;
             border-radius: 0;
             padding-bottom: 70px;
             max-width: none;
+        }
 
-            h3 {
+        p {
+            overflow: unset;
+            max-height: unset;
+
+            @media (min-width: 993px) {
+                font-size: 16px;
+            }
+        }
+
+        h3 {
+            font-size: 24px;
+
+            @media (max-width: 992px) {
                 margin-bottom: 8px;
+                font-size: 22px;
+            }
+        }
+
+        ol li {
+            label {
+                font-size: 14px;
+
+                @media (max-width: 992px) {
+                    font-size: 10px;
+                }
+            }
+
+            span {
+                font-size: 45px;
+
+                @media (max-width: 992px) {
+                    font-size: 50px;
+                }
             }
         }
     }
@@ -412,7 +435,7 @@
             height: 64px;
             margin-bottom: 12px;
 
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
                 height: 40px;
             }
 
@@ -429,11 +452,7 @@
             font-size: 30px;
             font-weight: 500;
 
-            @media (max-width: 1440px) {
-                font-size: 26px;
-            }
-
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
                 font-size: 16px;
             }
         }
@@ -441,7 +460,7 @@
         span {
             font-size: 16px;
 
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
                 font-size: 12px;
             }
         }

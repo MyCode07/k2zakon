@@ -197,7 +197,7 @@
             height: 503px;
 
             @media (max-width: 1440px) {
-                height: 330px;
+                height: 430px;
             }
 
             @media (max-width: 768px) {
@@ -209,6 +209,8 @@
 }
 
 section.service-features {
+    padding-top: 20px;
+    
     h2 span {
         font-weight: inherit;
     }
@@ -217,9 +219,10 @@ section.service-features {
         margin-left: auto;
         margin-right: auto;
         max-width: 890px;
+        margin-bottom: 26px;
 
-        @media (min-width: 1441px) {
-            font-size: 32px;
+        @media (max-width: 992px) {
+            margin-bottom: 20px;
         }
     }
 
@@ -275,6 +278,7 @@ section.service-features {
         background-color: #d8160c;
         justify-content: center;
         padding-bottom: 40px;
+        height: 243px;
 
         label {
             max-width: 199px;
@@ -297,9 +301,17 @@ section.service-features {
         background-color: #2b3131;
         color: #fff;
         top: -31px;
-        right: -68px;
+        right: -41px;
         justify-content: center;
         padding-bottom: 20px;
+
+        width: 227px;
+        height: 227px;
+
+        @media (max-width: 1440px) {
+            width: 200px;
+            height: 200px;
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -342,13 +354,13 @@ section.service-features {
         @media (max-width: 1440px) {
             height: 110px;
             min-width: 180%;
-            left: calc(100% + 20px);
+            left: calc(100% - 20px);
             bottom: -15px;
+            padding-bottom: 15px;
         }
 
         @media (max-width: 992px) {
             width: auto;
-            left: calc(100% - 57px);
         }
 
         @media (max-width: 768px) {

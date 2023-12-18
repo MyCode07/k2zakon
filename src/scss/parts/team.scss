@@ -1,6 +1,6 @@
 .team {
     padding-bottom: 60px;
-    padding-top: 20px;
+    margin-top: 140px;
 
     @media (max-width: 768px) {
         padding-bottom: 40px;
@@ -60,9 +60,10 @@
 .team-top {
     padding-top: 0;
     padding-bottom: 0;
+    margin-bottom: 0 !important;
 
     &:after {
-        z-index: 1;
+        transform: translate(0, 80%) rotate(2.5deg) !important;
     }
 
     @media (max-width: 992px) {
@@ -74,11 +75,23 @@
         }
     }
 
+    .section__container {
+        position: relative;
+        margin-top: -80px;
+        top: 80px;
+    }
+
     .about-slider__flex {
         margin-top: 0;
 
         @media (max-width: 992px) {
             margin-top: -20px;
+        }
+
+        &:before {
+            transform: rotate(2.5deg);
+            height: 80px;
+            bottom: -50px;
         }
     }
 
@@ -110,6 +123,16 @@
             label {
                 padding-bottom: 15px;
             }
+        }
+    }
+
+    .about-slider__info {
+        @media (min-width: 993px) {
+            font-size: 20px;
+        }
+
+        @media (min-width: 1441px) {
+            margin-bottom: 135px;
         }
     }
 
