@@ -8,6 +8,104 @@
         }
     }
 
+    // .contacts-panorama
+
+    &-panorama {
+        position: relative;
+        margin-bottom: 48px;
+        display: block;
+
+        @media (max-width: 992px) {
+            margin-bottom: 26px;
+        }
+
+        // .contacts-panorama__img
+
+        &__img {
+            width: 100vw;
+            left: 50%;
+            transform: translate(-50%, 0);
+            position: relative;
+            margin: 0 auto;
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #000000, $alpha: 0.2);
+            }
+
+            picture {
+                width: 100%;
+
+                max-height: 442px;
+
+                @media (max-width: 768px) {
+                    min-height: 82px;
+                }
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+
+                max-height: 442px;
+
+                @media (max-width: 768px) {
+                    min-height: 82px;
+                }
+            }
+        }
+
+        // .contacts-panorama__content
+
+        &__content {
+            position: absolute;
+            z-index: 1;
+            bottom: 40px;
+
+            @media (max-width: 992px) {
+                bottom: 20px;
+            }
+
+            @media (max-width: 768px) {
+                bottom: 10px;
+            }
+
+            .icon {
+                width: 72px;
+
+                @media (max-width: 992px) {
+                    width: 50px;
+                }
+
+                @media (max-width: 768px) {
+                    width: 33px;
+                }
+            }
+
+            span {
+                line-height: 1.2;
+                display: block;
+                font-size: 30px;
+                font-weight: 500;
+                color: #fff !important;
+
+                @media (max-width: 992px) {
+                    font-size: 20px;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
     // .contacts__list
 
     &__list {
@@ -216,7 +314,7 @@
     padding-bottom: 100px;
 
     @media (max-width: 768px) {
-        padding-bottom: 50px;
+        padding-bottom: 10px;
     }
 }
 
@@ -225,7 +323,7 @@
     padding-bottom: 30px;
 
     @media (max-width: 768px) {
-        padding-bottom: 20px;
+        padding-top: 10px;
     }
 
     h2 {
@@ -287,20 +385,29 @@
 
         &-info {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
 
             img {
                 display: block;
-                @include adaptive-value("margin-right", 16, 8, 1);
-                @include adaptive-value("width", 38, 30, 1);
-                @include adaptive-value("height", 50, 40, 1);
+                width: 38px;
+                margin-right: 16px;
+
+                @media (max-width: 768px) {
+                    margin-right: 8px;
+                    width: 30px;
+                }
             }
 
             button {
                 svg {
-                    width: 38px;
+                    width: 37px;
                     height: 60px;
                     flex: 0 0 auto;
+
+                    @media (max-width: 768px) {
+                        width: 18px;
+                        height: 30px;
+                    }
                 }
             }
         }
@@ -321,7 +428,7 @@
                 }
 
                 @media (max-width: 768px) {
-                    max-width: 199px;
+                    font-size: 12px;
                     width: 100%;
                 }
             }
@@ -329,13 +436,22 @@
             span {
                 color: #d8160c;
                 font-weight: 500;
-                @include adaptive-value("font-size", 20, 16, 1);
                 font-size: 20px;
 
                 @media (max-width: 992px) {
+                    margin-top: 2px;
                     font-size: 16px;
+                    display: block;
                 }
             }
+        }
+    }
+}
+
+body:has(.contacts-panorama) {
+    .breadcrumbs {
+        @media (min-width: 993px) {
+            display: none;
         }
     }
 }

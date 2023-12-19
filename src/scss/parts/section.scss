@@ -85,18 +85,23 @@
     &__imagebox {
         position: absolute;
         right: 0;
-        top: 0;
+        top: -20px;
 
         @media (max-width: 1160px) {
             right: 20px;
         }
 
         @media (max-width: 992px) {
-            top: 100px;
+            right: 60px;
         }
 
         @media (max-width: 768px) {
-            top: 80px;
+            right: 10px;
+            top: 30px;
+        }
+
+        @media (max-width: 640px) {
+            top: 90px;
         }
 
         a {
@@ -106,15 +111,16 @@
             width: 405px;
 
             @media (max-width: 1440px) {
-                width: 298px;
+                width: 380px;
             }
 
             @media (max-width: 992px) {
-                width: 240px;
+                width: 350px;
             }
 
             @media (max-width: 768px) {
-                width: 178px;
+                width: 40vw;
+                min-width: 210px;
             }
 
             img {
@@ -132,14 +138,18 @@
             transform: translate(-50%, 0);
 
             @media (max-width: 1440px) {
-                bottom: -40%;
                 width: 600px;
             }
 
-            @media (max-width: 768px) {
-                width: 304px;
+            @media (max-width: 992px) {
+                width: 540px;
                 bottom: 0;
-                transform: translate(-52%, 0);
+            }
+
+            @media (max-width: 768px) {
+                min-width: 300px;
+                width: 60vw;
+                bottom: -35px;
             }
         }
     }
@@ -276,10 +286,14 @@
 
 .reputation {
     padding-top: 15px;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
 
     @media (max-width: 1440px) {
         padding-top: 20px;
+    }
+
+    @media (max-width: 992px) {
+        padding-bottom: 80px;
     }
 
     h2 {
@@ -330,9 +344,6 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-
-        @media (max-width: 992px) {
-        }
 
         // .reputation__flex-img
 
@@ -396,6 +407,10 @@
                 align-items: flex-end;
                 justify-content: flex-end;
 
+                @media (max-width: 1440px) {
+                    margin-top: -160px;
+                }
+
                 @media (max-width: 992px) {
                     position: absolute;
                     left: 0;
@@ -442,21 +457,6 @@
         background: #165fd8;
         transition: all 0.3s ease 0s;
 
-        img {
-            width: 120px;
-        }
-
-        span {
-            color: #fff;
-            font-family: Ubuntu;
-            font-size: 96px;
-            font-weight: 700;
-        }
-
-        label {
-            flex: unset;
-        }
-
         @media (any-hover: hover) {
             &:hover {
                 color: #fff;
@@ -465,12 +465,10 @@
         }
 
         @media (max-width: 1440px) {
-            width: 214px;
-            height: 211px;
-
-            span {
-                font-size: 80px;
-            }
+            width: 190px;
+            height: 190px;
+            top: 10px;
+            left: 30px;
         }
 
         @media (max-width: 992px) {
@@ -486,14 +484,33 @@
 
             height: 128px;
             width: 123px;
+        }
 
-            img {
+        img {
+            width: 120px;
+
+            @media (max-width: 992px) {
                 width: 85px;
             }
+        }
 
-            span {
+        span {
+            color: #fff;
+            font-family: Ubuntu;
+            font-size: 96px;
+            font-weight: 700;
+
+            @media (max-width: 1440px) {
+                font-size: 80px;
+            }
+
+            @media (max-width: 992px) {
                 font-size: 52px;
             }
+        }
+
+        label {
+            flex: unset;
         }
     }
 
@@ -505,7 +522,7 @@
         align-items: center;
         width: 356px;
         height: 131px;
-        padding: 0px 23px 0 0;
+        padding: 0px 23px;
         flex-shrink: 0;
         border-radius: 417px;
         background: #2e7d10;
@@ -520,7 +537,7 @@
         }
 
         @media (max-width: 1440px) {
-            width: 316px;
+            width: 290px;
             height: 120px;
         }
 
@@ -539,16 +556,17 @@
             padding: 0;
         }
 
-        img {
-            width: 129px;
+        img,
+        picture {
+            max-width: 129px;
 
             @media (max-width: 992px) {
-                width: 85px;
+                max-width: 85px;
             }
         }
 
         label {
-            @media (max-width: 1440px) {
+            @media (max-width: 992px) {
                 flex: unset;
             }
         }
@@ -558,24 +576,22 @@
             font-family: Ubuntu;
             font-size: 80px;
             font-weight: 700;
-
+            flex: 1 1 auto;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 23px;
-            width: 131px;
+            padding-right: 20px;
 
             @media (max-width: 1440px) {
                 font-size: 60px;
-                width: 120px;
             }
 
             @media (max-width: 992px) {
                 font-size: 40px;
-                padding: 0;
                 height: auto;
-                width: 118px;
+                padding-right: 0;
+                flex: unset;
             }
         }
     }
@@ -601,7 +617,7 @@
         }
 
         @media (max-width: 1440px) {
-            width: 351px;
+            width: 320px;
             right: 0;
             margin-top: -102px;
             height: 120px;
@@ -611,18 +627,18 @@
             top: 55px;
             z-index: 3;
             flex: unset;
-            padding: 16px 20px;
+            padding: 16px;
             width: fit-content;
             height: fit-content;
             left: 0;
         }
 
-        label {
-            width: 125px;
-            width: 125px;
+        img,
+        picture {
+            max-width: 125px;
 
             @media (max-width: 992px) {
-                width: 86px;
+                max-width: 86px;
             }
         }
 
@@ -633,19 +649,16 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            padding: 23px;
-            width: 131px;
+            padding-right: 20px;
             padding-left: 0;
+            flex: 1 1 auto;
 
             @media (max-width: 1440px) {
                 font-size: 60px;
-                width: 120px;
             }
 
             @media (max-width: 992px) {
                 font-size: 36px;
-                padding: 0 20px 0 0;
-                width: auto;
             }
         }
     }

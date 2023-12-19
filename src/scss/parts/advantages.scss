@@ -8,7 +8,7 @@
     }
 
     @media (max-width: 768px) {
-        padding-bottom: 40px;
+        padding-bottom: 30px;
     }
 
     h2 {
@@ -162,30 +162,9 @@
         // .victory__card-person
 
         &-person {
-            margin-top: -32%;
-
-            @media (max-width: 1440px) {
-                margin-top: -40%;
-            }
-
-            @media (max-width: 768px) {
-                margin-top: -22%;
-            }
-
             // .victory__card-person-img
 
             &-img {
-                width: 120px;
-                height: 120px;
-
-                @media (max-width: 768px) {
-                    width: 90px;
-                    height: 90px;
-                }
-            }
-
-            img {
-                border-radius: 50%;
             }
 
             a {
@@ -213,6 +192,7 @@
 
         .swiper {
             max-width: 324px;
+            width: 324px;
             width: 100%;
             padding: 20px;
             margin-top: -20px;
@@ -220,6 +200,7 @@
 
             @media (max-width: 768px) {
                 max-width: 250px;
+                width: 250px;
             }
 
             .victory__card-docimg {
@@ -241,9 +222,13 @@
 
         .swiper {
             margin-top: -20px;
-            width: 270px;
             padding: 20px;
             box-shadow: none;
+
+            @media (min-width: 769px) {
+                width: 270px !important;
+                max-width: 270px !important;
+            }
 
             &-slide {
                 height: auto !important;

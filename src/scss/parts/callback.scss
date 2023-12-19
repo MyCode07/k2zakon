@@ -26,8 +26,8 @@
     }
 
     .callback-person {
-        width: 310px;
-        height: 310px;
+        width: 330px;
+        height: 330px;
         display: block;
 
         @media (max-width: 992px) {
@@ -119,6 +119,7 @@
 
                 @media (max-width: 768px) {
                     margin-top: 19px;
+                    display: none;
                 }
             }
         }

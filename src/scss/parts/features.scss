@@ -1,5 +1,5 @@
 .features {
-    padding-bottom: 60px;
+    padding-bottom: 42px;
 
     @media (max-width: 768px) {
         padding-bottom: 32px;
@@ -31,7 +31,7 @@
             width: 102px;
         }
 
-        span{
+        span {
             text-align: center;
         }
     }
@@ -214,7 +214,7 @@
 
 section.service-features {
     padding-top: 20px;
-    
+
     h2 span {
         font-weight: inherit;
     }
