@@ -88,6 +88,10 @@ h4 {
 h3 {
     font-size: 24px;
     font-weight: 500;
+
+    @media (max-width: 992px) {
+        font-size: 16px;
+    }
 }
 
 .whatsapp-slider h2,

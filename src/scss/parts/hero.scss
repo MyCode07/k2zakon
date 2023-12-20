@@ -98,6 +98,10 @@
                 }
             }
 
+            @media (any-hover: none) {
+                filter: grayscale(0);
+            }
+
             img {
                 height: 66px;
 
