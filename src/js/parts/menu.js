@@ -29,9 +29,11 @@ if (burgers.length) {
 
 if (menuLinks.length) {
     menuLinks.forEach(link => {
+        const li = link.closest('li');
+
         link.addEventListener('click', (е) => {
 
-            if (menu.classList.contains('_open')) {
+            if (menu.classList.contains('_open') && li.getAttribute('id') != 'menu-item-350') {
                 menu.classList.remove('_open');
 
                 burgers.forEach(burger => {
@@ -64,6 +66,13 @@ if (submenuList.length) {
                     toggleMenu(li)
                 })
             }
+
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 992 && li.getAttribute('id') == 'menu-item-350') {
+                    e.preventDefault();
+                    toggleMenu(li)
+                }
+            })
         }
     })
 
