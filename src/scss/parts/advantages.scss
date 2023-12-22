@@ -164,6 +164,10 @@
         &-person {
             // .victory__card-person-img
 
+            @media (max-width: 1440px) and (min-width: 993px) {
+                margin-top: -75px;
+            }
+
             &-img {
                 @media (max-width: 1440px) and (min-width: 993px) {
                     width: 150px;

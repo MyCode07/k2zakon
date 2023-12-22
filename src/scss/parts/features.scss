@@ -345,7 +345,7 @@ section.service-features {
         width: auto;
         height: 140px;
         min-width: 202%;
-        bottom: -50px;
+        bottom: -40px;
         left: calc(100% - 57px);
 
         @media (any-hover: hover) {
@@ -357,7 +357,7 @@ section.service-features {
         @media (max-width: 1440px) {
             height: 110px;
             min-width: 180%;
-            left: calc(100% - 20px);
+            left: calc(100% - 20px) !important;
             bottom: -15px;
             padding-bottom: 15px;
         }
@@ -371,7 +371,7 @@ section.service-features {
             height: 65px;
             max-width: 250px;
             min-width: 240px;
-            left: calc(100% - 15px);
+            left: calc(100% - 15px) !important;
         }
 
         @media (max-width: 425px) {
