@@ -129,8 +129,8 @@
     }
 
     .section__flex-left {
-        width: auto;
-        max-width: none;
+        width: auto !important;
+        max-width: none !important;
     }
 
     .victory__card {
