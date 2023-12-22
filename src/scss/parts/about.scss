@@ -157,7 +157,7 @@
         height: 180px;
         background-color: #d8160c;
         color: #fff;
-        left: calc(100% - 47px);
+        left: calc(100% - 47px) !important;
         bottom: -34px;
         padding-bottom: 28px;
         gap: 0;
@@ -176,13 +176,13 @@
 
         @media (max-width: 992px) {
             bottom: -20px;
-            left: calc(100% - 50px);
+            left: calc(100% - 50px) !important;
         }
 
         @media (max-width: 768px) {
             width: 80px;
             height: 80px;
-            left: calc(100% + 28px);
+            left: calc(100% + 28px) !important;
             bottom: -10px;
             padding-bottom: 10px;
         }

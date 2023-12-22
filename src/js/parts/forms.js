@@ -132,7 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
 
-    function sentMessage(form) {
+    function sentMessage() {
+        const activePopup = document.querySelector('.popup#contacts._active');
+        if (activePopup) {
+            activePopup.classList.remove('_active')
+        }
+        
         popup.classList.add('_open');
         document.body.classList.add('_noscroll');
     }

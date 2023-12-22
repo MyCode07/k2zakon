@@ -496,7 +496,6 @@
 
         span {
             color: #fff;
-            font-family: Ubuntu;
             font-size: 96px;
             font-weight: 700;
 
@@ -537,7 +536,7 @@
         }
 
         @media (max-width: 1440px) {
-            width: 290px;
+            width: 320px;
             height: 120px;
         }
 
@@ -573,8 +572,7 @@
 
         span {
             color: #fff;
-            font-family: Ubuntu;
-            font-size: 80px;
+            font-size: 96px;
             font-weight: 700;
             flex: 1 1 auto;
             height: 100%;
@@ -584,7 +582,7 @@
             padding-right: 20px;
 
             @media (max-width: 1440px) {
-                font-size: 60px;
+                font-size: 80px;
             }
 
             @media (max-width: 992px) {
@@ -644,7 +642,6 @@
 
         span {
             color: #2b3131;
-            font-family: Ubuntu;
             font-size: 96px;
             font-style: normal;
             font-weight: 700;
@@ -654,7 +651,7 @@
             flex: 1 1 auto;
 
             @media (max-width: 1440px) {
-                font-size: 60px;
+                font-size: 80px;
             }
 
             @media (max-width: 992px) {
