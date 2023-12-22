@@ -94,6 +94,18 @@
             flex-direction: column-reverse;
             justify-content: flex-end;
         }
+
+        &._top {
+            @media (min-width: 992px) {
+                .section__flex-right {
+                    padding-bottom: 100px;
+
+                    h2 {
+                        margin-bottom: 100px;
+                    }
+                }
+            }
+        }
     }
 
     .section__flex-right {
@@ -118,6 +130,7 @@
 
     .section__flex-left {
         width: auto;
+        max-width: none;
     }
 
     .victory__card {
@@ -131,7 +144,7 @@
         margin-right: auto;
 
         @media (max-width: 1440px) {
-            max-width: 264px;
+            max-width: 284px;
             width: 100%;
         }
 
@@ -191,52 +204,44 @@
         }
     }
 
+    .swiper {
+        max-width: 344px !important;
+        width: 344px !important;
+        padding: 20px;
+        margin-top: -20px;
+
+        @media (max-width: 1440px) {
+            width: 290px !important;
+        }
+
+        @media (max-width: 768px) {
+            width: 252px !important;
+        }
+
+        .victory__card-docimg {
+            height: 427px;
+
+            @media (max-width: 1440px) {
+                height: 353px;
+            }
+
+            @media (max-width: 768px) {
+                height: 300px;
+            }
+        }
+    }
+
     &:not(.victory-swiperblock) {
         h2 {
             @media (max-width: 768px) {
                 max-width: 177px;
             }
         }
-
-        .swiper {
-            max-width: 324px;
-            width: 324px;
-            width: 100%;
-            padding: 20px;
-            margin-top: -20px;
-            margin-bottom: -20px;
-
-            @media (max-width: 768px) {
-                max-width: 250px;
-                width: 250px;
-            }
-
-            .victory__card-docimg {
-                height: 400px;
-
-                @media (max-width: 768px) {
-                    height: 297px;
-                }
-            }
-        }
     }
 
     &:has(.victory-swiperblock__title) {
-        .section__flex-left {
-            @media (max-width: 1440px) {
-                max-width: 270px;
-            }
-        }
-
         .swiper {
-            margin-top: -20px;
-            padding: 20px;
             box-shadow: none;
-
-            @media (min-width: 769px) {
-                width: 270px !important;
-                max-width: 270px !important;
-            }
 
             &-slide {
                 height: auto !important;
@@ -251,9 +256,22 @@
                     flex: 1 1 auto;
                 }
 
+                picture,
+                img {
+                    height: 100%;
+                    height: 427px;
+
+                    @media (max-width: 1440px) {
+                        height: 353px;
+                    }
+
+                    @media (max-width: 768px) {
+                        height: 300px;
+                    }
+                }
+
                 img {
                     box-shadow: 0px 0px 14.89655px 0px rgba(0, 0, 0, 0.17);
-                    height: 325px !important;
                 }
             }
         }
@@ -278,6 +296,14 @@
             ol {
                 display: none !important;
             }
+        }
+    }
+}
+
+.person-page + .advantages {
+    .section__info {
+        @media (max-width: 1440px) {
+            padding-top: 0;
         }
     }
 }

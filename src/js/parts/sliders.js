@@ -9,6 +9,8 @@ const slideParam1Text = document.querySelector('[data-slider-change] [data-slide
 const slideParam2Name = document.querySelector('[data-slider-change] [data-slider-param2] span');
 const slideParam2Text = document.querySelector('[data-slider-change] [data-slider-param2] label');
 const slideCity = document.querySelector('[data-slider-change] [data-slider-city]');
+const slideLink = document.querySelector('[data-slider-change] [data-slider-link]');
+const slideCityName = document.querySelector('[data-slider-change] [data-slider-city-name]');
 
 const sliders = document.querySelectorAll('.swiper');
 
@@ -49,6 +51,8 @@ const slideChange = (slide) => {
     const param2Num = slide.dataset.param2Num
     const param2Text = slide.dataset.param2Text
     const cityLogoUrl = slide.dataset.cityLogo
+    const cityName = slide.dataset.cityName
+    const link = slide.querySelector('a.about-slider__slide-img');
 
     slideName.innerHTML = name
     slidePos.innerHTML = pos
@@ -56,11 +60,16 @@ const slideChange = (slide) => {
     slideParam1Text.innerHTML = param1Text
     slideParam2Name.innerHTML = param2Num
     slideParam2Text.innerHTML = param2Text
+    slideCityName.textContent = cityName
 
     if (slideCity) {
         slideCity.querySelector('img').src = cityLogoUrl
         const sources = slideCity.querySelectorAll('source');
         if (sources.length) sources.forEach(img => img.srcset = cityLogoUrl)
+    }
+
+    if (slideLink && link) {
+        slideLink.href = link.href
     }
 }
 
@@ -85,7 +94,7 @@ if (sldierBtns.length) {
 
 if (aboutSlider && isMobile.any() && window.innerWidth <= 992) {
     let move = 0;
-    
+
     aboutSlider.addEventListener('touchstart', (event) => {
         const touch = event.targetTouches[0];
         const midpoint = Math.floor(screen.width / 2);

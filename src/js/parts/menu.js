@@ -68,7 +68,7 @@ if (submenuList.length) {
             }
 
             link.addEventListener('click', function (e) {
-                if (window.innerWidth <= 992 && li.getAttribute('id') == 'menu-item-350') {
+                if (isMobile.any() && li.getAttribute('id') == 'menu-item-350') {
                     e.preventDefault();
                     toggleMenu(li)
                 }

@@ -202,6 +202,7 @@
 .person__card {
     height: 100%;
     position: relative;
+    display: block;
 
     @media (any-hover: hover) {
         &:hover {

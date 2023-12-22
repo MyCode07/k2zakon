@@ -12,8 +12,8 @@
     max-height: 759px;
 
     @media (max-width: 1440px) {
-        padding-top: 78px;
-        padding-bottom: 100px;
+        padding-top: 98px;
+        // padding-bottom: 100px;
     }
 
     @media (max-width: 768px) {
@@ -315,6 +315,15 @@
 
     .person__card-info {
         max-width: 392px;
+        display: block;
+
+        transition: none;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #fff !important;
+            }
+        }
 
         @media (max-width: 992px) {
             width: 100vw;
