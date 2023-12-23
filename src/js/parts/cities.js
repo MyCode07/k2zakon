@@ -1,6 +1,6 @@
 import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
-var json_data = { "jsonPath": "https://k2zakon.test-yeremyan.site/wp-content/themes/blank-sheet/assets/files/russian-cities.json" };
+var json_data = { "jsonPath": "https://k2zakon.ru/wp-content/themes/blank-sheet/assets/files/russian-cities.json" };
 
 const cityPopup = document.querySelector('.popup#city');
 const inputCity = cityPopup.querySelector('input[type="search"]');
