@@ -4,6 +4,7 @@ const menu = document.querySelector('.menu');
 const burgers = document.querySelectorAll('.burger');
 const menuLinks = document.querySelectorAll('.menu nav li a');
 const container = document.querySelector('.header__container');
+const menuOverlay = document.querySelector('.menu-overlay');
 
 let left = container.getBoundingClientRect().left;
 menu.style.left = left + 'px';
@@ -19,6 +20,10 @@ if (burgers.length) {
             burgers.forEach(burger => {
                 burger.classList.toggle('_active');
             })
+
+            if (menuOverlay) {
+                menuOverlay.classList.toggle('_open');
+            }
 
             menu.classList.toggle('_open');
         })
@@ -104,8 +109,17 @@ document.addEventListener('click', function (e) {
     let targetEl = e.target;
     if (!targetEl.classList.contains('menu') && !targetEl.closest('.menu') && !targetEl.classList.contains('burger') && menu.classList.contains('_open')) {
         menu.classList.remove('_open')
+
         burgers.forEach(burger => {
-            burger.classList.toggle('_active');
+            burger.classList.remove('_active');
+        })
+    }
+    if (targetEl.classList.contains('menu-overlay')) {
+        targetEl.classList.remove('_open')
+        menu.classList.remove('_open')
+
+        burgers.forEach(burger => {
+            burger.classList.remove('_active');
         })
     }
 })

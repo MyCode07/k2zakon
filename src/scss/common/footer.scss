@@ -213,7 +213,7 @@
 
         .footer__top-line {
             justify-content: space-between;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
 
             & > :not(:last-child) {
                 margin-right: 20px;
@@ -241,7 +241,16 @@
             transition: all 0.5s;
 
             @media (max-width: 992px) {
-                margin-bottom: 15px;
+                margin-top: 20px;
+                font-size: 12px;
+                width: 100%;
+                justify-content: center;
+                order: 10;
+            }
+
+            @media (max-width: 425px) {
+                justify-content: flex-start;
+                padding: 8px;
             }
 
             img,
@@ -249,6 +258,13 @@
                 width: 19px;
                 margin-right: 12px;
                 flex: 0 0 auto;
+
+                @media (max-width: 992px) {
+                    width: 14px;
+                    height: 7px;
+                    margin-right: 10px;
+                    margin-top: 2px;
+                }
             }
         }
     }
@@ -264,6 +280,8 @@
     // .footer__map
 
     &__map {
+        position: relative;
+
         #map {
             height: 400px;
         }
@@ -273,6 +291,94 @@
             width: 100% !important;
             display: block;
             height: 100% !important;
+        }
+
+        .map-desctop,
+        .map-mobil {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+
+            picture,
+            img {
+                height: 100%;
+                width: 100%;
+                display: block;
+                pointer-events: none;
+                object-fit: cover;
+            }
+        }
+
+        .map-desctop {
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .map-mobile {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: block;
+            }
+        }
+
+        // .footer__map-icons
+
+        &-icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+            @media (max-width: 768px) {
+                top: 14px;
+                left: 10px;
+            }
+
+            .label {
+                font-size: 14px;
+                color: #000;
+                border-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+                padding: 4px 6px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
+
+                .icon {
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 6px;
+                }
+
+                &:first-child {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .link {
+                display: block;
+                margin-top: 6px;
+                width: fit-content;
+
+                .icon {
+                    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img,
+                    picture {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: contain;
+                    }
+                }
+            }
         }
     }
 
