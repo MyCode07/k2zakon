@@ -33,6 +33,14 @@ let lat = null;
 let lon = null;
 
 
+const footerMapDescop = document.querySelector('.map-desctop');
+const footerMapMobile = document.querySelector('.map-mobile');
+const taxiMapLinks = document.querySelectorAll('.taxi-map-link');
+const yandexMapLinks = document.querySelectorAll('.yandex-map-link');
+const googleMapLinks = document.querySelectorAll('.google-map-link');
+const twoGisMapLinks = document.querySelectorAll('.twogis-map-link');
+
+
 if (headerCityChoice) {
     headerCityChoice.addEventListener('click', () => headerCityChoose.classList.add('_hide'))
 }
@@ -47,7 +55,7 @@ if (footerEmailCopy) {
 }
 
 
-function copyToClipboard(text) {
+export function copyToClipboard(text) {
     if (window.clipboardData && window.clipboardData.setData) {
         return window.clipboardData.setData("Text", text);
     }
@@ -506,10 +514,12 @@ function handleTextChange() {
                     response.full_address !== null
                 ) {
                     changeMapLocation(
-                        response.coordinate_latitude,
-                        response.coordinate_longitude,
-                        'Юристы K2',
-                        response.full_address
+                        response.desctop_map,
+                        response.mobile_map,
+                        response.yandex_link,
+                        response.google_link,
+                        response.twogis_link,
+                        response.taxi_link
                     );
                     footerMap.classList.remove('hide');
                 } else {
@@ -533,10 +543,12 @@ function handleTextChange() {
                             footerCityP.textContent = response.city_full_address;
                             console.log(response);
                             changeMapLocation(
-                                response.closest_latitude,
-                                response.closest_longitude,
-                                'Юристы K2',
-                                response.city_full_address
+                                response.desctop_map,
+                                response.mobile_map,
+                                response.yandex_link,
+                                response.google_link,
+                                response.twogis_link,
+                                response.taxi_link
                             );
                             console.log('Ближайший офис в г. ' + response.closest_city);
                             footerCity.classList.remove('hide');
@@ -617,45 +629,33 @@ function handleTextChange() {
 }
 handleTextChange();
 
-// Создаем карту
-var myMap;
-
-ymaps.ready(function () {
-    myMap = new ymaps.Map('map', {
-        center: [36.571866, 50.603664],
-        zoom: 15.52,
-    });
-
-    //Добавьте метку (балун) на карту
-    var myPlacemark = new ymaps.Placemark(
-        [36.571866, 50.603664],
-        {
-            hintContent: 'Юристы K2',
-            balloonContent: 'г. Белгород, ул. Свободная, 50, 4 этаж',
-        },
-        { iconColor: '#d8160c', preset: 'islands#redDotIcon' }
-    );
-    myMap.geoObjects.add(myPlacemark);
-});
 
 
+function changeMapLocation(desctopMap, mobileMap, yandexLink, googleLink, twoGisLink, taxiLink = false) {
+    changeMapImage(footerMapDescop, desctopMap)
+    changeMapImage(footerMapMobile, mobileMap)
 
-function changeMapLocation(lat, lon, hintContent, balloonContent) {
-    if (myMap && myMap.geoObjects) {
-        myMap.geoObjects.removeAll();
+
+    changeMapLinks(taxiMapLinks, taxiLink)
+    changeMapLinks(yandexMapLinks, yandexLink)
+    changeMapLinks(googleMapLinks, googleLink)
+    changeMapLinks(twoGisMapLinks, twoGisLink)
+
+    function changeMapImage(map, image) {
+        const mapImage = map.querySelector('img');
+        const mapSources = map.querySelectorAll('source');
+
+        mapImage.src = image
+        if (mapSources.length) {
+            mapSources.forEach(item => item.srcset = image)
+        }
     }
 
-    var newPlacemark = new ymaps.Placemark(
-        [+lat, +lon],
-        { hintContent: hintContent, balloonContent: balloonContent },
-        { iconColor: '#d8160c', preset: 'islands#redDotIcon' }
-    );
-
-    if (myMap) {
-        myMap.geoObjects.add(newPlacemark);
-        myMap.setCenter([+lat, +lon], 15.52);
+    function changeMapLinks(links, href) {
+        if (links.length && href) {
+            links.forEach(item => item.href = href)
+        }
     }
-    console.log([+lat, +lon]);
 }
 
 

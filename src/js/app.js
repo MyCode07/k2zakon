@@ -5,6 +5,7 @@ import "./parts/cities.js"
 import "./parts/map.js";
 import "./parts/read-more.js";
 import "./parts/services.js";
+import "./parts/tabs.js";
 
 import { toolTipAction } from "./parts/tooltip.js";
 import { stickyHeader } from "./parts/header.js";
