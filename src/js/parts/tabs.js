@@ -37,7 +37,7 @@ if (tabs.length) {
 const copyToTexts = document.querySelectorAll('.details .copy');
 if (copyToTexts.length) {
     copyToTexts.forEach(item => {
-        const text = item.querySelector('span').textContent;
+        const text = item.querySelector('.copy-text').textContent;
         item.addEventListener('click', function () {
             copyToClipboard(text);
         })
