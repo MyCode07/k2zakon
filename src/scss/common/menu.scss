@@ -89,7 +89,6 @@
             width: 28px;
             z-index: 2;
             margin-bottom: 10px;
-
         }
 
         &:after {
@@ -246,13 +245,15 @@
                             color: #fff !important;
                         }
 
-                        ul {
+                        & > ul {
                             display: block;
                         }
 
-                        svg,
-                        img {
-                            stroke: #fff;
+                        & > button {
+                            svg,
+                            img {
+                                stroke: #fff;
+                            }
                         }
                     }
                 }
@@ -265,7 +266,7 @@
                         background-color: #fff;
                     }
 
-                    ul {
+                    & > ul {
                         display: block;
 
                         @media (max-width: 992px) {
@@ -273,12 +274,14 @@
                         }
                     }
 
-                    svg,
-                    img {
-                        stroke: #d8160c;
+                    & > button {
+                        svg,
+                        img {
+                            stroke: #d8160c;
 
-                        @media (max-width: 992px) {
-                            transform: rotate(-90deg);
+                            @media (max-width: 992px) {
+                                transform: rotate(-90deg);
+                            }
                         }
                     }
                 }
@@ -326,6 +329,13 @@
 
                     & > :not(:last-child) {
                         margin-bottom: 10px;
+                    }
+                }
+
+                button,
+                ul {
+                    @media (max-width: 992px) {
+                        display: none;
                     }
                 }
             }

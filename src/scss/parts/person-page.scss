@@ -94,9 +94,12 @@
 
         @media (max-width: 768px) {
             padding-left: 0 !important;
-            flex-direction: column-reverse !important;
             width: fit-content !important;
             max-width: 90px;
+
+            li:has(img) {
+                order: 10;
+            }
         }
     }
 

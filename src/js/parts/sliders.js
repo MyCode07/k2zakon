@@ -60,9 +60,12 @@ const slideChange = (slide) => {
     slideParam1Text.innerHTML = param1Text
     slideParam2Name.innerHTML = param2Num
     slideParam2Text.innerHTML = param2Text
-    slideCityName.textContent = cityName
 
-    if (slideCity) {
+    if (slideCityName && cityName) {
+        slideCityName.textContent = cityName
+    }
+
+    if (slideCity && cityLogoUrl) {
         slideCity.querySelector('img').src = cityLogoUrl
         const sources = slideCity.querySelectorAll('source');
         if (sources.length) sources.forEach(img => img.srcset = cityLogoUrl)

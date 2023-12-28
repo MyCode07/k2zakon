@@ -390,6 +390,14 @@
         }
     }
 
+    .more {
+        @media (any-hover: hover) {
+            &:hover {
+                color: #d8160c;
+            }
+        }
+    }
+
     &.chack-card {
         ol {
             align-items: center;
