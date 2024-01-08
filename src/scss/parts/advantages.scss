@@ -94,8 +94,10 @@
             flex-direction: column-reverse;
             justify-content: flex-end;
         }
+    }
 
-        &._top {
+    &:not(.advantages-person) {
+        .section__flex._top {
             @media (min-width: 992px) {
                 .section__flex-right {
                     padding-bottom: 100px;
@@ -294,6 +296,26 @@
             }
 
             ol {
+                display: none !important;
+            }
+        }
+    }
+
+    &-person {
+        @media (min-width: 1441px) {
+            padding-bottom: 60px;
+        }
+
+        .section__flex-right {
+            padding-bottom: 0 !important;
+
+            @media (max-width: 768px) {
+                margin-bottom: 30px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 {
                 display: none !important;
             }
         }
