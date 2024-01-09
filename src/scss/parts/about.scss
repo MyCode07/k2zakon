@@ -50,6 +50,12 @@
         justify-content: center;
         padding-bottom: 40px;
 
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #000;
+            }
+        }
+
         @media (max-width: 1440px) {
             height: 190px;
         }
@@ -107,6 +113,7 @@
 
         @media (any-hover: hover) {
             &:hover {
+                background-color: #c9c9c9;
                 color: #0d0d0d;
             }
         }
@@ -164,6 +171,7 @@
 
         @media (any-hover: hover) {
             &:hover {
+                background-color: #920700;
                 color: #fff;
             }
         }

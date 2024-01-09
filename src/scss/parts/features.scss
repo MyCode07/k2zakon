@@ -48,6 +48,7 @@
         color: #fff;
         position: relative;
         text-align: center;
+        transition: background-color 0.3s ease 0s;
 
         @media (any-hover: hover) {
             &:hover {
@@ -99,6 +100,12 @@
             height: 109px;
             padding-left: 18px;
         }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #920700;
+            }
+        }
     }
 
     .depozit {
@@ -109,6 +116,12 @@
         z-index: 1;
         right: -63px;
         top: -10px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #000;
+            }
+        }
 
         @media (max-width: 1440px) {
             width: 200px;
@@ -144,6 +157,8 @@
 
         @media (any-hover: hover) {
             &:hover {
+                background-color: #c9c9c9;
+
                 color: #000;
             }
         }
