@@ -77,66 +77,22 @@ const slideChange = (slide) => {
 }
 
 const slides = document.querySelectorAll('[data-slider-change] .about-slider__slide');
-const sldierBtnPrev = document.querySelector('.about-slider__prev');
-const sldierBtnNext = document.querySelector('.about-slider__next');
+const sldierBtns = document.querySelectorAll('[data-slider-change-btn]');
 const aboutSlider = document.querySelector('.about-slider__slider');
-const allSlides = document.querySelectorAll('.about-slider__slide');
-
-if (allSlides.length) {
-    const firstSlide = allSlides[0];
-    firstSlide.nextElementSibling.classList.add('_next')
-
-    sldierBtnNext.addEventListener('click', () => {
-        changeSlides(1);
+if (sldierBtns.length) {
+    sldierBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            slides.forEach((slide, i) => {
+                if (slide.classList.contains('_active')) {
+                    slide.classList.remove('_active')
+                }
+                else {
+                    slide.classList.add('_active')
+                    slideChange(slide)
+                }
+            })
+        })
     })
-    sldierBtnPrev.addEventListener('click', () => {
-        changeSlides(-1);
-    })
-}
-
-function changeSlides(direction) {
-    let currSlide = document.querySelector('.about-slider__slide._active');
-    let nextSlide = document.querySelector('.about-slider__slide._next');
-    let nextSlideNext = null;
-
-    const firstSlide = allSlides[0];
-    const lastSlide = allSlides[allSlides.length - 1];
-
-    nextSlide.classList.remove('_next')
-
-    if (direction == 1) {
-        nextSlide = currSlide.nextElementSibling;
-
-        if (!nextSlide) {
-            nextSlide = firstSlide
-        }
-
-        nextSlideNext = nextSlide.nextElementSibling;
-
-        if (!nextSlideNext) {
-            nextSlideNext = firstSlide
-        }
-    }
-    else {
-        nextSlide = currSlide.previousElementSibling;
-
-        if (!nextSlide) {
-            nextSlide = lastSlide
-        }
-
-        nextSlideNext = nextSlide.previousElementSibling;
-        if (!nextSlideNext) {
-            nextSlideNext = lastSlide
-        }
-    }
-
-
-    currSlide.classList.remove('_active')
-    nextSlide.classList.add('_active')
-
-    nextSlideNext.classList.add('_next')
-
-    slideChange(nextSlide)
 }
 
 if (aboutSlider && isMobile.any() && window.innerWidth <= 992) {

@@ -711,6 +711,10 @@
                 height: 100%;
             }
         }
+
+        &:not(._active, ._next) {
+            opacity: 0;
+        }
     }
 }
 
