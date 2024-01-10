@@ -45,6 +45,14 @@ if (headerCityChoice) {
     headerCityChoice.addEventListener('click', () => headerCityChoose.classList.add('_hide'))
 }
 
+document.addEventListener('DOMContentLoaded', function (e) {
+    setTimeout(() => {
+        if (headerCityChoose && !headerCityChoose.classList.contains('_hide')) {
+            headerCityChoose.classList.add('_hide')
+        }
+    }, 3000);
+})
+
 const footerEmailCopy = document.querySelector('#footer-email-copy');
 if (footerEmailCopy) {
     var copyText = footerEmailCopy.querySelector("input");

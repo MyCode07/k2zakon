@@ -1,6 +1,9 @@
 import Swiper from 'swiper';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { isMobile } from '../utils/isMobile.js';
+import { getSwipeDirection } from '../static/swipeDirection.js';
+
+
 
 const slideName = document.querySelector('[data-slider-change] [data-slider-name]');
 const slidePos = document.querySelector('[data-slider-change] [data-slider-pos]');
@@ -144,27 +147,19 @@ if (aboutSlider && isMobile.any() && window.innerWidth <= 992) {
 
     aboutSlider.addEventListener('touchstart', (event) => {
         const touch = event.targetTouches[0];
-        const midpoint = Math.floor(screen.width / 2);
-        const px = touch.pageX;
-        move = px;
+        move = touch.pageX;
     })
 
     aboutSlider.addEventListener('touchend', (event) => {
         const touch = event.changedTouches[0];
-        const midpoint = Math.floor(screen.width / 2);
-        const px = touch.pageX;
 
-        const deltamove = Math.abs(move - px)
-        if (deltamove >= 50) {
-            slides.forEach(slide => {
-                if (slide.classList.contains('_active')) {
-                    slide.classList.remove('_active')
-                }
-                else {
-                    slide.classList.add('_active')
-                    slideChange(slide)
-                }
-            })
+        const dir = getSwipeDirection(event);
+
+        if (dir == 'right') {
+            changeSlides(1);
+        }
+        else if(dir == 'left') {
+            changeSlides(-1);
         }
     })
 }
