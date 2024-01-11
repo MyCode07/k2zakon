@@ -48,7 +48,7 @@ if (headerCityChoice) {
 document.addEventListener('DOMContentLoaded', function (e) {
     setTimeout(() => {
         if (headerCityChoose && !headerCityChoose.classList.contains('_hide')) {
-            headerCityChoose.classList.add('_hide')
+            setCityNameCookie();
         }
     }, 3000);
 })
@@ -330,7 +330,9 @@ function getCityCookie() {
 $.getJSON(json_data.jsonPath, createLiElements);
 
 // Кнопка модалки подтверждения города
-headerCityOk.addEventListener('click', () => {
+headerCityOk.addEventListener('click', setCityNameCookie);
+
+function setCityNameCookie() {
     headerCityChoose.classList.add('_hide');
 
     city = headerCityName.textContent;
@@ -351,10 +353,7 @@ headerCityOk.addEventListener('click', () => {
         secure: true,
         'max-age': 31536000000,
     });
-});
-
-// handleTextChange();
-// });
+}
 
 
 // Отслеживание изменения города
