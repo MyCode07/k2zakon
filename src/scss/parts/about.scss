@@ -366,6 +366,14 @@
         padding-top: 32px;
     }
 
+    &.hide-line-992 {
+        @media (max-width: 992px) {
+            &:after {
+                display: none !important;
+            }
+        }
+    }
+
     .section__container {
         overflow: hidden;
     }
@@ -793,9 +801,11 @@
             }
 
             li {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
 
                 label,
                 span {
