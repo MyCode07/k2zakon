@@ -335,4 +335,15 @@
     ._button {
         color: #fff !important;
     }
+
+    // .calendar-office
+
+    &-office {
+        .section__flex-left {
+            img {
+                max-width: 322px;
+                filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+            }
+        }
+    }
 }

@@ -490,3 +490,62 @@
         }
     }
 }
+
+#office-hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    overflow: hidden;
+
+    margin-bottom: 0 !important;
+    margin-top: -73px !important;
+
+    padding-top: 128px;
+    padding-bottom: 120px;
+
+    @media (max-width: 1440px) {
+        padding-top: 98px;
+    }
+
+    @media (max-width: 992px) {
+        padding-bottom: 40px;
+    }
+
+    &:not(._shadow) {
+        &:after {
+            transform: translate(0, 0);
+            clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
+            z-index: 1;
+            bottom: -1px;
+        }
+    }
+}
+
+.office-hero {
+    .hero__bgi {
+        @media (max-width: 992px) {
+            display: none;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            inset: 0;
+            background:
+                linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%),
+                linear-gradient(180deg, rgba(245, 245, 245, 0) 75.76%, #f5f5f5 143.25%),
+                lightgray 13.5px -81px / 99.302% 109.533% no-repeat;
+            filter: blur(0.5px);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+    }
+
+    .lowers-item:first-child .icon {
+        opacity: 1;
+    }
+
+    .about-slider__flex:before {
+        background-color: #dcdfd4;
+    }
+}

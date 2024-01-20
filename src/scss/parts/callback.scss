@@ -151,3 +151,15 @@
         }
     }
 }
+
+.callback-fullwidth {
+    .section__flex {
+        max-width: none;
+    }
+
+    .callback-person {
+        @media (min-width: 769px) {
+            margin-left: auto;
+        }
+    }
+}

@@ -411,6 +411,29 @@
     }
 }
 
+.contacts-section {
+    h2 {
+        margin-bottom: 40px;
+
+        @media (max-width: 992px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .contacts-panorama {
+        margin-bottom: 22px;
+
+        @media (max-width: 992px) {
+            margin-bottom: 11px;
+        }
+    }
+
+    .contacts-panorama__content {
+        right: 50%;
+        transform: translate(50%, 0);
+    }
+}
+
 .contact-calendar {
     padding-bottom: 100px;
 
@@ -545,7 +568,7 @@
     }
 }
 
-body:has(.contacts-panorama) {
+body:has(.contacts-page) {
     .breadcrumbs {
         @media (min-width: 993px) {
             display: none;

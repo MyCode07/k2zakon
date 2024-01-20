@@ -117,6 +117,12 @@
             object-fit: cover;
         }
     }
+
+    &.map-in-middle {
+        .section__flex-right {
+            margin-top: 0;
+        }
+    }
 }
 
 .sud-map {

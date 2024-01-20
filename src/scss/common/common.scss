@@ -622,6 +622,20 @@ label {
             }
         }
     }
+
+    // ._button-darkgray
+
+    &-darkgray {
+        background-color: #344F62;
+        color: #fff;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #fff;
+                box-shadow: 0 0 20px 0 #808080 !important;
+            }
+        }
+    }
 }
 
 .filter__btn {

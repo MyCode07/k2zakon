@@ -211,6 +211,29 @@
             }
         }
     }
+
+    &.has-button {
+        ._button {
+            @media (min-width: 993px) {
+                position: absolute;
+                right: 0;
+                bottom: -75px;
+                z-index: 2;
+
+                @media (max-width: 1440px) {
+                    right: 15px;
+                    bottom: -40px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                margin-top: 44px;
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
 }
 
 .rating {
