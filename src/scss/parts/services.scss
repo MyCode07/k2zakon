@@ -107,7 +107,14 @@
     }
 }
 
-
-.bgc-white{
+.bgc-white {
     background-color: #fff;
+}
+
+.services-search.bgc-white {
+    padding-bottom: 75px;
+
+    @media (max-width: 992px) {
+        padding-bottom: 35px;
+    }
 }

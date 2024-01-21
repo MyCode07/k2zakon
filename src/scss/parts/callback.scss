@@ -153,6 +153,13 @@
 }
 
 .callback-fullwidth {
+    padding-top: 0;
+    padding-bottom: 20px;
+
+    @media (max-width: 992px) {
+        padding-bottom: 26px;
+    }
+
     .section__flex {
         max-width: none;
     }

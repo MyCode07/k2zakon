@@ -431,3 +431,15 @@ section.service-features {
         }
     }
 }
+
+.company.has-button {
+    padding-top: 44px;
+
+    @media (max-width: 992px) {
+        padding-top: 23px;
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: 20px;
+    }
+}

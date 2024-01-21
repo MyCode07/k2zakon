@@ -509,6 +509,7 @@
 
     @media (max-width: 992px) {
         padding-bottom: 40px;
+        background-color: transparent;
     }
 
     &:not(._shadow) {
@@ -517,6 +518,11 @@
             clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
             z-index: 1;
             bottom: -1px;
+
+            @media (max-width: 992px) {
+                display: block !important;
+                background-color: #fff;
+            }
         }
     }
 }
@@ -547,5 +553,42 @@
 
     .about-slider__flex:before {
         background-color: #dcdfd4;
+    }
+
+    @media (max-width: 992px) {
+        .person__card-info p {
+            display: none;
+        }
+
+        .person__card-info ol li:has(img) {
+            display: none;
+        }
+
+        .person__card-info ol li label {
+            font-size: 12px;
+        }
+
+        .person__card-info ol li span {
+            font-size: 45px;
+            width: 50%;
+        }
+
+        .person__card-info h3 {
+            margin-bottom: 2px;
+        }
+
+        .person__card-info {
+            padding-bottom: 65px;
+            padding-top: 8px;
+        }
+
+        .person__card-info ol {
+            margin-top: 0;
+        }
+
+        ._button {
+            width: 100%;
+            bottom: 10px;
+        }
     }
 }
