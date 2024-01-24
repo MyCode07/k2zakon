@@ -37,7 +37,11 @@ document.addEventListener('click', function (e) {
                 if (item.dataset.type != type) item.classList.remove('_active')
                 else item.classList.add('_active')
             });
+        }
 
+        if (targetEl.closest('.qrcode-link')) {
+            const popup = targetEl.closest('.popup');
+            popup.classList.remove('_open');
         }
     }
 

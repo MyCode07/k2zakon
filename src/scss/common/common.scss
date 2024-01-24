@@ -535,6 +535,8 @@ label {
             @media (any-hover: hover) {
                 &:hover {
                     background-color: #d8160c;
+                    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0);
+
                     svg {
                         fill: #fff;
                     }
@@ -626,7 +628,7 @@ label {
     // ._button-darkgray
 
     &-darkgray {
-        background-color: #344F62;
+        background-color: #344f62;
         color: #fff;
 
         @media (any-hover: hover) {

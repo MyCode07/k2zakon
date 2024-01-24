@@ -642,7 +642,6 @@ function changeMapLocation(desctopMap, mobileMap, yandexLink, googleLink, twoGis
     changeMapImage(footerMapDescop, desctopMap)
     changeMapImage(footerMapMobile, mobileMap)
 
-
     changeMapLinks(taxiMapLinks, taxiLink)
     changeMapLinks(yandexMapLinks, yandexLink)
     changeMapLinks(googleMapLinks, googleLink)
