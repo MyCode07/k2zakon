@@ -355,3 +355,15 @@
         }
     }
 }
+
+.advantages-office {
+    h2 {
+        max-width: none !important;
+    }
+
+    @media (max-width: 768px) {
+        .section__flex-right {
+            margin-bottom: 30px !important;
+        }
+    }
+}
