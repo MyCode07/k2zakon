@@ -169,4 +169,14 @@
             margin-left: auto;
         }
     }
+
+    @media (min-width: 769px) {
+        .section__flex-left {
+            width: 60%;
+        }
+
+        .section__flex-right {
+            width: 40%;
+        }
+    }
 }

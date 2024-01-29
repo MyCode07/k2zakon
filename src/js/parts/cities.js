@@ -7,6 +7,7 @@ const inputCity = cityPopup.querySelector('input[type="search"]');
 const cityPopupImg = cityPopup.querySelector('.popup__content-img');
 const cityPopupChack = cityPopup.querySelector('.popup__content-chack');
 
+const header = document.querySelector('.header');
 const headerCity = document.querySelector('.header__city-btn');
 const headerCityName = headerCity.querySelector('span');
 const headerCityChoose = document.querySelector('.header__city-choose');
@@ -112,99 +113,102 @@ function createLiElements(data) {
             addedNames.push(obj.name);
         }
     });
+    
+    if (!header.classList.contains('_static-info')) {
 
-    const cities = cityPopup.querySelectorAll('ul li span');
+        const cities = cityPopup.querySelectorAll('ul li span');
 
-    getCityCookie();
+        getCityCookie();
 
-    if (city !== null) {
-        headerCityName.textContent = city;
-        headerCityName.setAttribute('lat', lat);
-        headerCityName.setAttribute('lon', lon);
+        if (city !== null) {
+            headerCityName.textContent = city;
+            headerCityName.setAttribute('lat', lat);
+            headerCityName.setAttribute('lon', lon);
 
-        if (city !== 'Вся Россия') {
-            headerCityChooseName.textContent = city;
+            if (city !== 'Вся Россия') {
+                headerCityChooseName.textContent = city;
+            }
+            else {
+                headerCityChooseName.textContent = 'не выбран';
+            }
+
+            console.log('Взяли город из Cookie');
         }
         else {
-            headerCityChooseName.textContent = 'не выбран';
+            getPlace(addedNames, cities);
+            headerCityChoose.classList.remove('_hide');
+            console.log('Определили город по IP');
         }
 
-        console.log('Взяли город из Cookie');
-    }
-    else {
-        getPlace(addedNames, cities);
-        headerCityChoose.classList.remove('_hide');
-        console.log('Определили город по IP');
-    }
+        cities.forEach((newCity) => {
+            newCity.addEventListener('click', () => {
+                headerCityName.textContent = newCity.textContent;
 
-    cities.forEach((newCity) => {
-        newCity.addEventListener('click', () => {
-            headerCityName.textContent = newCity.textContent;
+                let latValue = newCity.getAttribute('lat');
+                let lonValue = newCity.getAttribute('lon');
+                headerCityName.setAttribute('lat', latValue);
+                headerCityName.setAttribute('lon', lonValue);
 
-            let latValue = newCity.getAttribute('lat');
-            let lonValue = newCity.getAttribute('lon');
-            headerCityName.setAttribute('lat', latValue);
-            headerCityName.setAttribute('lon', lonValue);
+                cityPopup.classList.remove('_open');
+                headerCityChoose.classList.add('_hide');
 
-            cityPopup.classList.remove('_open');
-            headerCityChoose.classList.add('_hide');
+                city = headerCityName.textContent;
+                lat = headerCityName.getAttribute('lat');
+                lon = headerCityName.getAttribute('lon');
 
-            city = headerCityName.textContent;
-            lat = headerCityName.getAttribute('lat');
-            lon = headerCityName.getAttribute('lon');
+                setCityCookie('city', city, {
+                    secure: true,
+                    'max-age': 31536000000,
+                });
+                setCityCookie('lat', lat, {
+                    secure: true,
+                    'max-age': 31536000000,
+                });
+                setCityCookie('lon', lon, {
+                    secure: true,
+                    'max-age': 31536000000,
+                });
 
-            setCityCookie('city', city, {
-                secure: true,
-                'max-age': 31536000000,
+                unLockPadding();
             });
-            setCityCookie('lat', lat, {
-                secure: true,
-                'max-age': 31536000000,
-            });
-            setCityCookie('lon', lon, {
-                secure: true,
-                'max-age': 31536000000,
-            });
-
-            unLockPadding();
         });
-    });
 
-    inputCity.addEventListener('input', () => {
-        const filterValue = inputCity.value.toLowerCase();
-        let matchedCount = 0;
-        cityPopupImg.classList.add('none');
-        cityPopupChack.classList.remove('_active');
+        inputCity.addEventListener('input', () => {
+            const filterValue = inputCity.value.toLowerCase();
+            let matchedCount = 0;
+            cityPopupImg.classList.add('none');
+            cityPopupChack.classList.remove('_active');
 
-        document.querySelector('#city .all').classList.remove('none')
+            document.querySelector('#city .all').classList.remove('none')
 
 
-        if (filterValue === '') {
-            cities.forEach((city, index) => {
-                cityPopupImg.classList.remove('none');
-                if (index !== 0) {
-                    city.closest('li').classList.add('none');
-                } else {
-                    city.closest('li').classList.remove('none');
-                }
-            });
-        } else {
-            cities.forEach((city) => {
-                const listItemText = city.textContent.toLowerCase();
-
-                if (listItemText.startsWith(filterValue)) {
-                    if (matchedCount < 12) {
+            if (filterValue === '') {
+                cities.forEach((city, index) => {
+                    cityPopupImg.classList.remove('none');
+                    if (index !== 0) {
+                        city.closest('li').classList.add('none');
+                    } else {
                         city.closest('li').classList.remove('none');
-                        matchedCount++;
+                    }
+                });
+            } else {
+                cities.forEach((city) => {
+                    const listItemText = city.textContent.toLowerCase();
+
+                    if (listItemText.startsWith(filterValue)) {
+                        if (matchedCount < 12) {
+                            city.closest('li').classList.remove('none');
+                            matchedCount++;
+                        } else {
+                            city.closest('li').classList.add('none');
+                        }
                     } else {
                         city.closest('li').classList.add('none');
                     }
-                } else {
-                    city.closest('li').classList.add('none');
-                }
-            });
-        }
-    });
+                });
+            }
+        });
+    }
 }
 
 
@@ -437,13 +441,18 @@ function handleTextChange() {
                     response.phone_link !== '' &&
                     response.phone_link !== null
                 ) {
-                    headerTelefone.href = response.phone_link;
-                    headerTelefoneText.textContent = response.phone;
-                    footerDesktopPhone.textContent = response.phone;
-                } else {
-                    headerTelefone.href = defaultTelefon;
-                    headerTelefoneText.textContent = defaultTelefonText;
-                    footerDesktopPhone.textContent = defaultTelefonText;
+                    if (!header.classList.contains('_static-info')) {
+                        headerTelefone.href = response.phone_link;
+                        headerTelefoneText.textContent = response.phone;
+                        footerDesktopPhone.textContent = response.phone;
+                    }
+                }
+                else {
+                    if (!header.classList.contains('_static-info')) {
+                        headerTelefone.href = defaultTelefon;
+                        headerTelefoneText.textContent = defaultTelefonText;
+                        footerDesktopPhone.textContent = defaultTelefonText;
+                    }
                 }
 
                 if (
@@ -451,11 +460,16 @@ function handleTextChange() {
                     response.email !== '' &&
                     response.email !== null
                 ) {
-                    footerEmail.href = 'mailto:' + response.email;
-                    footerEmailText.textContent = response.email;
-                } else {
-                    footerEmail.href = defaultEmail;
-                    footerEmailText.textContent = defaultEmailText;
+                    if (!header.classList.contains('_static-info')) {
+                        footerEmail.href = 'mailto:' + response.email;
+                        footerEmailText.textContent = response.email;
+                    }
+                }
+                else {
+                    if (!header.classList.contains('_static-info')) {
+                        footerEmail.href = defaultEmail;
+                        footerEmailText.textContent = defaultEmailText;
+                    }
                 }
 
                 if (
@@ -463,18 +477,23 @@ function handleTextChange() {
                     response.full_address !== '' &&
                     response.full_address !== null
                 ) {
-                    footerCityP.textContent = response.full_address;
-                    footerCity.classList.remove('hide');
-                } else {
-                    footerCityP.textContent = defaultAddress;
-                    footerCity.classList.remove('hide');
+                    if (!header.classList.contains('_static-info')) {
+                        footerCityP.textContent = response.full_address;
+                        footerCity.classList.remove('hide');
+                    }
+                }
+                else {
+                    if (!header.classList.contains('_static-info')) {
+                        footerCityP.textContent = defaultAddress;
+                        footerCity.classList.remove('hide');
+                    }
                 }
 
                 if (yandexLink) {
                     let linkCounter = yandexLink.querySelector('.link-counter');
                     if ('yandex_link' in response && response.yandex_link !== '') {
                         yandexLink.href = response.yandex_link;
-                        if (linkCounter) {
+                        if (linkCounter && !header.classList.contains('_static-info')) {
                             linkCounter.classList.add('start')
                             // linkCounter.textContent = response.yandex_amount;
                             let number = parseInt(response.yandex_amount)
@@ -486,7 +505,7 @@ function handleTextChange() {
                     let linkCounter = googleLink.querySelector('.link-counter');
                     if ('google_link' in response && response.google_link !== '') {
                         googleLink.href = response.google_link;
-                        if (linkCounter) {
+                        if (linkCounter && !header.classList.contains('_static-info')) {
                             linkCounter.classList.add('start')
                             // linkCounter.textContent = response.google_amount;
 
@@ -499,7 +518,7 @@ function handleTextChange() {
                     let linkCounter = gisLink.querySelector('.link-counter');
                     if ('twogis_link' in response && response.twogis_link !== '') {
                         gisLink.href = response.twogis_link;
-                        if (linkCounter) {
+                        if (linkCounter && !header.classList.contains('_static-info')) {
                             linkCounter.classList.add('start')
                             // linkCounter.textContent = response.twogis_amount;
 
@@ -520,16 +539,21 @@ function handleTextChange() {
                     response.full_address !== '' &&
                     response.full_address !== null
                 ) {
-                    changeMapLocation(
-                        response.desctop_map,
-                        response.mobile_map,
-                        response.yandex_link,
-                        response.google_link,
-                        response.twogis_link,
-                        response.taxi_link
-                    );
-                    footerMap.classList.remove('hide');
-                } else {
+
+                    if (!header.classList.contains('_static-info')) {
+                        changeMapLocation(
+                            response.desctop_map,
+                            response.mobile_map,
+                            response.yandex_link,
+                            response.google_link,
+                            response.twogis_link,
+                            response.taxi_link
+                        );
+                        footerMap.classList.remove('hide');
+                    }
+                }
+
+                else {
                     console.log('Офиса в выбранном городе нет, ищем ближайший');
                     footerCity.classList.add('hide');
 
@@ -547,25 +571,26 @@ function handleTextChange() {
                         },
                         dataType: 'json',
                         success: function (response) {
-                            footerCityP.textContent = response.city_full_address;
                             console.log(response);
-                            changeMapLocation(
-                                response.desctop_map,
-                                response.mobile_map,
-                                response.yandex_link,
-                                response.google_link,
-                                response.twogis_link,
-                                response.taxi_link
-                            );
                             console.log('Ближайший офис в г. ' + response.closest_city);
-                            footerCity.classList.remove('hide');
-                            footerMap.classList.remove('hide');
 
-                            changeCityLogo(response.city_logo);
-                            closestCityHasOffiice = response.closest_city
+                            if (!header.classList.contains('_static-info')) {
+                                footerCityP.textContent = response.city_full_address;
+                                changeMapLocation(
+                                    response.desctop_map,
+                                    response.mobile_map,
+                                    response.yandex_link,
+                                    response.google_link,
+                                    response.twogis_link,
+                                    response.taxi_link
+                                );
+                                footerCity.classList.remove('hide');
+                                footerMap.classList.remove('hide');
+                                changeCityLogo(response.city_logo);
+                                closestCityHasOffiice = response.closest_city
+                            }
 
-
-                            if (yandexLink) {
+                            if (yandexLink && !header.classList.contains('_static-info')) {
                                 let linkCounter = yandexLink.querySelector('.link-counter');
                                 if ('yandex_link' in response && response.yandex_link !== '') {
                                     yandexLink.href = response.yandex_link;
@@ -577,7 +602,7 @@ function handleTextChange() {
                                     }
                                 }
                             }
-                            if (googleLink) {
+                            if (googleLink && !header.classList.contains('_static-info')) {
                                 let linkCounter = googleLink.querySelector('.link-counter');
                                 if ('google_link' in response && response.google_link !== '') {
                                     googleLink.href = response.google_link;
@@ -590,7 +615,7 @@ function handleTextChange() {
                                     }
                                 }
                             }
-                            if (gisLink) {
+                            if (gisLink && !header.classList.contains('_static-info')) {
                                 let linkCounter = gisLink.querySelector('.link-counter');
                                 if ('twogis_link' in response && response.twogis_link !== '') {
                                     gisLink.href = response.twogis_link;

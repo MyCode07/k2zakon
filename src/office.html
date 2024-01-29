@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <section class="section services-search bgc-white">
+    <section class="section services-search _pl _pl-top _after-pl-hero">
         <div class="section__container _container">
             <div class="section__body">
                 <ol class="services-grid" data-animate data-animate-bottom>
@@ -122,7 +122,8 @@
         </div>
     </section>
 
-    <section class="section callback callback-fullwidth _pl _pl-bottom" data-replace-width="768">
+
+    <section class="section callback callback-fullwidth bgc-white _pl _pl-bottom " data-replace-width="768">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__flex _center">
@@ -152,39 +153,9 @@
         </div>
     </section>
 
-    <section class="section features company has-button">
-        <div class="section__container _container">
-            <div class="section__body">
-                <div class="features-flex">
-                    <div class="features-flex__links">
-                        <a href="" class="features-link proekt run-numbers" data-animate="">
-                            <span class="run">10</span>
-                            <label>Юристов в команде</label>
-                        </a>
-                        <a href="" class="features-link depozit  run-numbers" data-animate="" data-delay="0.2">
-                            <span class="run">8</span>
-                            <label>Лет на рынке</label>
-                        </a>
-                        <a href="" class="features-link soprovojdenie  run-numbers" data-animate="" data-delay="0.2">
-                            <span class="run">4</span>
-                            <label>Офиса</label>
-                        </a>
-                    </div>
-                    <div class="features-flex__img" data-animate="" data-delay="0.1">
-                        <img src="img/services.png" alt="">
-                    </div>
-                </div>
-                <button class="_button _wh" data-open-popup data-id="qrcode" data-type="whatsapp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <path
-                            d="M20.9878 4C18.73 1.75 15.7195 0.5 12.5418 0.5C5.93554 0.5 0.583622 5.83333 0.583622 12.4167C0.583622 14.5 1.16899 16.5833 2.17247 18.3333L0.5 24.5L6.8554 22.8333C8.6115 23.75 10.5348 24.25 12.5418 24.25C19.1481 24.25 24.5 18.9167 24.5 12.3333C24.4164 9.25 23.2456 6.25 20.9878 4ZM18.3118 16.6667C18.061 17.3333 16.8902 18 16.3049 18.0833C15.8031 18.1667 15.1341 18.1667 14.4652 18C14.047 17.8333 13.4617 17.6667 12.7927 17.3333C9.78223 16.0833 7.85889 13.0833 7.69164 12.8333C7.52439 12.6667 6.43728 11.25 6.43728 9.75C6.43728 8.25 7.18989 7.58333 7.44077 7.25C7.69164 6.91667 8.02613 6.91667 8.277 6.91667C8.44425 6.91667 8.69512 6.91667 8.86237 6.91667C9.02961 6.91667 9.28049 6.83333 9.53136 7.41667C9.78223 8 10.3676 9.5 10.4512 9.58333C10.5348 9.75 10.5348 9.91667 10.4512 10.0833C10.3676 10.25 10.284 10.4167 10.1167 10.5833C9.94947 10.75 9.78223 11 9.6986 11.0833C9.53135 11.25 9.36411 11.4167 9.53136 11.6667C9.69861 12 10.284 12.9167 11.2038 13.75C12.3746 14.75 13.2944 15.0833 13.6289 15.25C13.9634 15.4167 14.1307 15.3333 14.2979 15.1667C14.4652 15 15.0505 14.3333 15.2178 14C15.385 13.6667 15.6359 13.75 15.8868 13.8333C16.1376 13.9167 17.6429 14.6667 17.8937 14.8333C18.2282 15 18.3955 15.0833 18.4791 15.1667C18.5627 15.4167 18.5627 16 18.3118 16.6667Z" />
-                    </svg>
-                    <span class="_dsc-show">Поставить нам задачу в WhatsApp</span>
-                    <span class="_mb-show">Обсудим WhatsApp</span>
-                </button>
-            </div>
-        </div>
-    </section>
+    @@include('html/reputation.html',{"class": ''})
+
+
 
     <section class="section _pl _pl-top section-map map-in-middle" data-replace-width="768">
         <div class="section__container _container">
@@ -263,81 +234,40 @@
         </div>
     </section>
 
-    <section class="section advantages advantages-office has-title">
+    <section class="section features company has-button">
         <div class="section__container _container">
             <div class="section__body">
-                <h2 data-animate data-animate-bottom>Наши клиенты и оппоненты подтвердят, что мы знаем свое дело</h2>
-                <div class="section__flex _center _column-reverse _row-reverse">
-                    <div class="section__flex-left">
-                        <div class="swiper" data-animate data-animate-left>
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="">
-                                        <img loading="lazy" src="img/1x1.png" srcset="img/swiper-img.png" alt="">
-                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="">
-                                        <img loading="lazy" src="img/1x1.png" srcset="img/swiper-img.png" alt="">
-                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="">
-                                        <img loading="lazy" src="img/1x1.png" srcset="img/swiper-img.png" alt="">
-                                        <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="features-flex">
+                    <div class="features-flex__links">
+                        <a href="" class="features-link proekt run-numbers" data-animate="">
+                            <span class="run">10</span>
+                            <label>Юристов в команде</label>
+                        </a>
+                        <a href="" class="features-link depozit  run-numbers" data-animate="" data-delay="0.2">
+                            <span class="run">8</span>
+                            <label>Лет на рынке</label>
+                        </a>
+                        <a href="" class="features-link soprovojdenie  run-numbers" data-animate="" data-delay="0.2">
+                            <span class="run">4</span>
+                            <label>Офиса</label>
+                        </a>
                     </div>
-                    <div class="section__flex-right">
-                        <ol>
-                            <li data-animate-stagger data-animate-left>
-                                <svg width="35" height="35" viewBox="0 0 35 35">
-                                    <path
-                                        d="M32.0833 16.1583V17.5C32.0815 20.6448 31.0632 23.7047 29.1803 26.2235C27.2973 28.7423 24.6506 30.5849 21.6349 31.4765C18.6192 32.3682 15.396 32.2611 12.4461 31.1713C9.49619 30.0814 6.97761 28.0672 5.26597 25.4291C3.55434 22.7909 2.74135 19.6701 2.94827 16.5321C3.15519 13.3942 4.37092 10.4071 6.41415 8.01657C8.45738 5.62599 11.2186 3.95994 14.2861 3.26689C17.3536 2.57383 20.5629 2.89091 23.4354 4.17084"
-                                        stroke="#2B3131" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
-                                    <path d="M32.0833 5.83331L17.5 20.4312L13.125 16.0562" stroke="#D8160C"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span>Работаем при отсутствии нужных документов и доказательств</span>
-                            </li>
-                            <li data-animate-stagger data-animate-left>
-                                <svg width="35" height="35" viewBox="0 0 35 35">
-                                    <path
-                                        d="M32.0833 16.1583V17.5C32.0815 20.6448 31.0632 23.7047 29.1803 26.2235C27.2973 28.7423 24.6506 30.5849 21.6349 31.4765C18.6192 32.3682 15.396 32.2611 12.4461 31.1713C9.49619 30.0814 6.97761 28.0672 5.26597 25.4291C3.55434 22.7909 2.74135 19.6701 2.94827 16.5321C3.15519 13.3942 4.37092 10.4071 6.41415 8.01657C8.45738 5.62599 11.2186 3.95994 14.2861 3.26689C17.3536 2.57383 20.5629 2.89091 23.4354 4.17084"
-                                        stroke="#2B3131" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
-                                    <path d="M32.0833 5.83331L17.5 20.4312L13.125 16.0562" stroke="#D8160C"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span>Не боимся крупных компаний и юристов с именем</span>
-                            </li>
-                            <li data-animate-stagger data-animate-left>
-                                <svg width="35" height="35" viewBox="0 0 35 35">
-                                    <path
-                                        d="M32.0833 16.1583V17.5C32.0815 20.6448 31.0632 23.7047 29.1803 26.2235C27.2973 28.7423 24.6506 30.5849 21.6349 31.4765C18.6192 32.3682 15.396 32.2611 12.4461 31.1713C9.49619 30.0814 6.97761 28.0672 5.26597 25.4291C3.55434 22.7909 2.74135 19.6701 2.94827 16.5321C3.15519 13.3942 4.37092 10.4071 6.41415 8.01657C8.45738 5.62599 11.2186 3.95994 14.2861 3.26689C17.3536 2.57383 20.5629 2.89091 23.4354 4.17084"
-                                        stroke="#2B3131" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
-                                    <path d="M32.0833 5.83331L17.5 20.4312L13.125 16.0562" stroke="#D8160C"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                <span>Назначаем нужные экспертизы и ломаем ненужные</span>
-                            </li>
-                        </ol>
+                    <div class="features-flex__img" data-animate="" data-delay="0.1">
+                        <img src="img/services.png" alt="">
                     </div>
                 </div>
+                <button class="_button _wh" data-open-popup data-id="qrcode" data-type="whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                        <path
+                            d="M20.9878 4C18.73 1.75 15.7195 0.5 12.5418 0.5C5.93554 0.5 0.583622 5.83333 0.583622 12.4167C0.583622 14.5 1.16899 16.5833 2.17247 18.3333L0.5 24.5L6.8554 22.8333C8.6115 23.75 10.5348 24.25 12.5418 24.25C19.1481 24.25 24.5 18.9167 24.5 12.3333C24.4164 9.25 23.2456 6.25 20.9878 4ZM18.3118 16.6667C18.061 17.3333 16.8902 18 16.3049 18.0833C15.8031 18.1667 15.1341 18.1667 14.4652 18C14.047 17.8333 13.4617 17.6667 12.7927 17.3333C9.78223 16.0833 7.85889 13.0833 7.69164 12.8333C7.52439 12.6667 6.43728 11.25 6.43728 9.75C6.43728 8.25 7.18989 7.58333 7.44077 7.25C7.69164 6.91667 8.02613 6.91667 8.277 6.91667C8.44425 6.91667 8.69512 6.91667 8.86237 6.91667C9.02961 6.91667 9.28049 6.83333 9.53136 7.41667C9.78223 8 10.3676 9.5 10.4512 9.58333C10.5348 9.75 10.5348 9.91667 10.4512 10.0833C10.3676 10.25 10.284 10.4167 10.1167 10.5833C9.94947 10.75 9.78223 11 9.6986 11.0833C9.53135 11.25 9.36411 11.4167 9.53136 11.6667C9.69861 12 10.284 12.9167 11.2038 13.75C12.3746 14.75 13.2944 15.0833 13.6289 15.25C13.9634 15.4167 14.1307 15.3333 14.2979 15.1667C14.4652 15 15.0505 14.3333 15.2178 14C15.385 13.6667 15.6359 13.75 15.8868 13.8333C16.1376 13.9167 17.6429 14.6667 17.8937 14.8333C18.2282 15 18.3955 15.0833 18.4791 15.1667C18.5627 15.4167 18.5627 16 18.3118 16.6667Z" />
+                    </svg>
+                    <span class="_dsc-show">Поставить нам задачу в WhatsApp</span>
+                    <span class="_mb-show">Обсудим WhatsApp</span>
+                </button>
             </div>
         </div>
     </section>
 
-    @@include('html/reputation.html',{"class": ''})
 
     <section class="section contacts contacts-section">
         <div class="section__container _container">

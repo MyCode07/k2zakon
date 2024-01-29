@@ -226,11 +226,6 @@
             .height {
                 overflow: unset;
             }
-
-            + .footer__bottom {
-                padding: 0 20px;
-                max-width: none;
-            }
         }
 
         .height {
@@ -531,5 +526,11 @@ body:has(.office-page) {
         .footer__center-btn {
             margin-top: 0;
         }
+    }
+}
+
+.city-footer {
+    .footer__center-btn {
+        cursor: default;
     }
 }
