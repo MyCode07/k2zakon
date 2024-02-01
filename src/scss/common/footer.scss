@@ -226,6 +226,11 @@
             .height {
                 overflow: unset;
             }
+
+            & + .footer__bottom {
+                max-width: none;
+                padding: 0 20px;
+            }
         }
 
         .height {

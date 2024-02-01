@@ -1162,3 +1162,24 @@
         list-style-type: unset;
     }
 }
+
+.reputation-city {
+    .swiper {
+        box-shadow: unset;
+        width: 283px;
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .victory__card-docimg {
+            height: auto;
+        }
+
+        .victory__card {
+            @media (max-width: 1440px) {
+                max-width: 100%;
+            }
+        }
+    }
+}

@@ -4,6 +4,12 @@ const links = document.querySelectorAll('.services-grid a');
 const emptySearch = document.querySelector('.empty-search');
 
 if (input) {
+
+    if (window.innerWidth <= 768) {
+        input.placeholder = input.dataset.placeholderMobile
+    }
+
+
     input.addEventListener('input', () => {
         const filterValue = input.value.toLowerCase();
 
@@ -24,7 +30,7 @@ if (input) {
             });
 
             let onEmpty = [...links].every(link => {
-                return link.closest('li').classList.contains('none');
+                return link.closest('li').classList.contains('none'); 
             });
 
             if (onEmpty) emptySearch.classList.add('_active');
