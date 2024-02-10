@@ -1237,17 +1237,17 @@
             font-size: 24px;
 
             @media (max-width: 768px) {
-                font-size: 16px;
+                font-size: 18px;
             }
         }
 
         label {
-            font-size: 20px;
             color: #b7b7b7;
             text-align: center;
+            font-size: 16px;
 
             @media (max-width: 768px) {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             a {
@@ -1357,7 +1357,7 @@
     &#chack-second {
         ._button {
             @media (min-width: 769px) {
-                font-size: 20px;
+                white-space: nowrap;
             }
         }
     }
@@ -1474,6 +1474,41 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    &#privacy {
+        .popup__container {
+            width: 587px;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-weight: 500;
+            font-size: 16px;
+            max-width: 90%;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+
+            svg {
+                flex: 0 0 auto;
+                width: 23px;
+                height: 23px;
+                stroke: currentColor;
             }
         }
     }

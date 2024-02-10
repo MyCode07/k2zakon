@@ -346,6 +346,45 @@
             }
         }
     }
+
+    &.wins-city {
+        @media (min-width: 993px) {
+            display: none;
+        }
+        padding-bottom: 0;
+
+        .section__info {
+            @media (max-width: 992px) {
+                padding: 0;
+            }
+
+            ol,
+            button {
+                display: none;
+            }
+        }
+
+        .section__flex-right {
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .section__flex {
+            gap: 0;
+            @media (max-width: 992px) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+        }
+
+        h2 {
+            @media (max-width: 992px) {
+                max-width: none;
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
 
 .person-page + .advantages {

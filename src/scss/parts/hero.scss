@@ -539,10 +539,6 @@
 
 .office-hero {
     .hero__bgi {
-        @media (max-width: 992px) {
-            display: none;
-        }
-
         &:after {
             position: absolute;
             content: "";

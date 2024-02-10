@@ -1164,6 +1164,11 @@
 }
 
 .reputation-city {
+    h2 {
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
     .swiper {
         box-shadow: unset;
         width: 283px;

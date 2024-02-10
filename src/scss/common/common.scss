@@ -141,6 +141,17 @@ h3 {
         background-color: #fff;
     }
 
+    &._over-top {
+        @media (min-width: 993px) {
+            margin-bottom: -45px;
+            background-color: transparent;
+
+            ul {
+                color: #fff;
+            }
+        }
+    }
+
     ul {
         color: #5e5e5e;
         line-height: normal;
@@ -163,6 +174,7 @@ h3 {
                 height: 9px;
                 width: 6px;
                 margin: 0 6px;
+                stroke: currentColor;
             }
         }
     }
@@ -982,7 +994,7 @@ label {
 
 ._dsc-show {
     @media (max-width: 768px) {
-        display: none;
+        display: none !important;
     }
 }
 
