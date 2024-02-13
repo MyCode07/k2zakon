@@ -695,6 +695,10 @@
     .why__text {
         max-width: 958px;
     }
+
+    &.fullwidth .read-more__text {
+        max-width: none;
+    }
 }
 
 .whatsapp-slider {

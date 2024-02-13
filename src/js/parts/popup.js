@@ -43,6 +43,31 @@ document.addEventListener('click', function (e) {
             const popup = targetEl.closest('.popup');
             popup.classList.remove('_open');
         }
+
+        if (id == 'chat') {
+            if (targetEl.classList.contains('_active')) {
+                targetEl.classList.remove('_active')
+                document.querySelector('body').classList.remove('_noscroll');
+                popup.classList.remove('_open');
+                unLockPadding();
+            }
+            else {
+                targetEl.classList.add('_active')
+            }
+        }
+        else {
+            const chatBtn = document.querySelector('[data-id="chat"]');
+            const chatPopup = document.querySelector('.popup#chat._open');
+
+            if (chatBtn) {
+                chatBtn.style.display = 'none'
+                chatBtn.classList.remove('_active')
+
+                if (chatPopup) {
+                    chatPopup.classList.remove('_open')
+                }
+            }
+        }
     }
 
     if (targetEl.classList.contains('popup')) {
@@ -55,6 +80,14 @@ document.addEventListener('click', function (e) {
         }
         else {
             unLockPadding();
+        }
+
+        const chatBtn = document.querySelector('[data-id="chat"]');
+        if (chatBtn) {
+            chatBtn.style.display = 'block'
+            chatBtn.classList.remove('_active')
+            document.querySelector('body').classList.remove('_noscroll');
+            targetEl.classList.remove('_open');
         }
     }
 
@@ -69,6 +102,11 @@ document.addEventListener('click', function (e) {
         else if (popup.id == 'chack') {
             document.querySelector('body').classList.add('_noscroll');
             document.querySelector('.popup#chack-second').classList.add('_open');
+
+            if (chatBtn) {
+                document.querySelector('body').classList.add('_noscroll');
+                chatBtn.style.display = 'none'
+            }
         }
         else if (popup.id == 'contacts' && sendEmail == false) {
             document.querySelector('body').classList.add('_noscroll');
@@ -80,10 +118,26 @@ document.addEventListener('click', function (e) {
                 (popup.id == 'contacts' && document.querySelector('.popup._service._open'))
             ) {
                 document.querySelector('body').classList.add('_noscroll');
+
+                if (chatBtn) {
+                    chatBtn.style.display = 'none'
+                }
             }
             else {
                 unLockPadding();
             }
+        }
+
+        if (popup.id == 'contacts') {
+            if (chatBtn) {
+                document.querySelector('body').classList.add('_noscroll');
+                chatBtn.style.display = 'none'
+            }
+        }
+
+        const chatBtn = document.querySelector('[data-id="chat"]');
+        if (chatBtn) {
+            chatBtn.style.display = 'block'
         }
     }
 })
