@@ -241,6 +241,14 @@
         }
     }
 
+    &.advantages-services {
+        h2 {
+            @media (max-width: 768px) {
+                max-width: none;
+            }
+        }
+    }
+
     &:has(.victory-swiperblock__title) {
         .swiper {
             box-shadow: none;

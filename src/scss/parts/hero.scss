@@ -124,25 +124,81 @@
 
     &:has(.big-title) {
         max-height: 1000px;
+        padding-top: 80px;
+
+        @media (max-width: 992px) {
+            padding-top: 70px;
+            padding-bottom: 240px;
+        }
+
+        @media (max-width: 768px) {
+            .section__info {
+                position: static;
+            }
+            .section__container {
+                position: static;
+            }
+        }
 
         ._button {
             margin: 130px 0 200px 0;
+
+            @media (max-width: 1440px) {
+                margin: 90px 0;
+            }
+
+            @media (max-width: 768px) {
+                margin: 0;
+                position: absolute;
+                bottom: 40px;
+                left: 20px;
+                width: calc(100% - 40px);
+            }
         }
 
         .section__imagebox {
             top: 70px;
+
+            @media (max-width: 992px) {
+                top: 40px;
+            }
+
+            @media (max-width: 768px) {
+                top: 150px;
+            }
         }
 
         h1 {
             max-width: 400px;
+
+            @media (max-width: 992px) {
+                max-width: 230px;
+            }
+
+            @media (max-width: 475px) {
+                max-width: 140px;
+            }
         }
     }
 
     .big-title {
-        @include adaptive-value("font-size", 60, 30, 1);
+        @include adaptive-value("font-size", 60, 0, 1);
         font-weight: 600;
         margin-bottom: 145px;
         display: block;
+        text-align: center;
+
+        @media (min-width: 993px) {
+            @include adaptive-value("font-size", 60, 0, 1);
+        }
+
+        @media (max-width: 1440px) {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 30px;
+        }
     }
 }
 
@@ -656,4 +712,10 @@
 
 ._after-pl-hero._pl {
     margin-top: 0 !important;
+}
+
+._service-hero {
+    @media (max-width: 992px) {
+        padding-bottom: 0;
+    }
 }

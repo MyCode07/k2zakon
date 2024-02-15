@@ -1195,7 +1195,19 @@
 
 section {
     &._close-to-footer {
-        margin-bottom: 60px;
+        &.company {
+            padding-top: 30px;
+            margin-bottom: 30px;
+
+            @media (max-width: 1440px) {
+                margin-bottom: 0;
+            }
+
+            @media (max-width: 992px) {
+                padding-top: 20px;
+                margin-bottom: -60px;
+            }
+        }
     }
 
     &._bgc-white {
