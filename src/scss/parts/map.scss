@@ -120,6 +120,8 @@
     }
 
     &.map-in-middle {
+        padding-bottom: 80px;
+
         .section__flex-right {
             margin-top: 0;
         }
@@ -214,4 +216,8 @@
             font-size: 12px;
         }
     }
+}
+
+.map-end {
+    padding-top: 80px;
 }

@@ -121,6 +121,29 @@
     .section__info {
         position: relative;
     }
+
+    &:has(.big-title) {
+        max-height: 1000px;
+
+        ._button {
+            margin: 130px 0 200px 0;
+        }
+
+        .section__imagebox {
+            top: 70px;
+        }
+
+        h1 {
+            max-width: 400px;
+        }
+    }
+
+    .big-title {
+        @include adaptive-value("font-size", 60, 30, 1);
+        font-weight: 600;
+        margin-bottom: 145px;
+        display: block;
+    }
 }
 
 .hero__bgi {
