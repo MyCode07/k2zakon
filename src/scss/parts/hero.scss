@@ -128,14 +128,15 @@
 
         @media (max-width: 992px) {
             padding-top: 70px;
-            padding-bottom: 240px;
+            padding-bottom: 0;
+
+            .section__body {
+                padding-bottom: 240px;
+            }
         }
 
         @media (max-width: 768px) {
             .section__info {
-                position: static;
-            }
-            .section__container {
                 position: static;
             }
         }
