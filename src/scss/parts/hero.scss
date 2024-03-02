@@ -4,8 +4,7 @@
     background-position: center bottom;
     overflow: hidden;
 
-    margin-bottom: 0 !important;
-    margin-top: -73px !important;
+    margin-top: -73px;
 
     padding-top: 128px;
     padding-bottom: 120px;
@@ -13,20 +12,10 @@
 
     @media (max-width: 1440px) {
         padding-top: 98px;
-        // padding-bottom: 100px;
     }
 
     @media (max-width: 768px) {
         @include adaptive-value("padding-bottom", 80, 40, 1);
-    }
-
-    &:not(._shadow) {
-        &:after {
-            transform: translate(0, 0);
-            clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
-            z-index: 1;
-            bottom: -1px;
-        }
     }
 
     ol {
@@ -131,46 +120,50 @@
             padding-bottom: 0;
 
             .section__body {
-                padding-bottom: 240px;
             }
         }
 
         @media (max-width: 768px) {
             .section__info {
                 position: static;
+                padding-bottom: 160px;
             }
         }
 
         ._button {
-            margin: 130px 0 200px 0;
+            z-index: 3;
+            position: relative;
 
             @media (max-width: 1440px) {
                 margin: 90px 0;
             }
 
+            @media (max-width: 992px) {
+                width: fit-content;
+                min-width: 260px;
+            }
+
             @media (max-width: 768px) {
                 margin: 0;
                 position: absolute;
-                bottom: 40px;
+                bottom: 20px;
                 left: 20px;
                 width: calc(100% - 40px);
             }
         }
 
         .section__imagebox {
-            top: 70px;
-
             @media (max-width: 992px) {
-                top: 40px;
             }
 
             @media (max-width: 768px) {
-                top: 150px;
+                top: 70px;
             }
         }
 
         h1 {
             max-width: 400px;
+            @include adaptive-value("font-size", 24, 22, 1);
 
             @media (max-width: 992px) {
                 max-width: 230px;
@@ -183,11 +176,10 @@
     }
 
     .big-title {
-        @include adaptive-value("font-size", 60, 0, 1);
         font-weight: 600;
-        margin-bottom: 145px;
+        margin-bottom: 90px;
         display: block;
-        text-align: center;
+        max-width: 520px;
 
         @media (min-width: 993px) {
             @include adaptive-value("font-size", 60, 0, 1);
@@ -199,6 +191,10 @@
 
         @media (max-width: 992px) {
             font-size: 30px;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: 60px;
         }
     }
 }
@@ -233,6 +229,12 @@
 
     @media (max-width: 992px) {
         padding-top: 10px;
+    }
+
+    &.hero-yur-sopr {
+        @media (max-width: 992px) {
+            margin-bottom: -30px;
+        }
     }
 
     &:after {
@@ -576,9 +578,9 @@
     background-size: cover;
     background-position: center bottom;
     overflow: hidden;
+    position: relative;
 
-    margin-bottom: 0 !important;
-    margin-top: -73px !important;
+    margin-top: -70px;
 
     padding-top: 128px;
     padding-bottom: 120px;
@@ -596,20 +598,6 @@
         padding-top: 75px;
     }
 
-    &:not(._shadow) {
-        &:after {
-            transform: translate(0, 0);
-            clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
-            z-index: 1;
-            bottom: -1px;
-
-            @media (max-width: 992px) {
-                display: block !important;
-                background-color: #fff;
-            }
-        }
-    }
-
     h1 {
         @media (max-width: 768px) {
             font-size: 21px;
@@ -618,6 +606,8 @@
 }
 
 .office-hero {
+    position: relative;
+
     .hero__bgi {
         &:after {
             position: absolute;
@@ -642,7 +632,7 @@
     }
 
     .about-slider__flex:before {
-        background-color: #dcdfd4;
+        background-color: #cdd0ca;
     }
 
     .about-slider__slide._next {
@@ -712,11 +702,45 @@
 }
 
 ._after-pl-hero._pl {
-    margin-top: 0 !important;
+    @media (min-width: 993px) {
+        z-index: 1;
+        margin-top: -80px;
+    }
+
+    &:before {
+        @media (max-width: 992px) {
+            clip-path: unset;
+        }
+
+        @media (max-width: 768px) {
+            height: 60px;
+        }
+    }
 }
 
 ._service-hero {
     @media (max-width: 992px) {
-        padding-bottom: 0;
+        padding-bottom: 0 !important;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 80px;
+        background-color: #fff;
+        box-shadow: 0 0 25px 35px #fff;
+        transform: translate(0, 50%) rotate(2.5deg);
+
+        @media (max-width: 992px) {
+            height: 80px;
+        }
+
+        @media (max-width: 768px) {
+            height: 60px;
+        }
     }
 }

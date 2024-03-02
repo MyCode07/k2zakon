@@ -1,8 +1,8 @@
 .features {
-    padding-bottom: 42px;
+    // padding-bottom: 42px;
 
     @media (max-width: 768px) {
-        padding-bottom: 32px;
+        // padding-bottom: 32px;
     }
 }
 
@@ -227,7 +227,7 @@
 }
 
 section.service-features {
-    padding-top: 20px;
+    // padding-top: 20px;
 
     h2 span {
         font-weight: inherit;
@@ -313,6 +313,13 @@ section.service-features {
             padding-top: 0;
             padding-bottom: 20px;
         }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #fff;
+                color: #d8160c;
+            }
+        }
     }
 
     .depozit {
@@ -333,7 +340,8 @@ section.service-features {
 
         @media (any-hover: hover) {
             &:hover {
-                color: #fff;
+                background-color: #fff;
+                color: #2b3131;
             }
         }
 
@@ -365,7 +373,8 @@ section.service-features {
 
         @media (any-hover: hover) {
             &:hover {
-                color: #2b3131;
+                background-color: #2b3131;
+                color: #fff;
             }
         }
 
@@ -432,14 +441,24 @@ section.service-features {
     }
 }
 
-.company.has-button {
-    padding-top: 44px;
+.company {
+    &.has-button {
+        // padding-top: 44px;
 
-    @media (max-width: 992px) {
-        padding-top: 23px;
+        @media (max-width: 992px) {
+            // padding-top: 23px;
+        }
+
+        @media (max-width: 768px) {
+            // padding-bottom: 20px;
+        }
     }
 
-    @media (max-width: 768px) {
-        padding-bottom: 20px;
+    &.close-to-map {
+        padding-bottom: 40px;
+
+        @media (max-width: 768px) {
+            padding-bottom: 10px;
+        }
     }
 }

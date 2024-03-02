@@ -1,10 +1,8 @@
 section.table {
-    padding-top: 64px;
-    padding-bottom: 100px;
+    padding-bottom: 20px;
 
     @media (max-width: 768px) {
-        padding-top: 25px;
-        padding-bottom: 40px;
+        padding-bottom: 0;
     }
 
     h2 {

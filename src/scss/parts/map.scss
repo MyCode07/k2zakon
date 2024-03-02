@@ -1,13 +1,13 @@
 .section-map {
-    padding-bottom: 0;
+    // padding-bottom: 0;
     z-index: 2;
 
     @media (max-width: 992px) {
-        padding-bottom: 20px;
+        // padding-bottom: 20px;
     }
 
     @media (max-width: 768px) {
-        padding-top: 40px;
+        // padding-top: 40px;
     }
 
     .section__flex {
@@ -28,7 +28,7 @@
         &-right {
             margin-left: 66px;
             flex: 1 1 auto;
-            margin-top: -50px;
+            max-width: 664px;
 
             @media (max-width: 1440px) {
                 padding-top: 46px;
@@ -120,14 +120,6 @@
     }
 
     &.map-in-middle {
-        padding-top: 80px;
-        padding-bottom: 100px;
-
-        @media (max-width: 992px) {
-            padding-top: 20px;
-            padding-bottom: 60px;
-        }
-
         .section__flex-right {
             margin-top: 0;
         }
@@ -135,8 +127,8 @@
 }
 
 .sud-map {
-    padding-top: 30px;
-    padding-bottom: 24px;
+    // padding-top: 30px;
+    // padding-bottom: 24px;
 
     h2 {
         @media (max-width: 1440px) {
@@ -192,8 +184,6 @@
 }
 
 .map-in-middle {
-    padding-top: 20px;
-
     ._button-construct {
         max-width: 397px;
         width: 100%;
@@ -203,10 +193,6 @@
             max-width: none;
             margin-top: 27px;
         }
-    }
-
-    @media (max-width: 992px) {
-        padding-top: 25px;
     }
 
     .section__flex {
@@ -225,13 +211,13 @@
 }
 
 .map-end {
-    padding-top: 80px;
+    // padding-top: 80px;
 
     @media (max-width: 1440px) {
-        padding-top: 40px;
+        // padding-top: 40px;
     }
 
     @media (max-width: 992px) {
-        padding-top: 20px;
+        // padding-top: 20px;
     }
 }

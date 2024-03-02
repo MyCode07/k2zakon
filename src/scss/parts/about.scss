@@ -1,8 +1,8 @@
 .company {
-    padding-bottom: 70px;
+    // padding-bottom: 70px;
 
     @media (max-width: 768px) {
-        padding-bottom: 40px;
+        // padding-bottom: 40px;
     }
 
     h2 {
@@ -213,6 +213,16 @@
     }
 
     &.has-button {
+        padding-bottom: 60px;
+
+        @media (max-width: 1440px) {
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 992px) {
+            padding-bottom: 0;
+        }
+
         ._button {
             @media (min-width: 993px) {
                 position: absolute;
@@ -237,10 +247,10 @@
 }
 
 .rating {
-    padding-bottom: 35px;
+    // padding-bottom: 35px;
 
     @media (max-width: 768px) {
-        padding-bottom: 25px;
+        // padding-bottom: 25px;
     }
 
     h2 {
@@ -295,21 +305,21 @@
 }
 
 .about-repotation {
-    padding-top: 40px;
-    padding-bottom: 125px;
+    // padding-top: 40px;
+    // padding-bottom: 125px;
 
-    @media (max-width: 768px) {
-        padding-top: 20px;
-        padding-bottom: 100px;
-    }
+    // @media (max-width: 768px) {
+    //     padding-top: 20px;
+    //     padding-bottom: 100px;
+    // }
 }
 
 .clients {
-    padding-bottom: 30px;
-    padding-top: 40px;
+    // padding-bottom: 30px;
+    // padding-top: 40px;
 
     @media (max-width: 992px) {
-        padding-top: 20px;
+        // padding-top: 20px;
     }
 
     h2 {
@@ -383,10 +393,10 @@
 }
 
 .about-slider {
-    padding-top: 10px;
+    // padding-top: 10px;
 
     @media (max-width: 768px) {
-        padding-top: 32px;
+        // padding-top: 32px;
     }
 
     &.hide-line-992 {
@@ -760,12 +770,12 @@
     background-color: #fff;
     z-index: 2;
     position: relative;
-    padding-bottom: 100px;
-    padding-top: 50px;
+    // padding-bottom: 100px;
+    // padding-top: 50px;
 
     @media (max-width: 768px) {
-        padding-bottom: 20px;
-        padding-top: 30px;
+        // padding-bottom: 20px;
+        // padding-top: 30px;
     }
 
     h2 {
@@ -776,12 +786,12 @@
 }
 
 .about-numbers {
-    padding-top: 30px;
-    padding-bottom: 50px;
+    // padding-top: 30px;
+    // padding-bottom: 50px;
 
     @media (max-width: 768px) {
-        padding-top: 25px;
-        padding-bottom: 35px;
+        // padding-top: 25px;
+        // padding-bottom: 35px;
     }
 
     .section__flex {

@@ -1,14 +1,14 @@
 .advantages {
-    padding-top: 40px;
-    padding-bottom: 90px;
+    // padding-top: 40px;
+    // padding-bottom: 90px;
 
     @media (max-width: 1440px) {
-        padding-top: 20px;
-        padding-bottom: 24px;
+        // padding-top: 20px;
+        // padding-bottom: 24px;
     }
 
     @media (max-width: 768px) {
-        padding-bottom: 30px;
+        // padding-bottom: 30px;
     }
 
     h2 {
@@ -309,11 +309,9 @@
         }
     }
 
-    &-person {
-        @media (min-width: 1441px) {
-            padding-bottom: 60px;
-        }
+    // .advantages-person
 
+    &-person {
         .section__flex-right {
             padding-bottom: 0 !important;
 
@@ -359,7 +357,7 @@
         @media (min-width: 993px) {
             display: none;
         }
-        padding-bottom: 0;
+        // padding-bottom: 0;
 
         .section__info {
             @media (max-width: 992px) {
@@ -398,7 +396,7 @@
 .person-page + .advantages {
     .section__info {
         @media (max-width: 1440px) {
-            padding-top: 0;
+            // padding-top: 0;
         }
     }
 }

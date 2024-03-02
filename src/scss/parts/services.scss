@@ -1,9 +1,8 @@
 .services-search {
-    padding-top: 1px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 
     @media (max-width: 768px) {
-        padding-bottom: 30px;
+        padding-bottom: 0;
     }
 
     h2 {
@@ -112,9 +111,9 @@
 }
 
 .services-search.bgc-white {
-    padding-bottom: 75px;
+    // padding-bottom: 75px;
 
     @media (max-width: 992px) {
-        padding-bottom: 35px;
+        // padding-bottom: 35px;
     }
 }

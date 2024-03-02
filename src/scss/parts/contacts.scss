@@ -1,16 +1,7 @@
 .contacts {
     @include adaptive-value("margin-top", 12, 7, 1);
-    padding-bottom: 20px;
 
     @media (max-width: 992px) {
-        &._pl._shadow:after {
-            display: block !important;
-        }
-
-        padding-bottom: 0 !important;
-    }
-
-    @media (max-width: 768px) {
         &:after {
             display: none !important;
         }
@@ -410,11 +401,11 @@
 }
 
 .contacts-section {
-    padding-top: 50px;
+    // padding-top: 50px;
     padding-bottom: 0;
 
     @media (max-width: 992px) {
-        padding-top: 30px;
+        // padding-top: 30px;
     }
 
     h2 {
@@ -435,21 +426,14 @@
 }
 
 .contact-calendar {
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
 
     @media (max-width: 768px) {
-        padding-bottom: 10px;
+        // padding-bottom: 10px;
     }
 }
 
 .ofice {
-    padding-top: 20px;
-    padding-bottom: 30px;
-
-    @media (max-width: 992px) {
-        padding-top: 0;
-    }
-
     h2 {
         margin-bottom: 34px;
 
@@ -577,9 +561,6 @@ body:has(.contacts-page) {
 }
 
 .details {
-    margin-bottom: 60px;
-    margin-top: 20px;
-
     // .details-block
 
     &-block {
