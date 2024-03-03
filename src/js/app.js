@@ -18,7 +18,9 @@ import { checkCookies } from "./utils/cookie.js";
 import { tabelScroll } from "./parts/teble.js";
 import { maskInputs } from "./static/inputmask.js";
 import { constractBtnAction } from "./parts/constracs-btn.js";
+import { chatScroll } from "./parts/chat.js";
 
+chatScroll();
 createSliders();
 toolTipAction();
 stickyHeader();

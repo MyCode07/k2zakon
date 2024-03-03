@@ -17,6 +17,7 @@ const headerCityChoice = headerCityChoose.querySelector('#choose');
 const footerCity = document.querySelector('.footer__center-btn');
 const footerCityP = footerCity.querySelector('span');
 const footerMap = document.querySelector('footer #map');
+const calendar = document.querySelector('._calendar-data');
 
 
 const headerTelefone = document.querySelector('.header__phone');
@@ -113,7 +114,7 @@ function createLiElements(data) {
             addedNames.push(obj.name);
         }
     });
-    
+
     if (!header.classList.contains('_static-info')) {
 
         const cities = cityPopup.querySelectorAll('ul li span');
@@ -436,6 +437,10 @@ function handleTextChange() {
 
                 closestCityHasOffiice = response.city_name
 
+                if (response.calendar) {
+                    changeCalendarInfo(response.calendar.calendar_title, response.calendar.calendar_text, response.calendar.calendar_btn)
+                }
+
                 if (
                     'phone_link' in response &&
                     response.phone_link !== '' &&
@@ -574,6 +579,11 @@ function handleTextChange() {
                             console.log(response);
                             console.log('Ближайший офис в г. ' + response.closest_city);
 
+                            if (response.calendar) {
+                                changeCalendarInfo(response.calendar.calendar_title, response.calendar.calendar_text, response.calendar.calendar_btn)
+                            }
+
+
                             if (!header.classList.contains('_static-info')) {
                                 footerCityP.textContent = response.city_full_address;
                                 changeMapLocation(
@@ -661,6 +671,14 @@ function handleTextChange() {
 }
 handleTextChange();
 
+
+function changeCalendarInfo(title, text, btn) {
+    if (!calendar) return;
+    calendar.querySelector('h2').textContent = title;
+    calendar.querySelector('p').textContent = text;
+    calendar.querySelector('a').textContent = btn.title;
+    calendar.querySelector('a').href = btn.url;
+}
 
 
 function changeMapLocation(desctopMap, mobileMap, yandexLink, googleLink, twoGisLink, taxiLink = false) {

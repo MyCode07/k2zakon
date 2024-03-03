@@ -1,8 +1,12 @@
 .features {
-    // padding-bottom: 42px;
+    // .features-top
 
-    @media (max-width: 768px) {
-        // padding-bottom: 32px;
+    &-top {
+        padding-bottom: 40px;
+
+        @media (max-width: 768px) {
+            padding-bottom: 20px;
+        }
     }
 }
 
