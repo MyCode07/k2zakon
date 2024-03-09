@@ -1,16 +1,4 @@
 .advantages {
-    // padding-top: 40px;
-    // padding-bottom: 90px;
-
-    @media (max-width: 1440px) {
-        // padding-top: 20px;
-        // padding-bottom: 24px;
-    }
-
-    @media (max-width: 768px) {
-        // padding-bottom: 30px;
-    }
-
     h2 {
         text-align: left;
         margin-bottom: 60px;
@@ -230,14 +218,6 @@
 
             @media (max-width: 768px) {
                 height: 300px;
-            }
-        }
-    }
-
-    &:not(.victory-swiperblock) {
-        h2 {
-            @media (max-width: 768px) {
-                max-width: 177px;
             }
         }
     }

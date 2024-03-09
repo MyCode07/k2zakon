@@ -371,6 +371,7 @@ label {
     line-height: 19px;
     transform: translate(0, -100%);
     max-width: 450px;
+    width: fit-content;
 
     @media (any-hover: none) {
         transform: translate(-50%, 0);

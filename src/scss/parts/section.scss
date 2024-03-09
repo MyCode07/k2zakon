@@ -1,5 +1,5 @@
 .section {
-    margin: 78px 0;
+    margin: 98px 0;
 
     @media (max-width: 992px) {
         margin: 58px 0;
@@ -23,7 +23,7 @@
             background-color: inherit;
             z-index: -1;
 
-            height: 80px;
+            height: 100px;
 
             @media (max-width: 992px) {
                 height: 60px;
@@ -37,7 +37,7 @@
         &:before {
             top: 0;
             transform: translate(0, -99%);
-            clip-path: polygon(0 0, 100% 80px, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 100px, 100% 100%, 0% 100%);
 
             @media (max-width: 992px) {
                 clip-path: polygon(0 0, 100% 60px, 100% 100%, 0% 100%);
@@ -51,7 +51,7 @@
         &:after {
             bottom: 0;
             transform: translate(0, 99%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 80px));
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
 
             @media (max-width: 992px) {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));

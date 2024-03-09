@@ -403,8 +403,10 @@
 .contacts-section {
     // padding-top: 50px;
     padding-bottom: 0;
+    margin-bottom: 0;
 
     @media (max-width: 992px) {
+        margin-bottom: 30px;
         // padding-top: 30px;
     }
 
