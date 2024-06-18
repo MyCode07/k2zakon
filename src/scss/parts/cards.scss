@@ -62,31 +62,34 @@
     // .victory__card-person
 
     &-person {
-        margin-top: -95px;
+        margin-top: -80px;
 
         @media (max-width: 1440px) {
-            margin-top: -75px;
+            margin-top: -60px;
         }
 
         // .victory__card-person-img
 
         &-img {
             display: block;
-            width: 190px;
-            height: 190px;
+            width: 160px;
+            height: 160px;
             position: relative;
             margin: 0 auto;
 
             transition: all 0.5s;
 
             @media (max-width: 1440px) {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
             }
         }
 
+        picture,
         img {
             border-radius: 50%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 

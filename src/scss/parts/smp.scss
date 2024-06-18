@@ -1,0 +1,120 @@
+.spm {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 60px 20px;
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .grid-item {
+            @media (min-width: 641px) {
+                grid-column: span 2;
+
+                @media (max-width: 1024px) {
+                    grid-column: span 3;
+                }
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                    grid-column: span 3;
+                }
+            }
+        }
+    }
+
+    // .spm__card
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+
+        // .spm__card-title
+
+        &-title {
+            text-align: center;
+            flex: 1 1 auto;
+            margin-bottom: 10px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 5px;
+            }
+        }
+
+        // .spm__card-images
+
+        &-images {
+            & > a {
+                display: block;
+                position: relative;
+                border-radius: 17px;
+                overflow: hidden;
+
+                @include adaptive-value("height", 310, 180, 1);
+            }
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                object-fit: cover;
+            }
+        }
+
+        // .spm__card-bottom
+
+        &-bottom {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-top: -60px;
+
+            @media (max-width: 992px) {
+                margin-top: -45px;
+            }
+        }
+
+        // .spm__card-spm
+
+        &-spm {
+            display: block;
+            max-width: 160px;
+
+            @media (max-width: 992px) {
+                max-width: 140px;
+            }
+        }
+
+        // .spm__card-person
+
+        &-person {
+            display: block;
+            width: fit-content;
+
+            img,
+            picture {
+                width: 120px;
+                height: 120px;
+
+                @media (max-width: 992px) {
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+
+    .view-more {
+        margin-top: 60px;
+
+        @media (max-width: 640px) {
+            margin-top: 50px;
+        }
+    }
+}

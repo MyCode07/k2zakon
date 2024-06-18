@@ -139,6 +139,10 @@
         }
 
         & > ul {
+            @media (min-width: 993px) {
+                min-width: 330px;
+            }
+
             & > li {
                 @media (max-width: 992px) {
                     padding: 14px 18px;
