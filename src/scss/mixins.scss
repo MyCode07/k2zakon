@@ -8,7 +8,9 @@ $mobileWidth: 360;
         //Только если меньше контейнера
         #{$property}: $startSize + px;
         @media (max-width: #{$maxWidthContainer + px}) {
-            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidthContainer - $mobileWidth}));
+            #{$property}: calc(
+                #{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidthContainer - $mobileWidth})
+            );
         }
         @media (max-width: #{$mobileWidth + px}) {
             #{$property}: $minSize + px;
@@ -17,10 +19,31 @@ $mobileWidth: 360;
         //Только если больше контейнера
         #{$property}: $startSize + px;
         @media (min-width: #{$maxWidthContainer + px}) {
-            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidth - $mobileWidth}));
+            #{$property}: calc(
+                #{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidth - $mobileWidth})
+            );
         }
     } @else {
         //Всегда
-        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidth - $mobileWidth}));
+        #{$property}: calc(
+            #{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidth - $mobileWidth})
+        );
+    }
+}
+
+@mixin pulse-animation($duration, $color) {
+    $name: inline-#{unique-id()};
+
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+
+    @keyframes #{$name} {
+        0% {
+            box-shadow: 0 0 0 0px rgba($color: $color, $alpha: 0.2);
+        }
+        100% {
+            box-shadow: 0 0 0 14px rgba($color: $color, $alpha: 0);
+        }
     }
 }

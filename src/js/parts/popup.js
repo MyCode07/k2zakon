@@ -108,7 +108,7 @@ document.addEventListener('click', function (e) {
                 chatBtn.style.display = 'none'
             }
         }
-        else if (popup.id == 'contacts' && sendEmail == false) {
+        else if (popup.classList.contains('_contacts') && sendEmail == false) {
             document.querySelector('body').classList.add('_noscroll');
             document.querySelector('.popup#chack').classList.add('_open');
         }
@@ -128,7 +128,7 @@ document.addEventListener('click', function (e) {
             }
         }
 
-        if (popup.id == 'contacts') {
+        if (popup.classList.contains('_contacts')) {
             if (chatBtn) {
                 document.querySelector('body').classList.add('_noscroll');
                 chatBtn.style.display = 'none'

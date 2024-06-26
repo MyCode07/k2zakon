@@ -211,6 +211,34 @@ table td,
         background-color: initial;
     }
 
+    .table h2 {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            bottom: -34px;
+            pointer-events: none;
+        }
+
+        &::before {
+            background-image: url("@img/icons/scroll.svg");
+            right: -2px;
+            transform: rotate(180deg);
+        }
+
+        &::after {
+            background-image: url("@img/icons/scroll.svg");
+            left: -2px;
+        }
+    }
+
     .tables-block {
         display: flex;
     }
