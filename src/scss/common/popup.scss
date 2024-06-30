@@ -947,6 +947,13 @@
         input {
             text-align: center;
         }
+
+        .popup-form > p {
+            margin-bottom: 1.5em;
+            margin-inline: auto;
+            text-align: center;
+            @include adaptive-value("font-size", 20, 14, 1);
+        }
     }
 
     &#lowers {

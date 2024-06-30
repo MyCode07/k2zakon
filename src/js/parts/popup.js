@@ -1,6 +1,7 @@
 import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
 const qrcodeLinks = document.querySelectorAll('#qrcode .qrcode-link');
+const chatBtn = document.querySelector('[data-id="chat"]');
 
 
 const getSentFormCookie = () => {
@@ -17,6 +18,45 @@ const getSentFormCookie = () => {
 
 const sendEmail = getSentFormCookie();
 console.log('sendEmail ' + sendEmail);
+
+// remove search param
+function removeSearchParam(name, value = false) {
+    const url = new URL(window.location.href)
+    const params = new URLSearchParams(url.search.slice(1))
+    if (value) {
+        const searchedParam = getSearchParam(name);
+        if (searchedParam) {
+            let paramArray = searchedParam.split(',')
+            let newArray = removeItemFromArray(paramArray, value)
+            if (newArray.length) {
+                params.set(name, newArray);
+            }
+            else {
+                params.delete(name);
+            }
+        }
+
+    }
+    else {
+        params.delete(name);
+    }
+
+    let newUrl = `${window.location.pathname}?${params}${window.location.hash}`;
+    if (newUrl[newUrl.length - 1] == '?') {
+        newUrl = newUrl.replace('?', '')
+    }
+
+    window.history.replaceState({}, '', newUrl)
+
+    function removeItemFromArray(arr, value) {
+        let index = arr.indexOf(value);
+        if (index > -1) {
+            arr.splice(index, 1);
+        }
+        return arr;
+    }
+}
+
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
@@ -56,7 +96,6 @@ document.addEventListener('click', function (e) {
             }
         }
         else {
-            const chatBtn = document.querySelector('[data-id="chat"]');
             const chatPopup = document.querySelector('.popup#chat._open');
 
             if (chatBtn) {
@@ -82,13 +121,14 @@ document.addEventListener('click', function (e) {
             unLockPadding();
         }
 
-        const chatBtn = document.querySelector('[data-id="chat"]');
         if (chatBtn) {
             chatBtn.style.display = 'block'
             chatBtn.classList.remove('_active')
             document.querySelector('body').classList.remove('_noscroll');
             targetEl.classList.remove('_open');
         }
+
+        removeSearchParam('open-popup')
     }
 
     if (targetEl.classList.contains('popup__close') || targetEl.hasAttribute('data-close-popup')) {
@@ -108,7 +148,7 @@ document.addEventListener('click', function (e) {
                 chatBtn.style.display = 'none'
             }
         }
-        else if (popup.classList.contains('_contacts') && sendEmail == false) {
+        else if (popup.id == 'contacts' && sendEmail == false) {
             document.querySelector('body').classList.add('_noscroll');
             document.querySelector('.popup#chack').classList.add('_open');
         }
@@ -128,17 +168,18 @@ document.addEventListener('click', function (e) {
             }
         }
 
-        if (popup.classList.contains('_contacts')) {
+        if (popup.id == 'contacts') {
             if (chatBtn) {
                 document.querySelector('body').classList.add('_noscroll');
                 chatBtn.style.display = 'none'
             }
         }
 
-        const chatBtn = document.querySelector('[data-id="chat"]');
         if (chatBtn) {
             chatBtn.style.display = 'block'
         }
+
+        removeSearchParam('open-popup')
     }
 })
 
