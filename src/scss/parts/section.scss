@@ -723,6 +723,10 @@
 
     &._pl {
         background-color: #fff !important;
+
+        .swiper-pagination span:not(.swiper-pagination-bullet-active) {
+            background-color: #ece6e2;
+        }
     }
 
     .swiper {

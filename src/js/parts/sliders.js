@@ -27,7 +27,9 @@ export const createSliders = () => {
         if (paginationElem) pagination = { el: paginationElem, clickable: true }
 
         let delay = 3000;
-        if (slider.closest('.whatsapp-slider')) delay = 30000
+        if (slider.closest('.whatsapp-slider')) {
+            delay = 30000
+        }
 
         new Swiper(slider, {
             modules: [
@@ -158,7 +160,7 @@ if (aboutSlider && isMobile.any() && window.innerWidth <= 992) {
         if (dir == 'right') {
             changeSlides(1);
         }
-        else if(dir == 'left') {
+        else if (dir == 'left') {
             changeSlides(-1);
         }
     })

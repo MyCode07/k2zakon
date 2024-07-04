@@ -46,4 +46,10 @@ $mobileWidth: 360;
             box-shadow: 0 0 0 14px rgba($color: $color, $alpha: 0);
         }
     }
+
+    @media (any-hover: hover) {
+        &:hover {
+            animation-name: none;
+        }
+    }
 }
